@@ -10,38 +10,27 @@
     <h1>Modificando el código HTML</h1>
     <p id="prueba">Modificando el contenido.</p>
     <button type="button" onclick="document.getElementById('prueba').innerHTML = 'CAMBIANDO el contenido!'">¡Dale!</button>
+
     <h1>Cambio de imágenes con JavaScript</h1>
     <img id="myFPImage" onclick="cambiaPic()" src="https://geekflare.com/wp-content/uploads/2021/09/520401-pure-black-background-wallpaper.jpg" width="100" height="180">
     <p>Haz click sobre las imagenes para cambiarlas </p>
-    <script>
-        function cambiaPic() {
-            var image = document.getElementById('myFPImage');
-            if (image.src.match("verde")) {
-                image.src = "https://geekflare.com/wp-content/uploads/2021/09/520401-pure-black-background-wallpaper.jpg";
-            } else {
-                image.src = "https://previews.123rf.com/images/mariia24/mariia242105/mariia24210500129/169291480-fondo-clave-de-croma-de-pantalla-verde-ilustraci%C3%B3n-de-stock-vectorial.jpg";
-            }
-        }
-    </script>
+
     <p id="mytxt">Aprende JavaScript con MyFPSchool!</p>
     <button type="button" onclick="myFunction()">¡Dale!</button>
-    <script>
-        function myFunction(){
-            var x = document.getElementById("mytxt");
-            x.style.fontSize = "25px";
-            x.style.color = "red";
-        }
-    </script>
+
     <script>
         console.log("Síntesis, ejemplo de consola");
     </script>
+
     <p id="parrafito"></p>
     <script>
         document.getElementById("parrafito").innerHTML = 5 + 6;
     </script>
+
     <script>
         document.write("<h2>Buenos días</h2>");
     </script>
+    
     <script>
         window.alert("BUENAS NOCHES");
     </script>
