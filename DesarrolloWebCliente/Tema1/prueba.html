@@ -23,5 +23,27 @@
             }
         }
     </script>
+    <p id="mytxt">Aprende JavaScript con MyFPSchool!</p>
+    <button type="button" onclick="myFunction()">¡Dale!</button>
+    <script>
+        function myFunction(){
+            var x = document.getElementById("mytxt");
+            x.style.fontSize = "25px";
+            x.style.color = "red";
+        }
+    </script>
+    <script>
+        console.log("Síntesis, ejemplo de consola");
+    </script>
+    <p id="parrafito"></p>
+    <script>
+        document.getElementById("parrafito").innerHTML = 5 + 6;
+    </script>
+    <script>
+        document.write("<h2>Buenos días</h2>");
+    </script>
+    <script>
+        window.alert("BUENAS NOCHES");
+    </script>
 </body>
 </html>
