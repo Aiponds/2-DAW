@@ -2,7 +2,7 @@ package Strings;
 
 import java.util.Scanner;
 
-public class Ejercicio1 {
+public class Ejercicio1_VictorStala {
     /*
     Pedir por teclado una cadena:
     Mostrar menú:
@@ -46,7 +46,7 @@ public class Ejercicio1 {
                 }
                 break;
                 case "6" : { // Comprobar palindromo
-                    
+                    comprobarPalindromo(cad);
                 }
                 break;
                 default : {
@@ -102,13 +102,25 @@ public class Ejercicio1 {
         System.out.println(cad.toUpperCase());
     }
     public static void comprobarPalindromo(String cad){
-
+        boolean palindromo=true;
+        for (int i = cad.length()-1; i >= 0; i--) {
+            if(cad.charAt(i)!=cad.charAt(cad.length()-i-1)){
+                palindromo=false;
+                break;
+            }
+        }
+        if(palindromo==true){
+            System.out.println("La cadena es palíndroma");
+        } else {
+            System.out.println("La cadena no es palíndroma");
+        }
     }
     public static String pedirCadena(){
         String cad;
         cad=new Scanner(System.in).nextLine();
         cad=cad.toLowerCase();
         cad=cad.trim();
+        cad=cad.replace(" ","");
         return cad;
     }
 }
