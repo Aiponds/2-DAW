@@ -15,6 +15,8 @@ function myFunction(){
     x.style.fontSize = "25px";
     x.style.color = "red";
 }
+/* copiando el codigo del anterior ejercicio, añado 2 casos ifelse para añadir 2 imagenes mas
+*/
 function clicFotogramas(){
     var image = document.getElementById('imagFotograma');
     if (image.src.match("78691387")) {
@@ -27,13 +29,22 @@ function clicFotogramas(){
         image.src = "https://thumbs.dreamstime.com/b/businessman-acting-like-punching-someone-white-background-facing-challenges-tough-competition-fighting-spirit-78691387.jpg";
     }
 }
+/* Le entra por cabecera si es verdadera o falsa y la respuesta del usuario.*/
 function verificarRespuesta(respuesta, preguntaId) {
     var pregunta = document.getElementById(preguntaId);
-    if (respuesta) {
+    if (respuesta==true) {
         pregunta.classList.remove('error');
         pregunta.classList.add('acierto');
     } else {
         pregunta.classList.remove('acierto');
         pregunta.classList.add('error');
+    }
+}
+function mensajeCosola(){
+    console.log("Mensaje en consola 1.");
+}
+function mensajeBienvenida(boton){
+    switch(boton){
+        case 'es' : document.getElementById(bienvenida).innerHTML="Bienvenido a JavaScript";
     }
 }

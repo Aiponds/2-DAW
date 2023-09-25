@@ -43,9 +43,40 @@
         <button onclick="verificarRespuesta(false, 'pregunta2')">Falso</button>
     </div>
 
+    <div id="pregunta3">
+        <p>Pregunta 3: Los seres humanos pueden respirar bajo el agua sin ayuda de equipos especiales.</p>
+        <button onclick="verificarRespuesta(false, 'pregunta3')">Verdadero</button>
+        <button onclick="verificarRespuesta(true, 'pregunta3')">Falso</button>
+    </div>
+
+    <div id="pregunta4">
+        <p>Pregunta 4: El plátano es una fruta que crece en arbustos</p>
+        <button onclick="verificarRespuesta(false, 'pregunta4')">Verdadero</button>
+        <button onclick="verificarRespuesta(true, 'pregunta4')">Falso</button>
+    </div>
+
+    <div id="pregunta5">
+        <p>Pregunta 5: El hielo se derrite a temperaturas por debajo de 0 grados Celsius.</p>
+        <button onclick="verificarRespuesta(false, 'pregunta5')">Verdadero</button>
+        <button onclick="verificarRespuesta(true, 'pregunta5')">Falso</button>
+    </div>
+
+    <div id="pregunta6">
+        <p>Pregunta 6: El diamante es una forma de carbono.</p>
+        <button onclick="verificarRespuesta(true, 'pregunta6')">Verdadero</button>
+        <button onclick="verificarRespuesta(false, 'pregunta6')">Falso</button>
+    </div>
+
+    <div id="pregunta7">
+        <p>Pregunta 7: La Gran Muralla China es visible desde el espacio.</p>
+        <button onclick="verificarRespuesta(false, 'pregunta7')">Verdadero</button>
+        <button onclick="verificarRespuesta(true, 'pregunta7')">Falso</button>
+    </div>
+
     <p id="mytxt">Aprende JavaScript con MyFPSchool!</p>
     <button type="button" onclick="myFunction()">¡Dale!</button>
 
+    <button type="button" onclick="mensajeConsola()">Mensaje</button>
     <script>
         console.log("Síntesis, ejemplo de consola");
     </script>
@@ -62,5 +93,10 @@
     <script>
         window.alert("BUENAS NOCHES");
     </script>
+    <br>
+    <button type="button" id="ru">RU</button>
+    <button type="button" id="es">ES</button>
+    <button type="button" id="en">EN</button>
+    <p id="bienvenida"></p>
 </body>
 </html>
