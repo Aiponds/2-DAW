@@ -10,13 +10,31 @@ function calcCircunferencia(){
     var longitud=2*Math.PI*radio;
 
     // Mostramos los resultados en la consola
-    console.log("Área de la circunferencia:", area);
-    console.log("Longitud de la circunferencia:", longitud);
+    document.write("Área de la circunferencia: "+ area+"<br>");
+    document.write("Longitud de la circunferencia: "+ longitud+"<br>");
 }
 function operadorTernario(){
     var edad = 18;
     var mensaje = edad >= 18 ? "Eres mayor de edad" : "Eres menor de edad";
-    console.log(mensaje);
+    document.write(mensaje+"<br>");
+}
+function operadorTernario2(){
+    var intentos = 3;
+    while(intentos>0){
+        var nota = prompt("Dime la nota ( "+intentos+" intentos y del 0-10 )");
+        if (!isNaN(nota) && nota >= 0 && nota <= 10) {
+            break;
+        } else {
+            alert("Nota inválida. Debes ingresar un número del 0 al 10.");
+            intentos--;
+        }
+    }
+
+    if (intentos === 0) {
+    alert("Has agotado tus 3 intentos. Adiós.");
+    }
+    var mensaje = nota >=5 ? "Has aprobado" : "Has suspendido";
+    document.write(mensaje+"<br>");
 }
 /*
 -En dato1, estamos concatenando Ronaldo con los numeros 5 y 5, dando resultado a Ronaldo55.
@@ -24,6 +42,6 @@ function operadorTernario(){
 function comprobarCodigo(){
     var dato1 = "Ronaldo"+5+5;
     var dato2 = 5 + 5 + "Ronaldo";
-    console.log(dato1);
-    console.log(dato2);
+    document.write("<br>"+dato1);
+    document.write("<br>"+dato2);
 }
