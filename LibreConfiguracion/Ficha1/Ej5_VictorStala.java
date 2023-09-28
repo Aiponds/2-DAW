@@ -1,4 +1,4 @@
-package LibreConfiguracion.Ficha1;
+package Ficha1;
 
 import java.util.Scanner;
 
