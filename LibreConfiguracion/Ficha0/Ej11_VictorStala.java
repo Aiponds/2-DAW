@@ -1,5 +1,3 @@
-package Ficha1;
-
 import java.util.Scanner;
 
 public class Ej11_VictorStala {
@@ -53,6 +51,9 @@ public class Ej11_VictorStala {
 
         return -1;
     }
-    
+    public static String pedirCad(){
+        System.out.print("Introduce una cadena: ");
+        return (new Scanner(System.in).nextLine());
+    }
 }
 
