@@ -1,5 +1,3 @@
-package Ficha1;
-
 import java.util.Scanner;
 
 public class Ej6_VictorStala {
