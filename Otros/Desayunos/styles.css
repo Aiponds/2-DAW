@@ -1,0 +1,84 @@
+/* Establece la imagen de fondo */
+body {
+    background-image: url('https://cdn.discordapp.com/attachments/1053211825031888936/1158362530561921116/198654525_l_normal_none.jpg?ex=651bf8ac&is=651aa72c&hm=a9021f8f68d354d56596d57b2667bef8b077faeb74fbcc1a597e529f1cc71e7f&'); /* Cambia 'nombre-de-tu-imagen.jpg' al nombre de tu imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Sombra negra */
+    background-color: rgba(50, 50, 50, 0.7); /* Fondo gris oscuro con transparencia */
+    color: #d2b48c; /* Texto color marrón claro */
+}
+/* Estilos para el header */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    background-color: rgba(50, 50, 50, 0.445); /* Fondo gris oscuro con transparencia para el header */
+    color: #d2b48c; /* Texto color marrón claro */
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados para el header */
+}
+
+/* Estilos para la tabla con desplazamiento vertical */
+.table-responsive {
+    max-height: 300px;
+    overflow-y: auto;
+    border-color: #d2b48c; /* Color de borde marrón claro para la tabla */
+}
+
+/* Estilos para el formulario */
+#formulario {
+    margin-top: 20px;
+    text-align: center; /* Centra los elementos dentro del formulario */
+    position: absolute;
+    bottom: 80px; /* Coloca el formulario en la parte inferior */
+    left: 50%; /* Centra el formulario horizontalmente */
+    transform: translateX(-50%); /* Centra el formulario horizontalmente */
+    z-index: 1; /* Asegura que el formulario esté en el frente */
+    
+}
+/* Estilos para los labels de los campos de entrada */
+.form-group label {
+    background-color: rgba(50, 50, 50, 0.7); /* Fondo gris oscuro con transparencia para los labels */
+    padding: 5px;
+    border-radius: 5px;
+    color: #d2b48c; /* Texto color marrón claro para los labels */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Sombra negra */
+}
+
+/* Estilos para el botón "Agregar" */
+#agregar-btn {
+    background-color: #d2b48c; /* Color de fondo marrón claro para el botón "Agregar" */
+    color: #333; /* Texto color gris oscuro para el botón "Agregar" */
+    border: none;
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Sombra negra */
+}
+#agregar-btn:hover {
+    background-color: #b28963; /* Color de fondo marrón claro más oscuro al pasar el ratón por encima */
+}
+
+/* Estilos para las filas de la tabla */
+table tr td {
+    text-align: center;
+    text-shadow: 0px 0px 0px;
+}
+tr {
+    text-align: center;
+    text-shadow: 0px 0px 0px;
+}
+/* Estilos para el footer */
+.footer {
+    text-align: center;
+    background-color: rgba(50, 50, 50, 0.356); /* Fondo gris oscuro con transparencia para el footer */
+    color: #d2b48c; /* Texto color marrón claro */
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+/* Estilos para la tabla con un color azul tenue */
+.table {
+    background-color: #b28963; /* Color de fondo azul tenue */
+}
