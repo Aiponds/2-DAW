@@ -3,11 +3,42 @@ document.addEventListener("DOMContentLoaded", function() {
     const nombreInput = document.getElementById("nombre");
     const precioInput = document.getElementById("precio");
     const agregarBtn = document.getElementById("agregar-btn");
+    const totalElement = document.getElementById("total"); // Elemento para mostrar el total
 
     // Objeto para almacenar nombres y precios acumulados
     const nombresYPrecios = {};
 
+    function calcularTotal() {
+        let total = 0;
+
+        // Recorre todas las filas de la tabla y suma los precios con descuento
+        const filas = tablaBody.querySelectorAll("tr");
+        filas.forEach((fila) => {
+            const precioConDescuento = parseFloat(fila.querySelector("td:nth-child(3)").textContent);
+            total += precioConDescuento;
+        });
+
+        totalElement.textContent = total.toFixed(2); // Actualiza el total en el elemento HTML
+    }
+
+    // Función para agregar desayuno al presionar "Enter" en los campos de entrada
+    function agregarConEnter(event) {
+        if (event.key === "Enter") {
+            if (document.activeElement === precioInput) {
+                agregarDesayuno();
+            } else if (document.activeElement === nombreInput) {
+                precioInput.focus();
+            }
+        }
+    }
+
     agregarBtn.addEventListener("click", function() {
+        agregarDesayuno();
+    });
+
+    precioInput.addEventListener("keydown", agregarConEnter);
+
+    function agregarDesayuno() {
         const nombre = nombreInput.value;
         const precio = parseFloat(precioInput.value);
 
@@ -40,11 +71,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 nombresYPrecios[nombre] = precio;
             }
 
+            // Llama a la función para calcular el total
+            calcularTotal();
+
             // Limpiar los campos de entrada
             // nombreInput.value = "";
             precioInput.value = "";
         } else {
             alert("Por favor, ingresa un nombre y un precio válido.");
         }
-    });
+    }
 });
