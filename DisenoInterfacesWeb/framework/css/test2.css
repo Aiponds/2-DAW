@@ -1,0 +1,24 @@
+img {
+    max-width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.fondo {
+    background-color: #95ffcc;
+    color: #05a189;
+    padding: 125px;
+}
+.fondo2 {
+    background-color: #02a28e;
+    color: #8df1cd;
+    padding: 60px;
+}
+.fondo3 {
+    background-color: #95ffcc;
+    width: 100px;
+    height: 100px;
+}
+div {
+    max-height: 100%;
+    padding: 3px;
+}
