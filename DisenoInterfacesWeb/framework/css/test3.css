@@ -1,0 +1,49 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+img {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+div div div div div {
+    margin-bottom: 20px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+hr.articulo {
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.61);
+}
+.columnaMain {
+    border-left: 0.0625rem solid rgba(128, 128, 128, 0.384);
+    border-right: 0.0625rem solid rgba(128, 128, 128, 0.384);;
+}
+.grid {
+    margin-top: 20px;
+}
+h1,h2,h3,h4,h5 {
+    margin: 0px auto;
+}
+.autor {
+    font-size: 10px;
+}
+.descripcion {
+    font-size: 12px;
+    font-weight: bolder;
+}
+span {
+    font-size: 12px;
+    color: red;
+}
+span.elpais {
+    background-image: url(https://static.elpais.com/dist/resources/images/v2/e_suscripcion.svg);
+    width: 1.0625rem;
+    height: 1.0625rem;
+    bottom: -0.0625rem;
+    margin-right: 0.25rem;
+    position: relative;
+    display: inline-block;
+}
+p {
+    color: rgb(51, 51, 51);
+}
