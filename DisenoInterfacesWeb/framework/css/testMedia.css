@@ -1,0 +1,42 @@
+* {
+    margin: 0px;
+}
+div {
+    box-sizing: border-box;
+    padding: 5px;
+}
+.header {
+    background-color: #2faf30;
+    background-size: auto;
+    height: 10vh;
+}
+.main {
+    background-color: #1552bb;
+    height: 75vh;
+}
+.aside {
+    background-color: #d0bb37;
+    height: 75vh;
+}
+.footer {
+    background-color: #b2155c;
+    height: 10vh;
+}
+@media (max-width: 768px){
+    .main {
+        width: 50%;
+    }
+    .aside {
+        width: 50%;
+    }
+}
+@media (max-width: 568px){
+    .main {
+        width: 100vw;
+        height: 55vh;
+    }
+    .aside {
+        width: 100vw;
+        height: 20vh;
+    }
+}
