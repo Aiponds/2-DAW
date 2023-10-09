@@ -43,3 +43,62 @@ function calcCirculo(){
     var area = Math.PI*Math.pow(rad, 2);
     document.write("Longitud: "+longitud+", area: "+area);
 }
+function pedirNumeroSumarContador(){
+    var numero = prompt("Introduce un numero: ");
+    numero = parseInt(numero);
+    var contador1 = numero+5;
+    var contador2 = contador1+21;
+    var contador3 = contador2-4;
+    document.write("<p>Número introducido: "+numero+"</p>")
+    document.write("<p>Contadores:\t"+contador1+"\t"+contador2+"\t"+contador3+"</p>");
+}
+function numerosBase16y5(){
+    var numero = prompt("Introduce un numero: ");
+    numero = parseInt(numero);
+    var base16 = numero.toString(16);
+
+    // Calcula el valor en base 5 (mediante un bucle)
+    var base5 = "";
+    var tempNumero = numero;
+
+    while (tempNumero > 0) {
+        var residuo = tempNumero % 5;
+        base5 = residuo.toString() + base5;
+        tempNumero = Math.floor(tempNumero / 5);
+    }
+     // Muestra los resultados en el documento
+     document.write("<p>Número en base 16:"+base16+"</p>");
+     document.write("<p>Número en base 16:"+base5+"</p>");
+}
+function numerosBase10y2(){
+    var numero = prompt("Introduce un numero en base 8: ");
+    numero = parseInt(numero);
+    var base10 = parseInt(numero, 8);
+    var base2 = base10.toString(2);
+    document.write("<p>Número en base 10: "+base10+"</p>");
+    document.write("<p>Número en base 2: "+base2+"</p>");
+}
+function numeroBaseX() {
+    var numero = prompt("Introduce un numero: ");
+    numero = parseInt(numero);
+    var base = prompt("Introduce una base: ");
+    base = parseInt(base);
+    var numeroEnBase = numero.toString(base);
+    document.write("<p>Número en base " + base + ": " + numeroEnBase + "</p>");
+}
+function calcProducto() {
+    var num1 = prompt("Introduce un numero: ");
+    var num2 = prompt("Introduce otro numero: ");
+    if ((num1 && num2 !=isNaN) && (num1 && num2 >=0 ) && (num1 && num2 <57)) {
+        var producto = num1 * num2;
+        document.write("<p>Producto: "+producto+"</p>");
+    } else {
+        alert("Los numeros introducidos no son válidos.");
+    }
+    var reiniciar = confirm("¿Deseas volver a empezar?");
+        if (reiniciar) {
+            calcProducto();
+        } else {
+            alert("Gracias por usar el programa.");
+        }
+}
