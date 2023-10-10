@@ -102,3 +102,44 @@ function calcProducto() {
             alert("Gracias por usar el programa.");
         }
 }
+function solicitarYImprimirNumeros() {
+    var numero;
+
+    numero = parseInt(prompt("Introduce un número (9999 para terminar):"));
+    if (!isNaN(numero) && numero !== 9999) {
+        solicitarYImprimirNumeros();
+        document.write(numero+", ")
+    }
+}
+function solicitarYSumarNumeros() {
+    var numero, suma=0;
+    do {
+        numero = parseInt(prompt("Introduce un número (9999 para terminar):"));
+        if(numero!==9999)
+            suma+=numero;
+    }while(!isNaN(numero)&& numero!==9999);
+    document.write("Total: "+suma);
+}
+function solicitarYMultiplicarNumeros() {
+    var numero, producto=1;
+    do {
+        numero = parseInt(prompt("Introduce un número (9999 para terminar):"));
+        if(numero!==9999)
+            producto*=numero;
+    }while(!isNaN(numero)&& numero!==9999);
+    document.write("Total: "+producto);
+}
+function multiplosYSuma() {
+    var suma = 0;
+
+    document.write("Múltiplos de 23 menores que 1000: ");
+
+    for (var i = 1; i < 1000; i++) {
+        if (i % 23 === 0) {
+            suma += i;
+            document.write(i + " ");
+        }
+    }
+
+    document.write("<br>Suma de los múltiplos: " + suma + "<br>");
+}

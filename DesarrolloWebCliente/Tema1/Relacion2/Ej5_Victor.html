@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobreescribir</title>
+</head>
+<body>
+    <script>
+        // Variable global original
+        var mensaje = "Hola, mundo!";
+
+        // Función global original
+        function saludar() {
+            document.write("Saludando desde la función original.");
+        }
+        document.write(mensaje); // Mostrará "¡Hola, sobrescribiendo la variable global!" en la consola
+        saludar(); // Mostrará "Saludando desde la función sobrescrita." en la consola
+
+        // Sobrescribir la variable global
+        mensaje = "¡Hola, sobrescribiendo la variable global!";
+
+        // Sobrescribir la función global
+        function saludar() {
+            document.write("Saludando desde la función sobrescrita.");
+        }
+
+        // Llamar a la variable y función sobrescritas
+        document.write("<br>"+mensaje); // Mostrará "¡Hola, sobrescribiendo la variable global!" en la consola
+        saludar(); // Mostrará "Saludando desde la función sobrescrita." en la consola
+    </script>
+</body>
+</html>
