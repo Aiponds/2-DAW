@@ -1,0 +1,21 @@
+.azulClaro {
+    background-color: #3da0bf;
+}
+.verde {
+    background-color: #3e7a4b;
+}
+.rojo {
+    background-color: #d2434c;
+}
+.amarillo {
+    background-color: #d39351;
+}
+.col-12 {
+    height: 25vh;
+}
+
+@media (min-width: 992px) {
+    .col-lg-2, .col-lg-10 {
+        height: 50vh;
+    }
+}
