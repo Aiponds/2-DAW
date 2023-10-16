@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecha</title>
+</head>
+<body>
+    <script>
+        // Crear una fecha concreta (por ejemplo, 16 de octubre de 2023)
+        var fechaConcreta = new Date('2023-11-16');
+
+        // Extraer el mes de la fecha (0-11, donde 0 es enero y 11 es diciembre)
+        var mes = fechaConcreta.getMonth() + 1; // Sumamos 1 para obtener un mes en el formato 1-12
+
+        // Extraer el año de la fecha
+        var año = fechaConcreta.getFullYear();
+
+        // Mostrar el mes y el año
+        document.write('Mes: ' + mes);
+        document.write('<br>Año: ' + año);
+    </script>
+</body>
+</html>
