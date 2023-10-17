@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 5.2</title>
+</head>
+<body>
+    <script>
+        // 5.2.-Escribir un programa en el cual se ingresen cuatro números, calcular
+        // e informar la suma de los dos primeros y el producto del tercero y el
+        // cuarto.
+        function pedirNum() {
+            var num;
+            do {
+                num = prompt("Introduce el valor del numero: ");
+            }while(isNaN(num));
+            num = parseInt(num);
+            return num;
+        }
+        var num1 = pedirNum();
+        var num2 = pedirNum();
+        var suma = num1+num2;
+        document.write("La suma de "+num1+" y "+num2+" es "+suma);
+        var num3 = pedirNum();
+        var num4 = pedirNum();
+        var producto = num3*num4;
+        document.write("<br>El producto "+num3+" y "+num4+" es "+producto);
+    </script>
+</body>
+</html>

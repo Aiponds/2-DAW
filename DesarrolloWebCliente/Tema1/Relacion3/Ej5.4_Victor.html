@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 5.4</title>
+</head>
+<body>
+    <script>
+        // 5.4.- Se debe desarrollar un programa que pida el ingreso del precio de un
+        // artículo y la cantidad que lleva el cliente. Mostrar lo que debe abonar el
+        // comprador (Ingresar por teclado un precio sin decimales, es decir un
+        // entero: 2, 7, 90 etc.)
+        function pedirNum() {
+            var num;
+            do {
+                num = prompt("Introduce el precio: ");
+            }while(isNaN(num));
+            num = parseFloat(num);
+            return num;
+        }
+        function pedirCant() {
+            var num;
+            do {
+                num = prompt("Introduce la cantidad: ");
+            }while(isNaN(num));
+            num = parseInt(num);
+            return num;
+        }
+        var precio = pedirNum();
+        var cantidad = pedirCant();
+        var total = parseFloat(precio*cantidad);     
+        document.write("Total a abonar: "+total);  
+    </script>
+</body>
+</html>

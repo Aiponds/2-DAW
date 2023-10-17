@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 5.1</title>
+</head>
+<body>
+    <script>
+        // 5.1.- Realizar la carga del lado de un cuadrado, mostrar por pantalla el
+        // perímetro del mismo (El perímetro de un cuadrado se calcula
+        // multiplicando el valor del lado por cuatro)
+        var lado;
+        do {
+            lado = prompt("Introduce el valor del lado: ");
+        }while(lado<0.1 || isNaN(lado));
+        document.write("El perimetro del cuadrado es "+lado*4);
+    </script>
+</body>
+</html>
