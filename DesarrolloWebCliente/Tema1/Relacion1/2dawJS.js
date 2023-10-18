@@ -154,5 +154,5 @@ function multiplosYSuma() {
         }
     }
     //Se muestra la suma de los multiplos
-    document.write("<br>Suma de los múltiplos: " + suma + "<br>");
+    document.write("<br>Suma de los múltiplos: " + suma);
 }
