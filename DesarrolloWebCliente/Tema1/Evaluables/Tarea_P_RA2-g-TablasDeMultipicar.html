@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <title>Tablas de Multiplicar</title>
+    <!-- Victor Stala -->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +25,7 @@
             25 / 2=
             10 x 16= 
         -->
-        <!--HTML-->
+        <!--HTML, biblioteca de BootStrap 5 importada para darle un diseño adaptativo.-->
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -94,7 +95,7 @@
             }while(num<=10);
 
             //TABLA DEL 9
-            //No hace falta reiniciar numero a 1 porque ya tenemos la variable local del bucle 'for' 'i'.
+            //No hace falta reiniciar numero a 1 porque ya tenemos la variable local del bucle 'for' :'i'.
             //Realizamos con un bucle 'for' el ejercicio de la tabla de dividir del 9.
             for (var i = 1; i <= 10; i++) {
                 //Creamos un elemento <li></li>
@@ -106,26 +107,31 @@
             }
             
             //DESPLAZAMIENTO DE BITS
-            var elemento = document.createElement("li");
+            //Creamos una 'li' por cada operacion a listar, luego las añadimos a la lista4 con 'appendChild'.
+            var elemento1 = document.createElement("li");
+            var elemento2 = document.createElement("li");
+            var elemento3 = document.createElement("li");
+            var elemento4 = document.createElement("li");
+            //Las operaciones de desplacamiento de bits son con los operadores '<<' para multiplicaciones y '>>' para divisiones.
             // 125 dividido por 8 utilizando desplazamiento de bits
             var resultado1 = 125 >> 3; // Desplazamos 3 bits a la derecha (125 / 2^3)
-            elemento.textContent = "125 / 8 = "+resultado1;
-            lista4.appendChild(elemento);
+            elemento1.textContent = "125 / 8 = "+resultado1;
+            lista4.appendChild(elemento1);
 
             // 40 multiplicado por 4 utilizando desplazamiento de bits
             var resultado2 = 40 << 2; // Desplazamos 2 bits a la izquierda (40 * 2^2)
-            elemento.textContent = "40 x 4 = "+resultado2;
-            lista4.appendChild(elemento);
+            elemento2.textContent = "40 x 4 = "+resultado2;
+            lista4.appendChild(elemento2);
 
             // 25 dividido por 2 utilizando desplazamiento de bits
             var resultado3 = 25 >> 1; // Desplazamos 1 bit a la derecha (25 / 2^1)
-            elemento.textContent = "25 / 2 = "+resultado3;
-            lista4.appendChild(elemento);
+            elemento3.textContent = "25 / 2 = "+resultado3;
+            lista4.appendChild(elemento3);
 
             // 10 multiplicado por 16 utilizando desplazamiento de bits
             var resultado4 = 10 << 4; // Desplazamos 4 bits a la izquierda (10 * 2^4)
-            elemento.textContent = "10 x 16 = "+resultado4;
-            lista4.appendChild(elemento);
+            elemento4.textContent = "10 x 16 = "+resultado4;
+            lista4.appendChild(elemento4);
         </script>
     </body>
 </html>
