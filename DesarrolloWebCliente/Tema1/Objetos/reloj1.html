@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Temporizador</title>
+</head>
+
+<body>
+    <h1>Temporizador</h1>
+
+    <!-- Inputs para horas, minutos y segundos -->
+    <label for="hora">Horas:</label>
+    <input type="number" id="hora" name="hora" min="0" max="23" value="0">
+
+    <label for="minuto">Minutos:</label>
+    <input type="number" id="minuto" name="minuto" min="0" max="59" value="0">
+
+    <label for="segundos">Segundos:</label>
+    <input type="number" id="segundos" name="segundos" min="0" max="59" value="0">
+
+    <br>
+
+    <!-- Recuadro para mostrar el tiempo introducido -->
+    <div id="tiempo">Tiempo: </div>
+
+    <!-- Botón para comenzar -->
+    <button id="inicio" onclick="comenzarCuentaRegresiva()">Comenzar</button>
+
+    <script>
+        var cuenta;
+        function comenzarCuentaRegresiva() {
+            var horas = parseInt(document.getElementById('hora').value);
+            var minutos = parseInt(document.getElementById('minuto').value);
+            var segundos = parseInt(document.getElementById('segundos').value);
+
+            cuenta = setInterval(function () {
+                if (horas === 0 && minutos === 0 && segundos === 0) {
+                    clearInterval(cuenta);
+                    alert('¡Tiempo terminado!');
+                    return;
+                }
+
+                if (segundos > 0) {
+                    segundos--;
+                } else if (minutos > 0) {
+                    minutos--;
+                    segundos = 59;
+                } else if (horas > 0) {
+                    horas--;
+                    minutos = 59;
+                    segundos = 59;
+                }
+                // Formatear los valores con dos dígitos
+                var horasTexto = horas < 10 ? '0' + horas : horas;
+                var minutosTexto = minutos < 10 ? '0' + minutos : minutos;
+                var segundosTexto = segundos < 10 ? '0' + segundos : segundos;
+                
+                var tiempoTexto = document.getElementById('tiempo');
+                tiempoTexto.innerHTML = 'Tiempo: ' +horasTexto+ ':' +minutosTexto+ ':' +segundosTexto;
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
