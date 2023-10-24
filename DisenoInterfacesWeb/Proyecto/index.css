@@ -16,3 +16,9 @@
 header {
     border-bottom: 3px solid #fa1a215e;
 }
+.divImg {
+    max-width: 1200px;
+    height: 100vh;
+    background-size: ;
+    background-image: url(https://media.discordapp.net/attachments/837036543225888818/1166275624625770527/OIG.jpeg?ex=6549e5d1&is=653770d1&hm=0a368b7fb9afe72794c3bd08767d7a7119b17f05a96295ee009321d8051263d2&=&width=473&height=473);
+}
