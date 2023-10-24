@@ -52,21 +52,9 @@
 
     <h2>5. Sustituir vocales minúsculas por mayúsculas y viceversa</h2>
     <?php
-        $cadena1 = "Hola 9";
-        $cadena2 = "Hola 10";
-        
-        // Comparación completa
-        $resultado_completo = strcmp($cadena1, $cadena2);
-        
-        // Comparación de los 5 primeros caracteres
-        $resultado_5_caracteres = strncmp($cadena1, $cadena2, 5);
-        
-        // Comparación natural
-        $resultado_natural = strnatcmp($cadena1, $cadena2);
-        
-        echo "Comparación completa: $resultado_completo\n";
-        echo "Comparación de 5 caracteres: $resultado_5_caracteres\n";
-        echo "Comparación natural: $resultado_natural\n";
+        $cadena = "Esta Es Una Cadena De Ejemplo";
+        $cadena_invertida = strtr($cadena, 'AEIOUaeiou', 'aeiouAEIOU');
+        echo $cadena_invertida;        
     ?>
 
     <h2>6. Eliminar espacios y puntos antes y después del texto</h2>
