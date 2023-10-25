@@ -1,24 +1,54 @@
 :root {
     --main-color: #ff1016;
+    --main-color-darkened: #c00006bb;
+}
+main {
+    height: 100vh;
+    /* Pongo un fondo oscurecido al cuerpo principal de la página. */
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.767);
+    background-blend-mode:darken;
+    background-image: url(https://fotografias.larazon.es/clipping/cmsimages01/2023/06/28/2971764A-A84F-4ACE-B016-14A550D47476/oferta-productos-supermercado-bilbao_98.jpg?crop=5616,3160,x0,y0&width=1900&height=1069&optimize=low&format=webply);
 }
 .navbar-brand > img {
     height: 50px;
 }
 .menuNav {
-    margin-top: 0px;
     background-color: var(--main-color);
 }
 .nav-link {
     color: var(--bs-white) !important;
     font-size: 1.2rem !important;
     font-weight: bold !important;
+    margin-left: 50px;
+    margin-right: 50px;
 }
-header {
-    border-bottom: 3px solid #fa1a215e;
+.divContenido {
+    color: var(--bs-white);
+    background-color: var(--main-color);
+    border-radius: 20px;
+    border: 3px var(--bs-white) solid;
+    margin-top: 100px !important;
 }
-.divImg {
-    max-width: 1200px;
-    height: 100vh;
-    background-size: ;
-    background-image: url(https://media.discordapp.net/attachments/837036543225888818/1166275624625770527/OIG.jpeg?ex=6549e5d1&is=653770d1&hm=0a368b7fb9afe72794c3bd08767d7a7119b17f05a96295ee009321d8051263d2&=&width=473&height=473);
+.boton {
+    color: var(--bs-white);
+    background-color: var(--main-color-darkened);
+    border-radius: 5px;
+    border: 3px var(--bs-white) solid;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+/* debug */
+div {
+    border: 1px solid black;
+}
+/* 
+    Media querys 
+*/
+@media(max-width: 993px){
+    /* Ajusto los márgenes para que no haga un salto de línea el texto.*/
+    .nav-link {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
