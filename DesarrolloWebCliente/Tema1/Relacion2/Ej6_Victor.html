@@ -8,7 +8,7 @@
 <body>
     <div id="miElemento" onmouseover="mouseOver()" onmouseout="mouseOut()">
         Pasa el ratón sobre este elemento.
-        <input type="text" id="miInput" onblur="inputBlur()" value="Haz clic aquí y luego haz clic fuera de este input para probar 'onblur'">
+        <input type="text" id="miInput" onblur="onBlur()" value="Haz clic aquí y luego haz clic fuera de este input para probar 'onblur'">
     </div>
     
     <script>
@@ -20,7 +20,7 @@
             document.getElementById("miElemento").style.backgroundColor = "red";
         }
     
-        function inputBlur() {
+        function onBlur() {
             document.getElementById("miElemento").style.backgroundColor = "green";
         }
     </script>

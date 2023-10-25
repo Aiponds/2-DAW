@@ -25,6 +25,7 @@
 
     <!-- Botón para comenzar -->
     <button id="inicio" onclick="comenzarCuentaRegresiva()">Comenzar</button>
+    <button id="inicio" onclick="pararCuentaRegresiva()">Parar</button>
 
     <script>
         var cuenta;
@@ -58,6 +59,10 @@
                 var tiempoTexto = document.getElementById('tiempo');
                 tiempoTexto.innerHTML = 'Tiempo: ' +horasTexto+ ':' +minutosTexto+ ':' +segundosTexto;
             }, 1000);
+        }
+        function pararCuentaRegresiva(){
+            clearInterval(cuenta);
+            alert('Cuenta regresiva detenida.');
         }
     </script>
 </body>
