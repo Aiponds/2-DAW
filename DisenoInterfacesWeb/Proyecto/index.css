@@ -91,6 +91,24 @@ div {
 /* 
     Media querys 
 */
+@media(max-width: 2560px) {
+    .menuNav {
+        height: 150px;
+    }
+    .nav-link {
+        color: var(--bs-white);
+        font-size: 2rem;
+        font-weight: bold;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .divContenido > h1 {
+        font-size: 55px;
+    }
+    .divContenido, .divContenido2 {
+        font-size: 40px;
+    }
+}
 @media(max-width: 1400px){
     .divContenido2 > h1 {
         font-weight: bold;
@@ -101,6 +119,9 @@ div {
     }
 }
 @media(max-width: 1200px){
+    .divContenido > h1 {
+        font-size: 35px;
+    }
     .divContenido2 {
         font-size: 18px;
     }
@@ -114,9 +135,9 @@ div {
         margin-left: 10px;
         margin-right: 10px;
     }
-    .divContenido, .divContenido2 > h1 {
+    .divContenido > h1, .divContenido2 > h1 {
         font-weight: bold;
-        font-size: 35px;
+        font-size: 30px;
     }
     .espaciado {
         height: 5vh;
@@ -130,6 +151,10 @@ div {
     }
 }
 @media(max-width: 768px){
+    .divContenido > h1, .divContenido2 > h1 {
+        font-weight: bold;
+        font-size: 25px;
+    }
     /*Modifico para que alterne entre imagen y texto.*/
     #menosOrder {
         order: 0;
