@@ -1,54 +1,140 @@
 :root {
     --main-color: #ff1016;
-    --main-color-darkened: #c00006bb;
+    --main-color-darkened: #c00006;
 }
 main {
-    height: 100vh;
+    height: max-content;
     /* Pongo un fondo oscurecido al cuerpo principal de la página. */
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.767);
+    background-size: auto;
+    background-repeat: repeat-y;
+    background-color: rgba(0, 0, 0, 0.685);
     background-blend-mode:darken;
     background-image: url(https://fotografias.larazon.es/clipping/cmsimages01/2023/06/28/2971764A-A84F-4ACE-B016-14A550D47476/oferta-productos-supermercado-bilbao_98.jpg?crop=5616,3160,x0,y0&width=1900&height=1069&optimize=low&format=webply);
+}
+footer {
+    background-color: var(--main-color);
+}
+.img-fluid {
+    padding: 10px;
+    width: 100%;
+    max-width: max-content;
+    max-height: max-content;
+    border-radius: 15px;
+}
+/* Para crear espacios que separen el contenido de mi pagina. */
+.espaciado {
+    height: 10vh;
 }
 .navbar-brand > img {
     height: 50px;
 }
 .menuNav {
     background-color: var(--main-color);
+    border-bottom: 3px solid var(--main-color-darkened);
+    /* Para que el menú este posicionado arriba permanentemente. */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 .nav-link {
-    color: var(--bs-white) !important;
-    font-size: 1.2rem !important;
-    font-weight: bold !important;
+    color: var(--bs-white);
+    font-size: 1.2rem;
+    font-weight: bold;
     margin-left: 50px;
     margin-right: 50px;
 }
 .divContenido {
+    padding: 10px;
     color: var(--bs-white);
+    font-size: 20px;
     background-color: var(--main-color);
     border-radius: 20px;
     border: 3px var(--bs-white) solid;
-    margin-top: 100px !important;
+    text-align: center;
+}
+.divContenido2 {
+    height: max-content;
+    color: var(--bs-white);
+    font-size: 20px;
+    background-color: var(--main-color);
+    text-align: center;
+}
+.divContenido > h1 {
+    font-weight: bolder;
+    font-size: 50px;
 }
 .boton {
     color: var(--bs-white);
     background-color: var(--main-color-darkened);
     border-radius: 5px;
     border: 3px var(--bs-white) solid;
-    margin: 0 auto;
-    margin-bottom: 5%;
+    margin-top: 15px;
+}
+
+#finPaginaSeparador {
+    height: 400px;
+    background-image: url(https://itab.imagevault.media/publishedmedia/6eo4kavkrrjwgje7om1o/ITAB_200807-04064.jpg);
+    background-color: rgba(0, 0, 0, 0.685);
+    background-blend-mode: darken;
+    background-size: cover;
+}
+#menosOrder{
+    order: -1;
+}
+#masOrder{
+    order: 1;
 }
 /* debug */
 div {
-    border: 1px solid black;
+    border: 0px solid lime;
 }
 /* 
     Media querys 
 */
-@media(max-width: 993px){
+@media(max-width: 1400px){
+    .divContenido2 > h1 {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .divContenido2 {
+        font-size: 20px;
+    }
+}
+@media(max-width: 1200px){
+    .divContenido2 {
+        font-size: 18px;
+    }
+    #finPaginaSeparador {
+        height: 300px;
+    }
+}
+@media(max-width: 992px){
     /* Ajusto los márgenes para que no haga un salto de línea el texto.*/
     .nav-link {
         margin-left: 10px;
         margin-right: 10px;
+    }
+    .divContenido, .divContenido2 > h1 {
+        font-weight: bold;
+        font-size: 35px;
+    }
+    .espaciado {
+        height: 5vh;
+    }
+    .img-fluid {
+        max-width: 400px;
+        max-height: 400px;
+    }
+    #finPaginaSeparador {
+        height: 200px;
+    }
+}
+@media(max-width: 768px){
+    /*Modifico para que alterne entre imagen y texto.*/
+    #menosOrder {
+        order: 0;
+    }
+    #finPaginaSeparador {
+        height: 150px;
     }
 }
