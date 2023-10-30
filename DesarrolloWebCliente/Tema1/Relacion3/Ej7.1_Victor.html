@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Comparación de Números</title>
+</head>
+<body>
+    <script>
+        //1.- Realizar un programa que lea por teclado dos números, si el primero
+        //es mayor al segundo informar su suma y diferencia, en caso contrario
+        //informar el producto y la división del primero respecto al segundo.
+        function compararNumeros() {
+            var numero1 = parseFloat(prompt("Ingrese el primer número:"));
+            var numero2 = parseFloat(prompt("Ingrese el segundo número:"));
+
+            if (numero1 > numero2) {
+                var suma = numero1 + numero2;
+                var resta = numero1 - numero2;
+                alert("La suma de los números es: " + suma);
+                alert("La diferencia de los números es: " + resta);
+            } else {
+                var producto = numero1 * numero2;
+                var division = numero1 / numero2;
+                alert("El producto de los números es: " + producto);
+                alert("La división del primer número respecto al segundo es: " + division);
+            }
+        }
+    </script>
+    <button onclick="compararNumeros()">Comparar Números</button>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Notas de un Alumno</title>
+    <script>
+        //7.2.-Se ingresan tres notas de un alumno, si el promedio es mayor o igual
+        //a 4 mostrar un mensaje 'regular', sino 'reprobado'. 
+        function calcularPromedio() {
+            var nota1 = parseFloat(prompt("Ingrese la primera nota:"));
+            var nota2 = parseFloat(prompt("Ingrese la segunda nota:"));
+            var nota3 = parseFloat(prompt("Ingrese la tercera nota:"));
+
+            var promedio = (nota1 + nota2 + nota3) / 3;
+
+            if (promedio >= 4) {
+                alert("El alumno es 'regular'.");
+            } else {
+                alert("El alumno está 'reprobado'.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calcularPromedio()">Calcular Promedio</button>
+</body>
+</html>

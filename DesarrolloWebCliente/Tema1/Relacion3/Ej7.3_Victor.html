@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Dígitos de un Número</title>
+    <script>
+        //7.3.- Se ingresa por teclado un número positivo de uno o dos dígitos
+        //(1..99) mostrar un mensaje indicando si el número tiene uno o dos dígitos
+        //(recordar de convertir a entero con parseInt para preguntar
+        //posteriormente por una variable entera). Tener en cuenta qué condición
+        //debe cumplirse para tener dos dígitos, un número
+        function verificarDigitos() {
+            var numero = parseInt(prompt("Ingrese un número positivo de uno o dos dígitos (1..99):"));
+
+            if (numero >= 1 && numero <= 99) {
+                if (numero >= 10) {
+                    alert("El número tiene dos dígitos.");
+                } else {
+                    alert("El número tiene un dígito.");
+                }
+            } else {
+                alert("El número no cumple con los requisitos.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="verificarDigitos()">Verificar Dígitos</button>
+</body>
+</html>

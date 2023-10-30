@@ -1,6 +1,4 @@
-
-    <html>
-    <script>
+function daw2K(){
     // 2DAWA.HTM
     var farenheit,celsius;
     var s="";
@@ -9,12 +7,11 @@
         farenheit=32+(celsius*9)/5;
         s=s+"C= "+celsius+" F= "+farenheit+"\n";
         if (celsius==0){
-             s=s+"Punto congelación del Agua\n";
+            s=s+"Punto congelación del Agua\n";
         }
         if (celsius==100){
             s=s+"Punto de ebullición del Agua\n"
         }
     }
-    alert(s);
-    </script>
-    </html>
+    document.getElementById("ejercicio11").innerHTML(s);
+}

@@ -15,7 +15,21 @@
         // ingresado a entero podemos hacer:
         // nota1=prompt('Ingrese primer nota:','');
         // nota1=parseInt(nota1);
-        
+        function verificarPromocion() {
+            var nota1 = parseInt(prompt('Ingrese la primera nota:'));
+            var nota2 = parseInt(prompt('Ingrese la segunda nota:'));
+            var nota3 = parseInt(prompt('Ingrese la tercera nota:'));
+
+            var suma = nota1 + nota2 + nota3;
+            var promedio = suma / 3;
+
+            if (promedio >= 7) {
+                alert('Promocionado');
+            } else {
+                alert('No promocionado');
+            }
+        }
     </script>
+    <button onclick="verificarPromocion()">Verificar Promoción</button>
 </body>
 </html>

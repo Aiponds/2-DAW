@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Comparación de Claves</title>
+</head>
+<body>
+    <script>
+        //6.2.- Solicitar que se ingrese dos veces una clave. Mostrar un mensaje si
+        //son iguales (tener en cuenta que para ver si dos variables tienen el mismo
+        //valor almacenado debemos utilizar el operador ==)
+        function compararClaves() {
+            var clave1 = prompt("Ingrese la primera clave:");
+            var clave2 = prompt("Ingrese la segunda clave:");
+
+            if (clave1 == clave2) {
+                alert("Las claves son iguales.");
+            } else {
+                alert("Las claves son diferentes.");
+            }
+        }
+    </script>
+    <button onclick="compararClaves()">Comparar Claves</button>
+</body>
+</html>
