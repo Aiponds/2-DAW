@@ -2,70 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cronometro</title>
-<style>
-    #ventana{
-        margin:auto;
-        display:block;
-        position:absolute;
-        height:200px;
-        width:400px;
-        background: pink;
-        border:solid 1px black;
-    }
-    #reloj{
-        position: absolute;
-        top:40px;
-        left:120px;
-        font-size: 80px;
-        color:dodgerblue;
-        text-align: center;
-    }
-</style>
-<script>
-    var segundos = 0;
-    var minutos = 1;
-    var llamada;
-    var ceromin='';
-    var ceroseg='';
-   
-    function cuentaAtras(){
-        devolvercero(minutos,segundos);
-        segundos = segundos % 60;
-        document.getElementById("reloj").innerHTML=ceromin+minutos+':'+ceroseg+segundos;
-         if (minutos ===0 && segundos ===0){
-            alert ("Se agotó su tiempo");
-            clearTimeOut(llamada);
+    <title>Temporizador</title>
+    <style>
+        body {
+            text-align: center;
         }
-        if (segundos ==0){
-            minutos --;
-            segundos+=60;   
-        }   
-        segundos --;
-        var llamada = setTimeout(cuentaAtras,1000);
-    }
-   
-    function devolvercero(minutos,segundos){
-        if (minutos<10){
-            ceromin='0';
-           
+
+        #ventana {
+            margin: auto;
+            display: block;
+            position: absolute;
+            height: 200px;
+            width: 400px;
+            background: pink;
+            border: solid 1px black;
         }
-        if (segundos<10){
-            ceroseg='0';
-           
-        }else {
-            ceroseg='';
+
+        #tiempo {
+            top: 40px;
+            left: 100px;
+            font-size: 36px;
+            color: dodgerblue;
         }
-         return ceroseg;return ceromin;
-    }
-   
-</script>
+
+        label {
+            display: inline-block;
+            width: 80px;
+            margin: 10px;
+        }
+
+        input {
+            width: 50px;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+    <script>
+        var cuenta;
+        
+        function comenzarCuentaRegresiva() {
+            var horas = parseInt(document.getElementById('hora').value);
+            var minutos = parseInt(document.getElementById('minuto').value);
+            var segundos = parseInt(document.getElementById('segundos').value);
+
+            cuenta = setInterval(function () {
+                if (horas === 0 && minutos === 0 && segundos === 0) {
+                    clearInterval(cuenta);
+                    alert('¡Tiempo terminado!');
+                    return;
+                }
+
+                if (segundos > 0) {
+                    segundos--;
+                } else if (minutos > 0) {
+                    minutos--;
+                    segundos = 59;
+                } else if (horas > 0) {
+                    horas--;
+                    minutos = 59;
+                    segundos = 59;
+                }
+                
+                // Formatear los valores con dos dígitos
+                var horasTexto = horas < 10 ? '0' + horas : horas;
+                var minutosTexto = minutos < 10 ? '0' + minutos : minutos;
+                var segundosTexto = segundos < 10 ? '0' + segundos : segundos;
+
+                var tiempoTexto = document.getElementById('tiempo');
+                tiempoTexto.innerHTML = 'Tiempo: ' + horasTexto + ':' + minutosTexto + ':' + segundosTexto;
+            }, 1000);
+        }
+
+        function pararCuentaRegresiva() {
+            clearInterval(cuenta);
+            alert('Cuenta regresiva detenida.');
+        }
+    </script>
 </head>
-<body onload="cuentaAtras()">
-   <div id="ventana">
-       <div id="reloj">
-           
-       </div>
-   </div>
+<body>
+    <div id="ventana">
+        <div id="tiempo">Tiempo: 00:00:00</div>
+        <label for="hora">Horas:</label>
+        <input type="number" id="hora" name="hora" min="0" max="23" value="0">
+        <label for="minuto">Minutos:</label>
+        <input type="number" id="minuto" name="minuto" min="0" max="59" value="0">
+        <label for="segundos">Segundos:</label>
+        <input type="number" id="segundos" name="segundos" min="0" max="59" value="0">
+        <br>
+        <button id="inicio" onclick="comenzarCuentaRegresiva()">Comenzar</button>
+        <button id="parar" onclick="pararCuentaRegresiva()">Parar</button>
+    </div>
 </body>
 </html>
