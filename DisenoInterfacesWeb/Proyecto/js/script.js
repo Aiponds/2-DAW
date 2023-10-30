@@ -1,4 +1,5 @@
-/*	gallery */
+/*	FUENTE: https://freefrontend.com/bootstrap-galleries/ */
+/* Galeria */
 $(document).ready(function(){
 
     $(".filter-button").click(function(){
