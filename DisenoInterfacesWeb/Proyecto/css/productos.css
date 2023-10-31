@@ -1,8 +1,4 @@
 /* FUENTE: https://freefrontend.com/bootstrap-galleries/*/
-:root {
-    --main-color: #ff1016;
-    --main-color-darkened: #c00006;
-}
 *{
 	padding:0;
 	margin:0;
@@ -15,7 +11,9 @@
 section{
     padding: 50px 0;
 }
+body {
 
+}
 /*	gallery */
 
 .gallery-title{
@@ -53,7 +51,7 @@ section{
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 20px;
+    padding: 10px;
 	overflow:hidden;
 	color:#fff;
 	top:0;
@@ -68,7 +66,16 @@ section{
     transition: 2s;
 }
 .img-fluid {
-    max-width: 250px !important;
+    max-width: 240px !important;
+    max-height: 260px !important;
 
 }
+.contenedor {
+    justify-content: space-evenly;
+}
 /*	end gallery */
+@media(width < 564px) {
+    .contenedor {
+        justify-content:center;
+    }
+}

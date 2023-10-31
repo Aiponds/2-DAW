@@ -2,11 +2,11 @@
     --main-color: #ff1016;
     --main-color-darkened: #c00006;
 }
-main {
+body {
     height: max-content;
     /* Pongo un fondo oscurecido al cuerpo principal de la página. */
-    background-size: auto;
-    background-repeat: repeat-x;
+    background-size:contain;
+    background-repeat: repeat-y;
     background-color: rgba(0, 0, 0, 0.685);
     background-blend-mode:darken;
     background-image: url(https://fotografias.larazon.es/clipping/cmsimages01/2023/06/28/2971764A-A84F-4ACE-B016-14A550D47476/oferta-productos-supermercado-bilbao_98.jpg?crop=5616,3160,x0,y0&width=1900&height=1069&optimize=low&format=webply);
