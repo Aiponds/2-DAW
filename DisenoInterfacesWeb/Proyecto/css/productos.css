@@ -64,6 +64,7 @@ body {
 	display:block;
    -webkit-transition: 2s;
     transition: 2s;
+    border-radius: 15px;
 }
 .img-fluid {
     max-width: 240px !important;

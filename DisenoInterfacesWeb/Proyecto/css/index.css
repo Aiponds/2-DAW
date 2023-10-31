@@ -5,14 +5,16 @@
 body {
     height: max-content;
     /* Pongo un fondo oscurecido al cuerpo principal de la página. */
-    background-size:contain;
-    background-repeat: repeat-y;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.685);
     background-blend-mode:darken;
     background-image: url(https://fotografias.larazon.es/clipping/cmsimages01/2023/06/28/2971764A-A84F-4ACE-B016-14A550D47476/oferta-productos-supermercado-bilbao_98.jpg?crop=5616,3160,x0,y0&width=1900&height=1069&optimize=low&format=webply);
 }
 footer {
     background-color: var(--main-color);
+    margin-top: 15%;
 }
 .img-fluid {
     padding: 10px;
@@ -86,9 +88,6 @@ footer.py-5 {
 }
 #masOrder{
     order: 1;
-}
-div {
-    border: 0px solid lime;
 }
 /* 
     Media querys 

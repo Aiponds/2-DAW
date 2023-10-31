@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Victor Stala</title>
+</head>
+<body>
+    <script>
+        function crearCookie(){
+            var usuarioCookie="Victor";
+            document.cookie="usuario="+encodeURIComponent(usuarioCookie)+";expires=Sat, 6 Nov 2023 12:15:00 GMT";
+            // Incrementa el contador de visitas
+            var visitas = obtenerVisitas() + 1;
+            document.cookie = "visitas=" + visitas;
+        }
+        function eliminarCookie() {
+            document.cookie = "usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; // al poner una fecha pasada a la actual la cookie expira.
+        }
+        function obtenerVisitas() {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith("visitas=")) {
+                    var value = cookie.substring("visitas=".length);
+                    return parseInt(value);
+                }
+            }
+            return 0;
+        }
+
+    </script>
+    <button type="button" onclick="crearCookie()">Crea una Cookie</button>
+    <button type="button" onclick='alert(document.cookie)'>Ver las Cookies</button>
+    <button type="button" onclick="eliminarCookie()">Eliminar la Cookie</button>
+</body>
+</html>
