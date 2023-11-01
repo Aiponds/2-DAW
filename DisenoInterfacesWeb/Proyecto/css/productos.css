@@ -11,9 +11,6 @@
 section{
     padding: 50px 0;
 }
-body {
-
-}
 /*	gallery */
 
 .gallery-title{
@@ -66,15 +63,16 @@ body {
     transition: 2s;
     border-radius: 15px;
 }
+/* Cambio el tamaño de las imagenes de la galería*/
 .img-fluid {
     max-width: 240px !important;
     max-height: 260px !important;
-
 }
+/* creo una clase contenedor propia para alinear los objetos de la galería*/
 .contenedor {
     justify-content: space-evenly;
 }
-/*	end gallery */
+/* Cuando sea vista movil, se alinean en el centro los objetos.*/
 @media(width < 564px) {
     .contenedor {
         justify-content:center;

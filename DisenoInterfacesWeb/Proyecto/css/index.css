@@ -3,8 +3,7 @@
     --main-color-darkened: #c00006;
 }
 body {
-    height: max-content;
-    /* Pongo un fondo oscurecido al cuerpo principal de la página. */
+    /* Pongo un fondo oscurecido al cuerpo de la página. */
     background-size:cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,27 +12,33 @@ body {
     background-image: url(https://fotografias.larazon.es/clipping/cmsimages01/2023/06/28/2971764A-A84F-4ACE-B016-14A550D47476/oferta-productos-supermercado-bilbao_98.jpg?crop=5616,3160,x0,y0&width=1900&height=1069&optimize=low&format=webply);
 }
 footer {
+    /* Le pongo un pequeño margen para que no se desplace al tener poco contenido visible en una pagina.*/
     background-color: var(--main-color);
-    margin-top: 15%;
+    margin-top: 35%;
 }
 .img-fluid {
-    padding: 10px;
+    /* Ajusto el tamaño de las imagenes y redondeo los bordes. */
     width: 100%;
-    max-width: max-content;
-    max-height: max-content;
+    max-width: 100%;
     border-radius: 15px;
+    padding: 10px;
 }
 /* Para crear espacios que separen el contenido de mi pagina. */
 .espaciado {
     height: 10vh;
 }
+/*
+    CSS del menú
+    le pongo tamaño al logo, que luego modificaré segun la resolución
+    cambio los tamaños de letra y márgenes de las opciones del menú
+*/
 .navbar-brand > img {
     height: 50px;
 }
 .menuNav {
     background-color: var(--main-color);
     border-bottom: 3px solid var(--main-color-darkened);
-    /* Para que el menú este posicionado arriba permanentemente. */
+    /* Para que el menú este posicionado arriba siempre. */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -45,7 +50,10 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
 }
+/* CSS del contenido principal */
 .divContenido {
+    container-type: inline-size;
+    margin-top: 10px;
     padding: 10px;
     color: var(--bs-white);
     font-size: 20px;
@@ -55,7 +63,6 @@ footer {
     text-align: center;
 }
 .divContenido2 {
-    height: max-content;
     color: var(--bs-white);
     font-size: 20px;
     background-color: var(--main-color);
@@ -65,6 +72,7 @@ footer {
     font-weight: bolder;
     font-size: 50px;
 }
+/* CSS para un botón que usare a lo largo de las paginas. */
 .boton {
     color: var(--bs-white);
     font-weight: bold;
@@ -73,21 +81,22 @@ footer {
     border: 3px var(--bs-white) solid;
     margin-top: 5px;
 }
+/* Para quitar el padding del footer de bootstrap */
 footer.py-5 {
     padding-bottom: 1px !important;
 }
-#finPaginaSeparador {
-    height: 400px;
-    background-image: url(https://itab.imagevault.media/publishedmedia/6eo4kavkrrjwgje7om1o/ITAB_200807-04064.jpg);
-    background-color: rgba(0, 0, 0, 0.685);
-    background-blend-mode: darken;
-    background-size: cover;
+.textoIzquierda {
+    text-align: start;
 }
-#menosOrder{
-    order: -1;
+/* Creo un span para poner letra cursiva y un poco mas grande.*/
+span.cursiva {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bolder;
 }
-#masOrder{
-    order: 1;
+/* Creo una etiqueta para luego usarla con un container query, que al ser el contenedor de menor tamaño parte del texto que seleccione deje de mostrarse.*/
+span.visible {
+    display:contents;
 }
 /* 
     Media querys 
@@ -112,13 +121,6 @@ footer.py-5 {
     footer .nav-link {
         margin-left: 10px;
     }
-    /*Modifico para que alterne entre imagen y texto.*/
-    #menosOrder {
-        order: 0;
-    }
-    #finPaginaSeparador {
-        height: 150px;
-    }
 }
 @media(min-width: 576px) {
     .divContenido h1, .divContenido2 h1 {
@@ -136,13 +138,6 @@ footer.py-5 {
         max-height: 300px;
         padding: 10px 0px 10px 0px;
     }
-    /*Modifico para que alterne entre imagen y texto.*/
-    #menosOrder {
-        order: 0;
-    }
-    #finPaginaSeparador {
-        height: 150px;
-    }
 }
 @media(min-width: 768px){
     .divContenido h1, .divContenido2 h1 {
@@ -157,13 +152,6 @@ footer.py-5 {
         font-size: 1.3rem;
         margin-left: 10px;
         margin-right: 10px;
-    }
-    /*Modifico para que alterne entre imagen y texto.*/
-    #menosOrder {
-        order: 0;
-    }
-    #finPaginaSeparador {
-        height: 150px;
     }
 }
 @media(min-width: 992px){
@@ -188,14 +176,7 @@ footer.py-5 {
         max-width: 400px;
         max-height: 400px;
     }
-    #finPaginaSeparador {
-        height: 200px;
-    }
-}
-@media(min-width: 1200px){
-    #finPaginaSeparador {
-        height: 300px;
-    }
+
 }
 @media(min-width: 1400px){
     .menuNav {
@@ -248,5 +229,11 @@ footer.py-5 {
     }
     footer input {
         height: 3.4rem;
+    }
+}
+/* Oculto texto al tener pantalla menor de este tamaño*/
+@container (width < 576px) {
+    span.visible {
+        display:none;
     }
 }

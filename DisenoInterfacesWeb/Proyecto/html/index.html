@@ -13,8 +13,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <!-- CSS Propio -->
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="../css/index.css">
 </head>
+
 <body>
   <!-- Hamburger menú con una imagen de logo y 3 opciones. -->
   <nav class="navbar navbar-expand-md navbar-light menuNav">
@@ -30,20 +31,20 @@
       <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav me-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="./html/productos.html" aria-current="page">Productos</a>
+            <a class="nav-link" href="./productos.html">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Concócenos</a>
+            <a class="nav-link" href="./aboutUs.html">Concócenos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Nuestros Datos</a>
+            <a class="nav-link" href="./datos.html">Nuestros Datos</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <!-- Main con imagen de fondo con oscurecimiento, tarjeta a la derecha para mostrar un poco el fondo -->
+    <!-- Body con imagen de fondo con oscurecimiento, tarjeta a la derecha para mostrar un poco el fondo -->
     <div class="container">
       <div class="row">
         <div class="col-12 espaciado"></div>
@@ -58,14 +59,14 @@
             </div>
             <div class="col-lg-4 col-sm-12 text-center my-auto">
               <p>Pulsa en el siguiente botón y accederás a nuestra lista de productos!</p>
-              <input type="button" value="ENTRAR" class="boton" onclick="location.href = './html/productos.html'">
+              <input type="button" value="ENTRAR" class="boton" onclick="location.href = './productos.html'">
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Un container que ocupe el 100% del ancho donde añado un poco mas de contenido para rellenar -->
-    <!-- Creo dos columnas vacias para dar un margen pero mantener el fondo, a menor tamaño ajusto los bordes-->
+    <!-- Creo dos columnas vacias para dar un margen pero mantener el fondo de color, a menor tamaño ajusto los bordes-->
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 espaciado"></div>
@@ -86,9 +87,10 @@
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-11 mx-auto">
           <img class="img-fluid" src="https://th.bing.com/th/id/OIG._RD5ho1KZLNeBKgL9DLI?pid=ImgGn" alt="">
         </div>
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 text-center my-auto" id="menosOrder">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 text-center my-auto">
           <h1>Nueva tienda online en algunas zonas</h1>
-          <p>Por el momento, la nueva app y web está disponible en Valencia, Barcelona, Madrid y otras poblaciones. Si aún no llegamos, ¡estate a la espera!</p>
+          <p>Por el momento, la nueva app y web está disponible en Valencia, Barcelona, Madrid y otras poblaciones. Si
+            aún no llegamos, ¡estate a la espera!</p>
         </div>
         <div class="col-xl-3 col-lg-2 col-md-0"></div>
       </div>
@@ -102,10 +104,10 @@
           <div class="col-5">
             <h5 class="text-dark">Enlaces:</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Inicio</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Productos</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Nuestros Datos</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Conócenos</a></li>
+              <li class="nav-item mb-2"><a href="./index.html" class="nav-link p-0">Inicio</a></li>
+              <li class="nav-item mb-2"><a href="./productos.html" class="nav-link p-0">Productos</a></li>
+              <li class="nav-item mb-2"><a href="./datos.html" class="nav-link p-0">Nuestros Datos</a></li>
+              <li class="nav-item mb-2"><a href="./aboutUs.html" class="nav-link p-0">Conócenos</a></li>
             </ul>
           </div>
           <div class="col-6 offset-1">
@@ -120,14 +122,9 @@
             </form>
           </div>
         </div>
-    
+
         <div class="d-flex justify-content-between py-4 my-4 border-top">
           <p>&copy; 2023 Alcampo, Todos los derechos reservados.</p>
-          <ul class="list-unstyled d-flex">
-            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
-          </ul>
         </div>
       </footer>
     </div>
@@ -141,4 +138,5 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
 </body>
+
 </html>
