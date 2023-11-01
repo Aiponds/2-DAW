@@ -1,40 +1,55 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+* 
+* Normalize.css lo incluye BS5 con su propio CSS, no hace falta incluir nada.
+*/
+
 :root {
     --main-color: #ff1016;
     --main-color-darkened: #c00006;
 }
+
 body {
     /* Pongo un fondo oscurecido al cuerpo de la página. */
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.685);
-    background-blend-mode:darken;
+    background-blend-mode: darken;
     background-image: url(https://fotografias.larazon.es/clipping/cmsimages01/2023/06/28/2971764A-A84F-4ACE-B016-14A550D47476/oferta-productos-supermercado-bilbao_98.jpg?crop=5616,3160,x0,y0&width=1900&height=1069&optimize=low&format=webply);
 }
+
 footer {
     /* Le pongo un pequeño margen para que no se desplace al tener poco contenido visible en una pagina.*/
     background-color: var(--main-color);
     margin-top: 35%;
 }
+
 .img-fluid {
     /* Ajusto el tamaño de las imagenes y redondeo los bordes. */
     width: 100%;
-    max-width: 100%;
+    max-width: 350px;
     border-radius: 15px;
     padding: 10px;
 }
+
 /* Para crear espacios que separen el contenido de mi pagina. */
 .espaciado {
     height: 10vh;
 }
+
 /*
     CSS del menú
     le pongo tamaño al logo, que luego modificaré segun la resolución
     cambio los tamaños de letra y márgenes de las opciones del menú
 */
-.navbar-brand > img {
+.navbar-brand>img {
     height: 50px;
 }
+
 .menuNav {
     background-color: var(--main-color);
     border-bottom: 3px solid var(--main-color-darkened);
@@ -43,6 +58,7 @@ footer {
     top: 0;
     z-index: 1000;
 }
+
 .nav-link {
     color: var(--bs-white);
     font-size: 1.2rem;
@@ -50,6 +66,7 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
 }
+
 /* CSS del contenido principal */
 .divContenido {
     container-type: inline-size;
@@ -62,16 +79,19 @@ footer {
     border: 3px var(--bs-white) solid;
     text-align: center;
 }
+
 .divContenido2 {
     color: var(--bs-white);
     font-size: 20px;
     background-color: var(--main-color);
     text-align: center;
 }
-.divContenido > h1 {
+
+.divContenido > h1:first-child {
     font-weight: bolder;
     font-size: 50px;
 }
+
 /* CSS para un botón que usare a lo largo de las paginas. */
 .boton {
     color: var(--bs-white);
@@ -81,110 +101,147 @@ footer {
     border: 3px var(--bs-white) solid;
     margin-top: 5px;
 }
+
 /* Para quitar el padding del footer de bootstrap */
 footer.py-5 {
     padding-bottom: 1px !important;
 }
+
 .textoJustificado {
     text-align: justify;
 }
+
 /* Creo un span para poner letra cursiva y un poco mas grande.*/
 span.cursiva {
     font-size: 25px;
     font-style: italic;
     font-weight: bolder;
 }
+
 /* Creo una etiqueta para luego usarla con un container query, que al ser el contenedor de menor tamaño parte del texto que seleccione deje de mostrarse.*/
 span.visible {
-    display:contents;
+    display: contents;
 }
+
 /* 
     Media querys 
 */
 @media(width < 576px) {
-    .divContenido h1, .divContenido2 h1 {
+
+    .divContenido h1,
+    .divContenido2 h1 {
         font-weight: bold;
         font-size: 2rem;
         margin-bottom: 0px;
     }
-    .divContenido p, .divContenido2 p {
+
+    .divContenido p,
+    .divContenido2 p {
         font-size: 1.3rem;
         margin-left: 20px;
         margin-right: 20px;
         margin-bottom: 0px;
     }
+
     .img-fluid {
         max-width: 250px;
         max-height: 250px;
         padding: 10px 0px 0px 0px;
     }
+
     footer .nav-link {
         margin-left: 10px;
     }
+    figcaption {
+        bottom: 0px;
+    }
 }
+
 @media(min-width: 576px) {
-    .divContenido h1, .divContenido2 h1 {
+
+    .divContenido h1,
+    .divContenido2 h1 {
         font-weight: bold;
         font-size: 2.2rem;
     }
-    .divContenido p, .divContenido2 p {
+
+    .divContenido p,
+    .divContenido2 p {
         font-size: 1.4rem;
         margin-left: 20px;
         margin-right: 20px;
         margin-bottom: 10px;
     }
+
     .img-fluid {
         max-width: 300px;
         max-height: 300px;
         padding: 10px 0px 10px 0px;
     }
 }
-@media(min-width: 768px){
-    .divContenido h1, .divContenido2 h1 {
+
+@media(min-width: 768px) {
+
+    .divContenido h1,
+    .divContenido2 h1 {
         font-weight: bold;
         font-size: 2.4rem;
     }
-    .divContenido p, .divContenido2 p {
+
+    .divContenido p,
+    .divContenido2 p {
         font-size: 1.4rem;
         margin-bottom: 0px;
     }
+
     .nav-link {
         font-size: 1.3rem;
         margin-left: 10px;
         margin-right: 10px;
     }
 }
-@media(min-width: 992px){
-    .divContenido h1, .divContenido2 h1 {
+
+@media(min-width: 992px) {
+
+    .divContenido h1,
+    .divContenido2 h1 {
         font-weight: bold;
         font-size: 2.6rem;
     }
-    .divContenido p, .divContenido2 p {
+
+    .divContenido p,
+    .divContenido2 p {
         font-size: 1.4rem;
         margin-bottom: 0px;
     }
+
     /* Ajusto los márgenes para que no haga un salto de línea el texto.*/
     .nav-link {
         font-size: 1.4rem;
         margin-left: 10px;
         margin-right: 10px;
     }
+
     .espaciado {
         height: 5vh;
     }
+
     .img-fluid {
         max-width: 400px;
         max-height: 400px;
     }
 
 }
-@media(min-width: 1400px){
+
+@media(min-width: 1400px) {
     .menuNav {
         height: 100px;
     }
-    .navbar-brand > img {
+
+    .navbar-brand>img {
         height: 50px;
     }
+
     .nav-link {
         color: var(--bs-white);
         font-size: 1.6rem;
@@ -192,21 +249,28 @@ span.visible {
         margin-left: 35px;
         margin-right: 35px;
     }
-    .divContenido h1, .divContenido2 h1 {
+
+    .divContenido h1,
+    .divContenido2 h1 {
         font-weight: bold;
         font-size: 2.8rem;
     }
-    .divContenido p, .divContenido2 p {
+
+    .divContenido p,
+    .divContenido2 p {
         font-size: 1.4rem;
     }
 }
+
 @media(min-width: 2560px) {
     .menuNav {
         height: 150px;
     }
-    .navbar-brand > img {
+
+    .navbar-brand>img {
         height: 100px;
     }
+
     .nav-link {
         color: var(--bs-white);
         font-size: 2.4rem;
@@ -214,26 +278,35 @@ span.visible {
         margin-left: 25px;
         margin-right: 25px;
     }
-    .divContenido h1, .divContenido2 h1 {
+
+    .divContenido h1,
+    .divContenido2 h1 {
         font-weight: bold;
         font-size: 3.4rem;
     }
-    .divContenido p, .divContenido2 p {
+
+    .divContenido p,
+    .divContenido2 p {
         font-size: 2rem;
     }
-    footer p,h5 {
+
+    footer p,
+    h5 {
         font-size: 2rem;
     }
+
     .boton {
         font-size: 1.6rem;
     }
+
     footer input {
         height: 3.4rem;
     }
 }
+
 /* Oculto texto al tener pantalla menor de este tamaño*/
 @container (width < 576px) {
     span.visible {
-        display:none;
+        display: none;
     }
 }
