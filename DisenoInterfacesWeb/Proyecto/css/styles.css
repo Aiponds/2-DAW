@@ -87,7 +87,7 @@ footer {
     text-align: center;
 }
 
-.divContenido > h1:first-child {
+.divContenido>h1:first-child {
     font-weight: bolder;
     font-size: 50px;
 }
@@ -152,6 +152,7 @@ span.visible {
     footer .nav-link {
         margin-left: 10px;
     }
+
     figcaption {
         bottom: 0px;
     }
