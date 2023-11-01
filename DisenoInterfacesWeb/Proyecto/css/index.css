@@ -85,8 +85,8 @@ footer {
 footer.py-5 {
     padding-bottom: 1px !important;
 }
-.textoIzquierda {
-    text-align: start;
+.textoJustificado {
+    text-align: justify;
 }
 /* Creo un span para poner letra cursiva y un poco mas grande.*/
 span.cursiva {
