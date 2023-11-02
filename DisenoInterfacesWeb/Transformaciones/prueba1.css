@@ -1,0 +1,13 @@
+div {
+    background-image: url(http://placekitten.com/400/200);
+    border: 1px solid black;
+    width: 400px;
+    height: 200px;
+    /* Si se ponen individuales, solo coge el útlimo.*/
+    transform: translate(100px, 100px);
+    transform: rotate(45deg);
+    transform: scale(1.5);
+    transform: skew(30deg, 0deg);
+    /* Si se quieren usar varios a la vez, se ponen en la misma linea*/ 
+    transform: translate(100px, 200px) rotate(0deg) skew(45deg, 0deg);
+}
