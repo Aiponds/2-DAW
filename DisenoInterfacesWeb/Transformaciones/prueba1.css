@@ -9,5 +9,5 @@ div {
     transform: scale(1.5);
     transform: skew(30deg, 0deg);
     /* Si se quieren usar varios a la vez, se ponen en la misma linea*/ 
-    transform: translate(100px, 200px) rotate(0deg) skew(45deg, 0deg);
+    transform: translate(100px, 200px) rotate(5deg) skew(45deg, 0deg);
 }
