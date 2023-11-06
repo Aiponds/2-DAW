@@ -1,0 +1,84 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.contenedor {
+    z-index: -10;
+    background-image: url(https://i.pinimg.com/originals/8f/d0/f4/8fd0f47d8864912e07a3af2633a77e34.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.burbuja {
+    position: relative;
+    top: -1500px;
+    left: 100px;
+    background-image: url(https://media.discordapp.net/attachments/916652028573413396/1171069168662106133/kisspng-soap-bubble-speech-balloon-clip-art-shape-5ac27357248c68.0462701715226929511497.png?ex=655b5627&is=6548e127&hm=326f21573f40223e7cbdec8a6951cf200e2c2569040537b57c3e5b9289882e75&=&width=468&height=468);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    animation-name: moverBurbuja;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    animation-direction: reverse;
+}
+#burbuja2 {
+    width: 50px;
+    height: 50px;
+    left: 500px;
+    animation-duration: 12s;
+}
+#burbuja3 {
+    width: 75px;
+    height: 75px;
+    left: 800px;
+    animation-duration: 10s;
+}
+#burbuja4 {
+    width: 90px;
+    height: 90px;
+    left: 1000px;
+    animation-duration: 9s;
+}
+#burbuja5 {
+    width: 130px;
+    height: 130px;
+    left: 1200px;
+    animation-duration: 13s;
+}
+#burbuja6 {
+    width: 25px;
+    height: 25px;
+    left: 1600px;
+    animation-duration: 12s;
+}
+.pez {
+    z-index: 5;
+    position: relative;
+    left: -400px;
+    background-image: url(https://www.clker.com//cliparts/p/D/o/X/a/Y/goldfish-hi.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    animation-name: moverPez;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+#pezPequeno {
+    width: 150px;
+    height: 150px;
+    animation-duration: 7s;
+}
+@keyframes moverPez {
+    0% { left: -400px;}
+    100% { left: 100%;}
+}
+@keyframes moverBurbuja {
+    0% { top: -1500px;}
+    100% { top: 500px;}
+}
