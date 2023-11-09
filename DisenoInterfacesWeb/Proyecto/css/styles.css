@@ -14,7 +14,7 @@
     -Boton de suscribete rotate <
     -Imagen de datos torcida con el skew <
     -Copyright todas las transformaciones  a la vez. <
-    -Pagina de conocenos se mueven sus divs de los lados al centro con animation
+    -Pagina de conocenos se mueven sus divs de los lados al centro con animation <
     -Boton seleccionado de productos tendra un borde constantemente cambiante
     -Buscar animación avanzada en internet. (nieve en todas las paginas)
 */
@@ -96,6 +96,26 @@ footer {
     border: 3px var(--bs-white) solid;
     text-align: center;
 }
+/* Efecto deslizamiento de izquierda de la pantalla a la posición original del div.*/
+.divAnimado {
+    position: relative;
+    animation-name: moverDiv;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+}
+#divAnimado2{
+    animation-duration: 3s;
+}
+#divAnimado3{
+    animation-duration: 4s;
+}
+#divAnimado4{
+    animation-duration: 5s;
+}
+@keyframes moverDiv {
+    0% { left: -2000px;}
+    100% { left: 0px;}
+}
 
 .divContenido2 {
     color: var(--bs-white);
@@ -118,6 +138,11 @@ footer {
     border-radius: 5px;
     border: 3px var(--bs-white) solid;
     margin-top: 5px;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+.boton:hover {
+    transform: scale(1.2);
 }
 #suscribete {
     transform: rotate3d(0, 0, 0, 0deg);
@@ -137,7 +162,6 @@ footer {
     transform: rotate(0deg) translate(0px, 0px) skew(0deg, 0deg) scale(1);
     transition: transform 1s ease;
 }
-
 #copyright:hover {
     transform: rotateY(360deg) translate(10px, 10px) skew(-10deg, -10deg) scale(1.3);
 }
