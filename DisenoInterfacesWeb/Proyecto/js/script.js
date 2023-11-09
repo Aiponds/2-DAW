@@ -22,7 +22,6 @@ $(document).ready(function(){
 		    	$(this).addClass("active");
 	    	});
 });
-/*	end gallery */
 
 $(document).ready(function(){
     $(".fancybox").fancybox({

@@ -1,22 +1,15 @@
 /*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-* 
-* Normalize.css lo incluye BS5 con su propio CSS, no hace falta incluir nada.
-*/
-/*
     Animaciones
-    -Botones del menu se desplazan ligeramente <
-    -Imagenes de galeria aumentan con el scale <
-    -(Intentar que el texto de la galeria aparezca poco a poco) <
-    -Boton de suscribete rotate <
-    -Imagen de datos torcida con el skew <
-    -Copyright todas las transformaciones  a la vez. <
-    -Pagina de conocenos se mueven sus divs de los lados al centro con animation
-    -Boton seleccionado de productos tendra un borde constantemente cambiante
-    -Buscar animación avanzada en internet. (nieve en todas las paginas)
+    -Botones del menu se desplazan ligeramente x
+    -Imagenes de galeria aumentan con el scale x
+    -Texto de los objetos de la galeria aparece poco a poco x
+    -Boton de suscribete rotate x
+    -Imagen de datos torcida con el skew  x
+    -Copyright todas las transformaciones  a la vez.  x
+    -Pagina de conocenos se mueven sus divs de los lados al centro con animation x
+    -Div con fade-in en la pagina principal. x
+    -Boton seleccionado de productos tendra un borde con animación
+    -Buscar animación avanzada en internet. (nieve en todas las paginas) x
 */
 
 :root {
@@ -25,6 +18,7 @@
 }
 
 body {
+    overflow-x: hidden;
     /* Pongo un fondo oscurecido al cuerpo de la página. */
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,6 +27,157 @@ body {
     background-blend-mode: darken;
     background-image: url(https://fotografias.larazon.es/clipping/cmsimages01/2023/06/28/2971764A-A84F-4ACE-B016-14A550D47476/oferta-productos-supermercado-bilbao_98.jpg?crop=5616,3160,x0,y0&width=1900&height=1069&optimize=low&format=webply);
 }
+
+/* Animación de nieve solo con CSS */
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+}
+
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+@-webkit-keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px)
+    }
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+@keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px)
+    }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, .5s;
+    animation-delay: 6s, .5s
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 8s, 3s
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s, 2s
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s, 1s
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 3s, 1.5s
+}
+
+.snowflake:nth-of-type(10) {
+    left: 25%;
+    -webkit-animation-delay: 2s, 0s;
+    animation-delay: 2s, 0s
+}
+
+.snowflake:nth-of-type(11) {
+    left: 65%;
+    -webkit-animation-delay: 4s, 2.5s;
+    animation-delay: 4s, 2.5s
+}
+
+/* Fin animación */
 
 footer {
     /* Le pongo un pequeño margen para que no se desplace al tener poco contenido visible en una pagina.*/
@@ -79,9 +224,14 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
 }
+
 .nav-link:hover {
-    transform: translate(7px, 7px);
-    transition-duration: 0.3s;
+    -webkit-transform: translate(5px, 5px);
+    -ms-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
+    -webkit-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
 }
 
 /* CSS del contenido principal */
@@ -118,28 +268,68 @@ footer {
     border-radius: 5px;
     border: 3px var(--bs-white) solid;
     margin-top: 5px;
-}
-#suscribete {
-    transform: rotate3d(0, 0, 0, 0deg);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
     transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
 }
+
+.boton:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+#suscribete {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
 #suscribete:hover {
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
     transform: rotate3d(1, 1, 1, 360deg);
 }
+
 #imagenDatos {
+    -webkit-transform: skew(0deg, 0deg);
+    -ms-transform: skew(0deg, 0deg);
     transform: skew(0deg, 0deg);
-    transition: transform 1s ease
-}
-#imagenDatos:hover {
-    transform: skew(180deg, 180deg);
-}
-#copyright {
-    transform: rotate(0deg) translate(0px, 0px) skew(0deg, 0deg) scale(1);
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
     transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease
+}
+
+#imagenDatos:hover {
+    -webkit-transform: skew(15deg, 1deg);
+    -ms-transform: skew(15deg, 1deg);
+    transform: skew(15deg, 1deg);
+}
+
+#copyright {
+    -webkit-transform: rotate(0deg) translate(0px, 0px) skew(0deg, 0deg) scale(1);
+    -ms-transform: rotate(0deg) translate(0px, 0px) skew(0deg, 0deg) scale(1);
+    transform: rotate(0deg) translate(0px, 0px) skew(0deg, 0deg) scale(1);
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
 }
 
 #copyright:hover {
-    transform: rotateY(360deg) translate(10px, 10px) skew(-10deg, -10deg) scale(1.3);
+    -webkit-transform: rotateY(360deg) translate(10px) skew(-10deg) scale(1.2);
+    transform: rotateY(360deg) translate(10px) skew(-10deg) scale(1.2);
 }
 
 /* Para quitar el padding del footer de bootstrap */
@@ -162,6 +352,83 @@ span.cursiva {
 span.visible {
     display: contents;
 }
+
+.divAnimado-fade-in {
+    -webkit-animation: fadeIn 5s;
+    animation: fadeIn 5s;
+}
+
+#divAnimado-fade-in2 {
+    -webkit-animation: fadeIn 6s;
+    animation: fadeIn 6s;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.divMovil {
+    position: relative;
+    left: 0px;
+    -webkit-animation-name: moverDiv;
+    animation-name: moverDiv;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+
+#divMovil2 {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+}
+
+#divMovil3 {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+}
+
+#divMovil4 {
+    -webkit-animation-duration: 6s;
+    animation-duration: 6s;
+}
+
+@-webkit-keyframes moverDiv {
+    0% {
+        left: -2000px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+@keyframes moverDiv {
+    0% {
+        left: -2000px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
 /* 
     Media querys 
 */
