@@ -19,6 +19,7 @@ section{
     text-align: center;
     font-weight: 500;
     margin-bottom: 70px;
+    
 }
 .filter-button{
     font-size: 18px;
@@ -41,27 +42,32 @@ section{
     margin: 0px;
 	padding:0;
 	position:relative;
+    transform: scale(1);
+    transition: transform 1s ease;
 }
-.gallery_product .img-info{
-	position: absolute;
-    background: rgba(0,0,0,0.5);
+/* Animación */
+.gallery_product:hover {
+    transform: scale(1.1);
+}
+.gallery_product .img-info {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
     left: 0;
     right: 0;
     bottom: 0;
     padding: 10px;
-	overflow:hidden;
-	color:#fff;
-	top:0;
-	display:none;
-	   -webkit-transition: 2s;
-    transition: 2s;
+    overflow: hidden;
+    color: #fff;
+    top: 0;
+    transform: scale(0); /* Establece la escala inicial en 0 */
+    transition: transform 1s ease; /* Aplica una transición a la propiedad de transform */
+    transform-origin: center center; /* Define el punto de transformación en el centro del elemento */
+    border-radius: 15px;
 }
 
-.gallery_product:hover .img-info{
-	display:block;
-   -webkit-transition: 2s;
-    transition: 2s;
-    border-radius: 15px;
+.gallery_product:hover .img-info {
+    display: block;
+    transform: scale(1); /* Establece la escala en 1 cuando se hace hover */
 }
 /* Cambio el tamaño de las imagenes de la galería*/
 .img-fluid {

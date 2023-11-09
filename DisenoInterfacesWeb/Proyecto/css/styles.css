@@ -6,6 +6,18 @@
 * 
 * Normalize.css lo incluye BS5 con su propio CSS, no hace falta incluir nada.
 */
+/*
+    Animaciones
+    -Botones del menu se desplazan ligeramente <
+    -Imagenes de galeria aumentan con el scale <
+    -(Intentar que el texto de la galeria aparezca poco a poco) <
+    -Boton de suscribete rotate <
+    -Imagen de datos torcida con el skew <
+    -Copyright todas las transformaciones  a la vez. <
+    -Pagina de conocenos se mueven sus divs de los lados al centro con animation
+    -Boton seleccionado de productos tendra un borde constantemente cambiante
+    -Buscar animación avanzada en internet. (nieve en todas las paginas)
+*/
 
 :root {
     --main-color: #ff1016;
@@ -60,11 +72,16 @@ footer {
 }
 
 .nav-link {
+    position: relative;
     color: var(--bs-white);
     font-size: 1.2rem;
     font-weight: bold;
     margin-left: 50px;
     margin-right: 50px;
+}
+.nav-link:hover {
+    transform: translate(7px, 7px);
+    transition-duration: 0.3s;
 }
 
 /* CSS del contenido principal */
@@ -94,12 +111,35 @@ footer {
 
 /* CSS para un botón que usare a lo largo de las paginas. */
 .boton {
+    position: relative;
     color: var(--bs-white);
     font-weight: bold;
     background-color: var(--main-color-darkened);
     border-radius: 5px;
     border: 3px var(--bs-white) solid;
     margin-top: 5px;
+}
+#suscribete {
+    transform: rotate3d(0, 0, 0, 0deg);
+    transition: transform 1s ease;
+}
+#suscribete:hover {
+    transform: rotate3d(1, 1, 1, 360deg);
+}
+#imagenDatos {
+    transform: skew(0deg, 0deg);
+    transition: transform 1s ease
+}
+#imagenDatos:hover {
+    transform: skew(180deg, 180deg);
+}
+#copyright {
+    transform: rotate(0deg) translate(0px, 0px) skew(0deg, 0deg) scale(1);
+    transition: transform 1s ease;
+}
+
+#copyright:hover {
+    transform: rotateY(360deg) translate(10px, 10px) skew(-10deg, -10deg) scale(1.3);
 }
 
 /* Para quitar el padding del footer de bootstrap */
@@ -122,7 +162,6 @@ span.cursiva {
 span.visible {
     display: contents;
 }
-
 /* 
     Media querys 
 */
