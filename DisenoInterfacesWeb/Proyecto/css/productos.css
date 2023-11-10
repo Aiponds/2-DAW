@@ -1,27 +1,29 @@
 /* FUENTE: https://freefrontend.com/bootstrap-galleries/*/
-*{
-	padding:0;
-	margin:0;
+* {
+    padding: 0;
+    margin: 0;
 }
 
 /*	general	*/
 .navbar {
     margin-bottom: 0px;
 }
-section{
+
+section {
     padding: 50px 0;
 }
+
 /*	gallery */
 
-.gallery-title{
+.gallery-title {
     font-size: 36px;
     color: var(--main-color-darkened);
     text-align: center;
     font-weight: 500;
     margin-bottom: 70px;
-    
+
 }
-/* Animación a los botones activos poniendole sombra, dandole efecto "neon" brillante*/
+
 .filter-button {
     font-size: 18px;
     border: 2px solid var(--main-color-darkened);
@@ -30,30 +32,45 @@ section{
     color: var(--main-color-darkened);
     margin-bottom: 30px;
     background-color: rgb(241, 236, 236);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-transition: color 0.3s ease, -webkit-box-shadow 0.3s ease;
+    transition: color 0.3s ease, -webkit-box-shadow 0.3s ease;
+    -o-transition: box-shadow 0.3s ease, color 0.3s ease;
+    transition: box-shadow 0.3s ease, color 0.3s ease;
+    transition: box-shadow 0.3s ease, color 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
+
 .filter-button:hover,
 .filter-button:focus,
 .filter-button.active {
     color: #ffffff;
     background-color: var(--main-color);
-    border: 2px solid transparent;
-    box-shadow: 0 0 10px 3px var(--main-color); /* Agrega un efecto de resplandor (glow) en el borde */
+    outline: none;
+    -webkit-box-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color), 0 0 30px var(--main-color);
+            box-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color), 0 0 30px var(--main-color);
 }
 
-
-.gallery_product{
+.gallery_product {
     width: 270px !important;
     margin: 0px;
-	padding:0;
-	position:relative;
-    transform: scale(1);
+    padding: 0;
+    position: relative;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
     transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
 }
+
 /* Animación */
 .gallery_product:hover {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
+
 .gallery_product .img-info {
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
@@ -64,28 +81,49 @@ section{
     overflow: hidden;
     color: #fff;
     top: 0;
-    transform: scale(0); /* Establece la escala inicial en 0 */
-    transition: transform 1s ease; /* Aplica una transición a la propiedad de transform */
-    transform-origin: center center; /* Define el punto de transformación en el centro del elemento */
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    /* Establece la escala inicial en 0 */
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+    /* Aplica una transición a la propiedad de transform */
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+            transform-origin: center center;
+    /* Define el punto de transformación en el centro del elemento */
     border-radius: 15px;
 }
 
 .gallery_product:hover .img-info {
     display: block;
-    transform: scale(1); /* Establece la escala en 1 cuando se hace hover */
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    /* Establece la escala en 1 cuando se hace hover */
 }
+
 /* Cambio el tamaño de las imagenes de la galería*/
 .img-fluid {
     max-width: 240px !important;
     max-height: 260px !important;
 }
+
 /* creo una clase contenedor propia para alinear los objetos de la galería*/
 .contenedor {
-    justify-content: space-evenly;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
 }
+
 /* Cuando sea vista movil, se alinean en el centro los objetos.*/
 @media(width < 564px) {
     .contenedor {
-        justify-content:center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 }
