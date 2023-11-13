@@ -1,0 +1,7 @@
+$primary-color: #1a6f94;
+$secondary-color: lighten($primary-color, 50%);
+$third-color: darken($primary-color, 10%);
+$link-color: lighten($primary-color, 5%); 
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+
+$fontstack: 'Gotu', sans-serif;

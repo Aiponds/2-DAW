@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Gotu&display=swap");
+* {
+  margin: 0;
+  font-family: "Gotu", sans-serif;
+}
+
+body {
+  margin-left: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+header {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header ul {
+  margin: 10px 10px 10px -30px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+header ul li {
+  text-align: center;
+  border: 3px solid #124e69;
+  border-left: 0px;
+  background-color: #bae2f3;
+  width: 33.3333333%;
+  height: 3rem;
+}
+header ul li a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #1e7faa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: background-color 1s ease-out, color 1s ease-out;
+}
+header ul li a:hover {
+  background-color: #124e69;
+  color: #bae2f3;
+}
+header ul li:first-child {
+  border: 3px solid #124e69;
+}
+
+h1 {
+  color: #1a6f94;
+  font-size: 2.5rem;
+}
+
+main li {
+  margin-left: -20px;
+  padding-bottom: 0.5rem;
+}
+
+@media (max-width: 650px) {
+  header ul {
+    flex-direction: column;
+  }
+  header ul li {
+    width: 100%;
+    border: 3px solid #124e69;
+    border-top: 0px;
+  }
+}/*# sourceMappingURL=styles.css.map */
