@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Usuario</title>
+</head>
+<body>
+    <script>
+        const Usuario = {
+            user:"Victor",
+            pass:"vivabetis",
+            login: function(user, pass) {
+                if(this.user==user && this.pass==pass){
+                    document.write("Has iniciado sesión correctamente.");
+                } else {
+                    document.write("Los datos de inicio de sesion no coinciden.");
+                }
+            }
+        };
+        var user2 = prompt("Introduce el usuario");
+        var pass2 = prompt("Introduce la contraseña");
+        Usuario.login(user2, pass2);
+    </script>
+</body>
+</html>

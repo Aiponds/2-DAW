@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonanchi</title>
+</head>
+<body>
+    <h2>Sucesión de Fibonanchi:</h2>
+    <script>
+        var numVeces = prompt("Introduce cuántos números quieres ver de la sucesión de Fibonanchi");
+        numVeces = parseInt(numVeces);
+        for (var i = 0; i < numVeces; i++) {
+            document.write(fibonanchi(i) + " ");
+        }
+        function fibonanchi(n) {
+            if (n <= 1) {
+                return n;
+            } else {
+                return fibonanchi(n - 1) + fibonanchi(n - 2);
+            }
+        }
+    </script>
+</body>
+</html>
