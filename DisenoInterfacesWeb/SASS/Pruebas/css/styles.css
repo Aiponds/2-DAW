@@ -17,4 +17,26 @@ header {
 }
 header h1 {
   text-align: center;
+}
+
+.section {
+  padding: 3rem;
+}
+.section h3 {
+  font-size: 2rem;
+}
+.section-a {
+  background: steelblue;
+  color: #f4f4f4;
+}
+.section-b {
+  background: skyblue;
+  color: #f4f4f4;
+}
+
+a {
+  color: #333;
+}
+a:hover {
+  color: coral;
 }/*# sourceMappingURL=styles.css.map */
