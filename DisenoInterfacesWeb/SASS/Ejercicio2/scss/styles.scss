@@ -1,0 +1,18 @@
+@import 'variables';
+@import 'functions';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $fontstack;
+} 
+div {
+    margin: 1rem;
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: 5px solid $primary-color;
+    padding: 0.7rem 1rem;
+    p {
+        padding: 0.5rem 0rem;
+    }
+}

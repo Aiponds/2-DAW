@@ -1,0 +1,5 @@
+$primary-color: #8b0000;
+$secondary-color: lighten(invert($primary-color, 100%), 20%);
+$fontstack: Verdana, Geneva, Tahoma, sans-serif;
+$small: 576px;
+$medium: 768px;
