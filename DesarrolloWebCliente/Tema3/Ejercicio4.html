@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes de Navidad</title>
+</head>
+<body>
+
+    <ul id="mensajeNavidad"></ul>
+
+    <script>
+        var list = document.querySelector('#mensajeNavidad');
+        var saludos = [
+            'Feliz cumpleaños: %',
+            'Feliz navidades a todos',
+            'Te deseo una feliz navidad',
+            'En Navidades nos vamos de fiesta',
+            'Pasa un buen fin de semana'
+        ];
+
+        for (var i = 0; i < saludos.length; i++) {
+            var input = saludos[i];
+
+            if (input.indexOf('Navidad') !== -1) {
+                var listItem = document.createElement('li');
+                listItem.textContent = input;
+                list.appendChild(listItem);
+            }
+        }
+    </script>
+
+</body>
+</html>

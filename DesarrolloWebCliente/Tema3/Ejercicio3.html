@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Última posición de una palabra</title>
+</head>
+<body>
+
+    <p id="frase">Este es un ejemplo de una frase. Esta frase puede contener la palabra "ejemplo" varias veces.</p>
+
+    <button onclick="buscarUltimaPosicion()">Buscar última posición</button>
+
+    <script>
+        function buscarUltimaPosicion() {
+            // Obtén la frase del elemento con el id "frase"
+            var frase = document.getElementById("frase").innerText;
+
+            // Palabra o substring que deseas buscar
+            var palabraBuscada = "ejemplo";
+
+            // Encuentra la última posición de la palabra utilizando LastIndexOf
+            var ultimaPosicion = frase.lastIndexOf(palabraBuscada);
+
+            // Muestra la última posición en una alerta
+            alert("La última posición de '" + palabraBuscada + "' es: " + ultimaPosicion);
+        }
+    </script>
+
+</body>
+</html>
