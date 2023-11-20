@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <a href="#" id="id"></a>
+    <script>
+        function generarNumeroAleatorio(min, max) {
+            // Calcular un número aleatorio en el rango [0, 1) y ajustar al rango deseado
+            var numeroAleatorio = Math.random() * (max - min) + min;
+            return numeroAleatorio;
+        }
+        function obtenerSaludo() {
+            //Recogo la hora actual con el objeto Date
+            var fecha = new Date();
+            var hora = fecha.getHours();
+
+            if (hora < 15) {
+                return "Buenos días";
+            } else {
+                return "Buenas tardes";
+            }
+        }
+        //Creo una variable para asignarle el enlace o el saludo.
+        var enlace = document.getElementById("id");
+        var numero = generarNumeroAleatorio(0,1);
+        //Si el numero aleatorio es menor de 0.5 muestra el enlace.
+        if(numero < 0.5) {
+            enlace.textContent = ("Myfpschool.com");
+        } else {
+            enlace.textContent = obtenerSaludo();
+        }
+    </script>
+</body>
+</html>

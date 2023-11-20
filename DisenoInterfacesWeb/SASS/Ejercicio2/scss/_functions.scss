@@ -1,0 +1,7 @@
+@mixin layout($color, $size: 14px){
+    color: $color;
+    background-color: lighten(invert($primary-color, 100%), 20%);
+    font-size: $size;
+    margin: $size;
+    padding: $size;
+}

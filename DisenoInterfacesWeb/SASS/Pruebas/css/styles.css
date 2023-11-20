@@ -31,7 +31,7 @@ header h1 {
 }
 .section-b {
   background: skyblue;
-  color: #f4f4f4;
+  color: #333;
 }
 
 a {
@@ -39,4 +39,32 @@ a {
 }
 a:hover {
   color: coral;
+}
+
+.btn-dark, .btn-light {
+  display: inline;
+  padding: 0.7rem 2rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.btn-light {
+  background-color: #f4f4f4;
+  color: #333;
+}
+.btn-light:hover {
+  --webkit-transform: $property;
+  transform: rotate(20deg);
+  background-color: #dbdbdb;
+}
+.btn-dark {
+  background-color: #333;
+  color: #f4f4f4;
+}
+.btn-dark:hover {
+  --webkit-transform: $property;
+  transform: rotate(-20deg);
+  background-color: ligthen(#333, 10%);
 }/*# sourceMappingURL=styles.css.map */
