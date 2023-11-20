@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios 2</title>
     <script src="prueba2.js"></script>
 </head>
+
 <body>
+    <div id="caja"></div>
     <script>
-        calcCircunferencia();
-        operadorTernario();
-        operadorTernario2();
-        comprobarCodigo();
+        function dibujarCirculo(radio) {
+            var resultado = '';
+            var caja = document.getElementById('caja');
+        
+            for (var y = -radio; y <= radio; y++) {
+                for (var x = -radio; x <= radio; x++) {
+                    if (x * x + y * y <= radio * radio) {
+                        resultado += '* ';
+                    } else {
+                        resultado += '&nbsp&nbsp';
+                    }
+                }
+                resultado += '<br>';
+            }
+        
+            caja.innerHTML = resultado;
+        }
+        
+        // Uso del código
+        var radioCirculo = prompt('Ingresa el radio del círculo:');
+        dibujarCirculo(radioCirculo);
     </script>
 </body>
+
 </html>
