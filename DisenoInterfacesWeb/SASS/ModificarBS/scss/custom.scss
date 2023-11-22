@@ -6,6 +6,17 @@
 @import "../bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
-div {
-    border: 1px solid black;
+:root {
+    --bs-breadcrumb-divider: ".";
+}
+.breadcrumb {
+    font-size: 1.5rem;
+    width: fit-content;
+    margin: 0.5rem auto;
+    background-color: #dee2e5;
+    border-radius: 0.75rem;
+    .breadcrumb-item {
+        padding: 0.75rem 1rem;
+        content: var(--bs-breadcrumb-divider)
+    }
 }
