@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historias</title>
+</head>
+<body>
+    <label for="nombre"><strong>Nombre del Protagonista:</strong></label> <br>
+    <input type="text" id="nombre" required> <br> <br>
+
+    <label for="catalan"><strong>CATALAN:</strong></label>
+    <input type="radio" name="localidad" value="catalan" id="catalan">
+    <label for="andaluz"><strong>ANDALUZ:</strong></label>
+    <input type="radio" name="localidad" value="andaluz" id="andaluz">
+    <br><br>
+    <input type="button" value="Generar Historia" id="btnSubmit">
+    <p id="texto" style="width: 40%; background-color: #FFC126; color: black;"></p>
+
+    <script src="./scriptHistoria.js"></script>
+</body>
+</html>

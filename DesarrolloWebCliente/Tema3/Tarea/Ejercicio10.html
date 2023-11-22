@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+
+<body>
+
+    <script>
+        // Función para establecer cookies
+        function setCookie(nombre, contenido) {
+            // Se crea una fecha de expiración en el futuro (puedes ajustarla según tus necesidades)
+            var expiracion = new Date();
+            expiracion.setDate(expiracion.getDate() + 7); // Expira en 7 días
+
+            // Se crea la cadena de la cookie
+            var cookieString = nombre + "=" + contenido + "; expires=" + expiracion.toUTCString() + "; path=/";
+
+            // Se establece la cookie
+            document.cookie = cookieString;
+        }
+
+        // Crear dos cookies
+        setCookie("nombreCookie", "EjemploNombre");
+        setCookie("contenidoCookie", "EjemploContenido");
+    </script>
+
+    <p>Se han creado dos cookies.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona</title>
+</head>
+
+<body>
+    <p id="texto"></p>
+    <button type="button" onclick="persona.bio()">Biografía</button>
+    <button type="button" onclick="persona.saluda()">Saludo</button>
+    <script>
+        var persona = {
+            name: ['Rafa', 'Nadal'],
+            age: 30,
+            gender: 'masculino',
+            interests: ['tenis', 'futbol'],
+            bio: function () {
+                document.getElementById("texto").textContent = this.name[0] + " " + this.name[1] + " tiene " + this.age + " años y le gusta el " + this.interests[0] + " y el " + this.interests[1] + ".";
+            },
+            saluda: function () {
+                document.getElementById("texto").textContent = "Hola, me llamo " + this.name[0] + ".";
+            }
+        }
+    </script>
+</body>
+
+</html>

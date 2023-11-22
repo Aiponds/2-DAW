@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensajes de Navidad</title>
+    <title>Mensajes de Navidad sin fiesta</title>
 </head>
+
 <body>
 
     <ul id="mensajeNavidad"></ul>
@@ -22,7 +24,9 @@
         for (var i = 0; i < saludos.length; i++) {
             var input = saludos[i];
 
-            if (input.indexOf('Navidad') !== -1) {
+            // Modificamos la condición para incluir palabras relacionadas con "Navidad"
+            // y excluimos mensajes que contienen la palabra "fiesta"
+            if (input.toLowerCase().indexOf('navidad') !== -1 && input.toLowerCase().indexOf('fiesta') === -1) {
                 var listItem = document.createElement('li');
                 listItem.textContent = input;
                 list.appendChild(listItem);
@@ -31,4 +35,5 @@
     </script>
 
 </body>
+
 </html>

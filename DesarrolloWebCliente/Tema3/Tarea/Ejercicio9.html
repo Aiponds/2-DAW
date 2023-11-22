@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Código Postal</title>
+</head>
+
+<body>
+
+    <label for="busqueda">Buscar:</label>
+    <input type="text" id="busqueda">
+    <button onclick="buscarCodigoPostal()">Buscar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        // Array grande con elementos de la estructura "CP ; Ciudad"
+        var arrayCP = [
+            "28924 ; Estepona",
+            "28001 ; Madrid",
+            "04745 ; Almeria"
+        ];
+
+        function buscarCodigoPostal() {
+            // Obtener el texto de búsqueda del campo de entrada y convertirlo a minúsculas
+            var textoBusqueda = document.getElementById('busqueda').value.toLowerCase();
+
+            // Buscar en el array
+            var resultado = arrayCP.find(function (elemento) {
+                // Convertir cada elemento a minúsculas para hacer la búsqueda insensible a mayúsculas y minúsculas
+                var elementoMinusculas = elemento.toLowerCase();
+                return elementoMinusculas.includes(textoBusqueda);
+            });
+
+            // Mostrar el resultado
+            var resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = resultado ? resultado : "No se encontró coincidencia";
+        }
+    </script>
+
+</body>
+
+</html>
