@@ -13,7 +13,6 @@ $breadcrumb-padding-x: 1rem; // Sobrescribe el padding horizontal del breadcrumb
 $breadcrumb-divider-font-size: 1.5rem; // Sobrescribe el tamaño de la fuente del divider
 $breadcrumb-divider-margin: 1.5rem; // Sobrescribe el margen derecho del divider
 
-<<<<<<< HEAD
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../bootstrap/scss/variables";
 @import "../bootstrap/scss/variables-dark";
@@ -39,22 +38,3 @@ $breadcrumb-divider-margin: 1.5rem; // Sobrescribe el margen derecho del divider
 @import "../bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
-=======
-// Then add additional custom code here
-:root {
-    --bs-breadcrumb-divider: ".";
-}
-
-.breadcrumb {
-    font-size: 1.5rem;
-    width: fit-content;
-    margin: 0.5rem auto;
-    background-color: #dee2e5;
-    border-radius: 0.75rem;
-
-    .breadcrumb-item {
-        padding: 0.75rem 1rem;
-        content: var(--bs-breadcrumb-divider)
-    }
-}
->>>>>>> 5dd72abe50c551b33d89eb61b557516ff72886c2
