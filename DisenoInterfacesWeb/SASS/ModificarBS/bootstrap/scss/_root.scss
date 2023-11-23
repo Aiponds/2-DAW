@@ -18,10 +18,6 @@
     --#{$prefix}#{$color}: #{$value};
   }
 
-  @each $color, $value in $theme-colors-rgb {
-    --#{$prefix}#{$color}-rgb: #{$value};
-  }
-
   @each $color, $value in $theme-colors-text {
     --#{$prefix}#{$color}-text-emphasis: #{$value};
   }
