@@ -12,6 +12,19 @@ $breadcrumb-padding-y: 0.75rem; // Sobrescribe el padding vertical del breadcrum
 $breadcrumb-padding-x: 1rem; // Sobrescribe el padding horizontal del breadcrumb item
 $breadcrumb-divider-font-size: 1.5rem; // Sobrescribe el tamaño de la fuente del divider
 $breadcrumb-divider-margin: 1.5rem; // Sobrescribe el margen derecho del divider
+
+$btn-border-radius: 15px;
+$btn-line-height: 10px;
+$card-border-radius: 15px;
+$card-border-width: 0px;
+
+
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
 $grid-breakpoints: (
   xs: 0,
   sm: 500px,
@@ -30,12 +43,6 @@ $container-max-widths: (
   xxl: 1320px
 );
 
-// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
-@import "../bootstrap/scss/variables";
-@import "../bootstrap/scss/variables-dark";
-
-// 4. Include any default map overrides here
-
 // 5. Include remainder of required parts
 @import "../bootstrap/scss/maps";
 @import "../bootstrap/scss/mixins";
@@ -50,8 +57,23 @@ $container-max-widths: (
 @import "../bootstrap/scss/grid";
 @import "../bootstrap/scss/helpers";
 @import "../bootstrap/scss/breadcrumb";
+@import "../bootstrap/scss/card";
+@import "../bootstrap/scss/buttons";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+h6 {
+    font-size: 0.75rem;
+}
+.fc-gray {
+    color: #a9adb0;
+}
+div.card P:before {
+    content: '✓';
+    padding-right: 0.1rem;
+}
+.bg-black {
+    background-color: #1d2125 !important;
+}
