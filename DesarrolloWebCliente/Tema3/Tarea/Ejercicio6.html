@@ -21,7 +21,7 @@
             var input = equipos[i];
             // Modificamos el código para separar el código del equipo y el nombre
             var partes = input.split(';');
-            var nombreEquipo = partes[1]; // El nombre del equipo es la segunda parte después del punto y coma
+            var nombreEquipo = input.substring(0,3) +";"+partes[1]; // El nombre del equipo es la segunda parte después del punto y coma
 
             var listItem = document.createElement('li');
             listItem.textContent = nombreEquipo;
