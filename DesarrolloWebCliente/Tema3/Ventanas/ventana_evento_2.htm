@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>
+      Página con Javascript.
+   </title>
+</head>
+
+<body>
+   <!-- Campos para la entrada de datos -->
+   <label for="x">Coordenada X: </label>
+   <input type="number" name="x" id="x">
+   <br>
+   <label for="y">Coordenada Y: </label>
+   <input type="number" name="y" id="y">
+   <br>
+   <label for="color">Color de fondo: </label>
+   <!-- Selección de color para el fondo -->
+   <select id="color">
+      <option value="#ff0000">Rojo</option>
+      <option value="#00ff00">Verde</option>
+      <option value="#0000ff">Azul</option>
+   </select>
+   <br>
+   <label for="tamanioTexto">Tamaño del texto: </label>
+   <!-- Tamaño del texto en píxeles -->
+   <input type="number" name="tamanioTexto" id="tamanioTexto">
+   <br>
+   <label for="colorTexto">Color del texto: </label>
+   <!-- Selección de color para el texto -->
+   <input type="color" name="colorTexto" id="colorTexto">
+   <br>
+   <label for="tiempo">Tiempo de actividad (segundos): </label>
+   <!-- Tiempo que la ventana secundaria estará abierta -->
+   <input type="number" name="tiempo" id="tiempo">
+   <br>
+   <label for="texto">Texto para mostrar: </label>
+   <!-- Texto que se mostrará en la ventana secundaria -->
+   <input type="text" name="texto" id="texto">
+   <br>
+   <!-- Botones con funciones -->
+   <button onClick="abrirVentana();">
+      Abrir.
+   </button>
+   <button onClick="cerrarVentana();">
+      Cerrar.
+   </button>
+   <button onClick="enfocarVentana();">
+      Enfocar.
+   </button>
+   <button onClick="desenfocarVentana();">
+      Desenfocar.
+   </button>
+
+   <script>
+      var miVentana;
+
+      function abrirVentana() {
+         // Obtener valores de entrada
+         var x = document.getElementById("x").value;
+         var y = document.getElementById("y").value;
+         var colorFondo = document.getElementById("color").value;
+         var tamanoTexto = document.getElementById("tamanioTexto").value;
+         var colorTexto = document.getElementById("colorTexto").value;
+
+         // Configurar parámetros para la ventana secundaria
+         var parametros = "width=400, height=300, left=" + x + ", top=" + y +
+            ", resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no";
+
+         // Abrir la ventana secundaria
+         miVentana = window.open("texto_de_secundaria_2.htm", "ventana", parametros);
+
+         // Configurar acciones después de que la ventana secundaria se haya cargado completamente
+         miVentana.onload = function () {
+            // Obtener otros valores de entrada
+            var tiempo = document.getElementById("tiempo").value;
+            var texto = document.getElementById("texto").value;
+
+            // Establecer propiedades de estilo para la ventana secundaria
+            miVentana.document.body.style.backgroundColor = colorFondo;
+            miVentana.document.body.innerHTML = '<h1 style="color: ' + colorTexto + '; font-size: ' + tamanoTexto + 'px;">' + texto + '</h1>';
+
+            // Configurar el tiempo de cierre si se proporciona
+            if (tiempo) {
+               setTimeout(function () {
+                  cerrarVentana();
+               }, tiempo * 1000);
+            }
+         };
+      }
+
+      function cerrarVentana() {
+         if (miVentana) {
+            miVentana.close();
+         }
+      }
+
+      function enfocarVentana() {
+         if (miVentana) {
+            miVentana.focus();
+         }
+      }
+
+      function desenfocarVentana() {
+         if (miVentana) {
+            miVentana.blur();
+         }
+      }
+   </script>
+</body>
+
+</html>
