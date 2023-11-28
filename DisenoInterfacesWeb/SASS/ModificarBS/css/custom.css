@@ -8371,13 +8371,48 @@ h6, .h6 {
   font-size: 0.75rem;
 }
 
-.fc-gray {
-  color: #a9adb0;
+.row .lista a {
+  color: #638ece;
+  margin: 0px 10px;
+}
+.row .lista .activo {
+  border-radius: 5px;
+  padding: 7px 11px;
+  background-color: #0463ff;
+  color: #fff;
+}
+.row .lista input {
+  border: 1px solid #4d4e4e;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+.row .card {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #4d4e4e;
+  border-radius: 5px;
+}
+.row .card img {
+  height: 100px;
+  width: 100px;
+}
+.row .card ul {
+  list-style-type: none;
+  padding: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+}
+.row .card .activo {
+  border-radius: 5px;
+  padding: 2px 5px;
+  background-color: #0463ff;
+  font-weight: bold;
+  color: #fff;
 }
 
-div.card P:before {
-  content: "✓";
-  padding-right: 0.1rem;
+.fc-gray {
+  color: #a9adb0;
 }
 
 .bg-black {

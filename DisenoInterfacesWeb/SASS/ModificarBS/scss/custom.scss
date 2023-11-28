@@ -18,7 +18,7 @@ $btn-line-height: 10px;
 $card-border-radius: 15px;
 $card-border-width: 0px;
 
-
+$list-group-action-color: #fff;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../bootstrap/scss/variables";
@@ -65,15 +65,59 @@ $container-max-widths: (
 
 // 8. Add additional custom code here
 h6 {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
+
+.row {
+  .lista {
+    a {
+      color: #638ece;
+      margin: 0px 10px;
+    }
+
+    .activo {
+      border-radius: 5px;
+      padding: 7px 11px;
+      background-color: #0463ff;
+      color: #fff;
+    }
+
+    input {
+      border: 1px solid #4d4e4e;
+      padding: 3px 10px;
+      border-radius: 5px;
+    }
+  }
+
+  .card {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #4d4e4e;
+    border-radius: 5px;
+    img {
+      height: 100px;
+      width: 100px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      width: fit-content;
+      display: flex;
+    }
+    .activo {
+      border-radius: 5px;
+      padding: 2px 5px;
+      background-color: #0463ff;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+}
+
 .fc-gray {
-    color: #a9adb0;
+  color: #a9adb0;
 }
-div.card P:before {
-    content: '✓';
-    padding-right: 0.1rem;
-}
+
 .bg-black {
-    background-color: #1d2125 !important;
+  background-color: #1d2125 !important;
 }
