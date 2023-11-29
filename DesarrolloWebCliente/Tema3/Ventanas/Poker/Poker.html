@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T4P1-Practica de Matriculas</title>
+    <script src="./Poker.js"></script>
 </head>
 <body>
     <h1>T4P1-Practica de Matriculas</h1>
     <p><strong>El programa calcula las cantidades de dobles parejas, tríos, escaleras de tres elementos, escaleras de cuatro elementos o póker en un número con 4 cifras.</strong></p>
-    <ul id="resultado-lista">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+    <p>Matriculas 1111 -> 9999</p>
+    <ul>
+        <li id="dobles"></li>
+        <li id="triples"></li>
+        <li id="escaleraSimple"></li>
+        <li id="escaleraCompleja"></li>
+        <li id="poker"></li>
     </ul>
+    <h1>Juega tu mano</h1>
+    <p>Matriculas 1111 -> 9999</p>
+    <label for="mano">Matricula: </label>
+    <input type="number" id="mano" min="1111" max="9999" placeholder="1234">
+    <button onclick="comprobarMano()">Ver Resultados</button>
+    <p id="contador"></p>
+    <script>
+        contarPatrones();
+    </script>
 </body>
 </html>
