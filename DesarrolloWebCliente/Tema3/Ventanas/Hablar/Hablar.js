@@ -72,6 +72,33 @@ const array4 = [
 var texto = document.getElementById('texto');
 var button = document.getElementById('btnSubmit');
 
-button.addEventListener('click', function() {
-    texto.innerHTML = array1[Math.floor(Math.random() * array1.length)];
+// Array para almacenar frases ya seleccionadas
+var frasesSeleccionadas = [];
+
+button.addEventListener('click', function () {
+    // Seleccionar una frase aleatoria de cada array
+    const frase1 = seleccionarFraseAleatoria(array1);
+    const frase2 = seleccionarFraseAleatoria(array2);
+    const frase3 = seleccionarFraseAleatoria(array3);
+    const frase4 = seleccionarFraseAleatoria(array4);
+
+    // Combinar las frases seleccionadas en un único texto
+    const textoFinal = `${texto.textContent} ${frase1} ${frase2} ${frase3} ${frase4}`;
+
+    // Mostrar el texto en el elemento HTML
+    texto.textContent = textoFinal;
+
+    // Agregar las frases seleccionadas al array de frases ya seleccionadas
+    frasesSeleccionadas.push(frase1, frase2, frase3, frase4);
 }, false);
+
+// Función para seleccionar una frase aleatoria de un array, evitando repeticiones
+function seleccionarFraseAleatoria(array) {
+    let fraseAleatoria = "";
+    do {
+        // Seleccionar una frase aleatoria del array
+        fraseAleatoria = array[Math.floor(Math.random() * array.length)];
+    } while (frasesSeleccionadas.includes(fraseAleatoria)); // Verificar si la frase ya ha sido seleccionada
+
+    return fraseAleatoria;
+}
