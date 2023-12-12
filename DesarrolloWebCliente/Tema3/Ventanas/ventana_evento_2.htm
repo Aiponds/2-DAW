@@ -55,7 +55,6 @@
 
    <script>
       var miVentana;
-
       function abrirVentana() {
          // Obtener valores de entrada
          var x = document.getElementById("x").value;
@@ -63,24 +62,18 @@
          var colorFondo = document.getElementById("color").value;
          var tamanoTexto = document.getElementById("tamanioTexto").value;
          var colorTexto = document.getElementById("colorTexto").value;
-
          // Configurar parámetros para la ventana secundaria
-         var parametros = "width=400, height=300, left=" + x + ", top=" + y +
-            ", resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no";
-
+         var parametros = "width=400, height=300, left=" + x + ", top=" + y + ", resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no";
          // Abrir la ventana secundaria
          miVentana = window.open("texto_de_secundaria_2.htm", "ventana", parametros);
-
          // Configurar acciones después de que la ventana secundaria se haya cargado completamente
          miVentana.onload = function () {
             // Obtener otros valores de entrada
             var tiempo = document.getElementById("tiempo").value;
             var texto = document.getElementById("texto").value;
-
             // Establecer propiedades de estilo para la ventana secundaria
             miVentana.document.body.style.backgroundColor = colorFondo;
             miVentana.document.body.innerHTML = '<h1 style="color: ' + colorTexto + '; font-size: ' + tamanoTexto + 'px;">' + texto + '</h1>';
-
             // Configurar el tiempo de cierre si se proporciona
             if (tiempo) {
                setTimeout(function () {
@@ -89,19 +82,16 @@
             }
          };
       }
-
       function cerrarVentana() {
          if (miVentana) {
             miVentana.close();
          }
       }
-
       function enfocarVentana() {
          if (miVentana) {
             miVentana.focus();
          }
       }
-
       function desenfocarVentana() {
          if (miVentana) {
             miVentana.blur();
