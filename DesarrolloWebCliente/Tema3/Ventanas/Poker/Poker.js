@@ -158,6 +158,7 @@ function esEscaleraCompleta(n) {
 // Función para obtener el contador almacenado en la cookie
 function getContadorFromCookie() {
     let contador = parseInt(getCookie("contador")) || 0;
+    contador =contador++;
     return contador;
 }
 
