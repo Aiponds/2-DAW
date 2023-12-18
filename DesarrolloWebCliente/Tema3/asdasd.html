@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Practica RA4_abcde</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        button {
+            margin: 10px;
+        }
+        #ventana1, #ventana2, #ventana3, #ventana4 {
+            display: none;
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+        #ventana1 {
+            top: 0;
+            left: 0;
+            background-color: lightgreen;
+        }
+        #ventana2 {
+            top: 0;
+            right: 0;
+            background-color: lightblue;
+        }
+        #ventana3 {
+            bottom: 0;
+            right: 0;
+            background-color: lightpink;
+        }
+        #ventana4 {
+            bottom: 0;
+            left: 0;
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prueba Practica RA4_abcde</h1>
+    <p>Nombre: [Tu Nombre]</p>
+    <button onclick="abrirVentana(1)">Ventana 1</button>
+    <button onclick="abrirVentana(2)">Ventana 2</button>
+    <button onclick="abrirVentana(3)">Ventana 3</button>
+    <button onclick="abrirVentana(4)">Ventana 4</button>
+
+    <div id="ventana1">
+        <form onsubmit="return validarFormulario()">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" required><br>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" required><br>
+            <label for="nuevaContrasena">Nueva Contraseña:</label>
+            <input type="password" id="nuevaContrasena" required><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div id="ventana2">
+        <p id="valoresAleatorios"></p>
+        <p id="listaValores"></p>
+    </div>
+
+    <div id="ventana3">
+        <p id="valoresImpares"></p>
+    </div>
+
+    <div id="ventana4">
+        <p id="contrasenaVigente"></p>
+        <p id="ultimaFechaHora"></p>
+    </div>
+
+    <script>
+        function abrirVentana(ventanaNum) {
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`ventana${i}`).style.display = i === ventanaNum ? "block" : "none";
+            }
+        }
+
+        function validarFormulario() {
+            const usuario = document.getElementById("usuario").value;
+            const contrasena = document.getElementById("contrasena").value;
+            const nuevaContrasena = document.getElementById("nuevaContrasena").value;
+
+            const usuarioObj = {
+                nombre: "alumno",
+                contrasena: "bueno",
+                ultimaFechaHora: ""
+            };
+
+            if (usuario === usuarioObj.nombre && contrasena === usuarioObj.contrasena) {
+                const cambiarContrasena = confirm("Datos correctos, ¿Deseas cambiar la contraseña?");
+                if (cambiarContrasena) {
+                    usuarioObj.contrasena = nuevaContrasena;
+                    usuarioObj.ultimaFechaHora = obtenerFechaHoraActual();
+                }
+            } else {
+                alert("Datos incorrectos ¿Quieres intentarlo de nuevo?");
+            }
+
+            return false; // Evita que se envíe el formulario y se refresque la página
+        }
+
+        function obtenerFechaHoraActual() {
+            const fechaHora = new Date();
+            return `${fechaHora.toLocaleDateString()} ${fechaHora.toLocaleTimeString()}`;
+        }
+
+        // Código para la ventana 2
+        const longitudLista = Math.floor(Math.random() * (60 - 50 + 1)) + 50;
+        const numValoresAleatorios = Math.floor(Math.random() * (9 - 6 + 1)) + 6;
+
+        const listaNumeros = Array.from({ length: longitudLista }, (_, i) => i + 1);
+        const valoresAleatorios = Array.from({ length: numValoresAleatorios }, () => {
+            const randomIndex = Math.floor(Math.random() * listaNumeros.length);
+            return listaNumeros.splice(randomIndex, 1)[0];
+        });
+
+        document.getElementById("valoresAleatorios").innerText = `Valores aleatorios: ${valoresAleatorios.join('-')}`;
+        document.getElementById("listaValores").innerText = `Lista a representar: ${listaNumeros.join('-')}`;
+
+        // Código para la ventana 3
+        const valoresImpares = valoresAleatorios.filter(num => num % 2 !== 0);
+        valoresImpares.sort((a, b) => a - b);
+        document.getElementById("valoresImpares").innerText = `Valores impares: ${valoresImpares.join('-')}`;
+
+        // Código para la ventana 4
+        document.getElementById("contrasenaVigente").innerText = `Contraseña vigente: ${usuarioObj.contrasena}`;
+        document.getElementById("ultimaFechaHora").innerText = `Última fecha y hora de cambio: ${usuarioObj.ultimaFechaHora}`;
+    </script>
+</body>
+</html>
