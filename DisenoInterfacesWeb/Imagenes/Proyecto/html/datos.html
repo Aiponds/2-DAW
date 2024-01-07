@@ -3,9 +3,7 @@
 
 <head>
     <title>Nuestros Datos - Alcampo</title>
-    <link rel="shortcut icon"
-        href="../Imagenes/logo.svg"
-        type="image/x-icon">
+    <link rel="shortcut icon" href="../Imagenes/logo.svg" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,9 +57,38 @@
     <!-- Hamburger menú con una imagen de logo y 3 opciones. -->
     <nav class="navbar navbar-expand-md navbar-light menuNav">
         <div class="container">
-            <a class="navbar-brand" href="./index.html"><img
-                    src="../Imagenes/logo.jpg"
-                    alt=""></a>
+            <a class="navbar-brand" href="./index.html">
+                <picture>
+                    <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                    <source srcset="../Imagenes/logo-S.webp" type="image/webp" media="(max-width: 575.98px)">
+                    <source srcset="../Imagenes/logo-S.avif" type="image/avif" media="(max-width: 575.98px)">
+                    <source srcset="../Imagenes/logo-S.jpg" type="image/jpg" media="(max-width: 575.98px)">
+
+                    <!-- Imagen para pantallas medianas (md) -->
+                    <source srcset="../Imagenes/logo-M.webp" type="image/webp"
+                        media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="../Imagenes/logo-M.webp" type="image/avif"
+                        media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="../Imagenes/logo-M.webp" type="image/jpg"
+                        media="(min-width: 576px) and (max-width: 767.98px)">
+
+                    <!-- Imagen para pantallas grandes (lg) -->
+                    <source srcset="../Imagenes/logo-L.webp" type="image/webp"
+                        media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="../Imagenes/logo-L.webp" type="image/avif"
+                        media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="../Imagenes/logo-L.webp" type="image/jpg"
+                        media="(min-width: 768px) and (max-width: 991.98px)">
+
+                    <!-- Imagen para pantallas extra grandes (xl) -->
+                    <source srcset="../Imagenes/logo-XL.webp" type="image/webp" media="(min-width: 992px)">
+                    <source srcset="../Imagenes/logo-XL.webp" type="image/avif" media="(min-width: 992px)">
+                    <source srcset="../Imagenes/logo-XL.webp" type="image/jpg" media="(min-width: 992px)">
+
+                    <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                    <img src="../Imagenes/logo-L.jpg" alt="Alcampo" class="img-fluid">
+                </picture>
+            </a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -99,9 +126,40 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-sm-12"><img
-                            src="../Imagenes/conocenos.jpg" alt=""
-                            class="img-fluid" id="imagenDatos"></div>
+                    <div class="col-md-6 col-sm-12">
+                        <picture>
+                            <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                            <source srcset="../Imagenes/conocenos-S.webp" type="image/webp"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/conocenos-S.avif" type="image/avif"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/conocenos-S.jpg" type="image/jpg" media="(max-width: 575.98px)">
+
+                            <!-- Imagen para pantallas medianas (md) -->
+                            <source srcset="../Imagenes/conocenos-M.webp" type="image/webp"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/conocenos-M.webp" type="image/avif"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/conocenos-M.webp" type="image/jpg"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+
+                            <!-- Imagen para pantallas grandes (lg) -->
+                            <source srcset="../Imagenes/conocenos-L.webp" type="image/webp"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/conocenos-L.webp" type="image/avif"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/conocenos-L.webp" type="image/jpg"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+
+                            <!-- Imagen para pantallas extra grandes (xl) -->
+                            <source srcset="../Imagenes/conocenos-XL.webp" type="image/webp" media="(min-width: 992px)">
+                            <source srcset="../Imagenes/conocenos-XL.webp" type="image/avif" media="(min-width: 992px)">
+                            <source srcset="../Imagenes/conocenos-XL.webp" type="image/jpg" media="(min-width: 992px)">
+
+                            <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                            <img src="../Imagenes/conocenos-L.jpg" alt="Alcampo" class="img-fluid" id="imagenDatos">
+                        </picture>
+                    </div>
                     <div class="col-md-6 col-sm-12 text-start">
                         <p><span class="cursiva">
                                 Dirección:</span>
