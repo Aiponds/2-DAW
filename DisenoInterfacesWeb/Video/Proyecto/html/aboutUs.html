@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Nuestros Datos - Alcampo</title>
+    <link rel="shortcut icon" href="../Imagenes/logo.svg" type="image/x-icon">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- CSS Propio -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <!-- Divs para la animación de la nieve. -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+    </div>
+    <!-- Hamburger menú con una imagen de logo y 3 opciones. -->
+    <nav class="navbar navbar-expand-md navbar-light menuNav">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <picture>
+                    <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                    <source srcset="../Imagenes/logo-S.webp" type="image/webp" media="(max-width: 575.98px)">
+                    <source srcset="../Imagenes/logo-S.avif" type="image/avif" media="(max-width: 575.98px)">
+                    <source srcset="../Imagenes/logo-S.jpg" type="image/jpg" media="(max-width: 575.98px)">
+
+                    <!-- Imagen para pantallas medianas (md) -->
+                    <source srcset="../Imagenes/logo-M.webp" type="image/webp"
+                        media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="../Imagenes/logo-M.webp" type="image/avif"
+                        media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="../Imagenes/logo-M.webp" type="image/jpg"
+                        media="(min-width: 576px) and (max-width: 767.98px)">
+
+                    <!-- Imagen para pantallas grandes (lg) -->
+                    <source srcset="../Imagenes/logo-L.webp" type="image/webp"
+                        media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="../Imagenes/logo-L.webp" type="image/avif"
+                        media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="../Imagenes/logo-L.webp" type="image/jpg"
+                        media="(min-width: 768px) and (max-width: 991.98px)">
+
+                    <!-- Imagen para pantallas extra grandes (xl) -->
+                    <source srcset="../Imagenes/logo-XL.webp" type="image/webp" media="(min-width: 992px)">
+                    <source srcset="../Imagenes/logo-XL.webp" type="image/avif" media="(min-width: 992px)">
+                    <source srcset="../Imagenes/logo-XL.webp" type="image/jpg" media="(min-width: 992px)">
+
+                    <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                    <img src="../Imagenes/logo-L.jpg" alt="Alcampo" class="img-fluid">
+                </picture>
+            </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./aboutUs.html">Concócenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./datos.html">Nuestros Datos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- - Página "Información sobre quiénes somos":
+        - Proporcionar detalles sobre la historia de la empresa, su misión, visión y valores.
+        - Incluir fotos y biografías de los miembros clave del equipo, si corresponde.
+        -->
+        <div class="container">
+            <div class="row">
+                <div class="espaciado"></div>
+            </div>
+            <div class="row divContenido divMovil">
+                <h1>¿Quienes somos?</h1>
+                <div class="col-12 textoJustificado">
+                    <p>En Alcampo somos más de <strong>20.000 profesionales</strong> que cada día nos levantamos con un
+                        propósito: llevar nuestra forma de hacer comercio a cada rincón donde estamos presentes.</p>
+                    <p>Operamos en España desde 1981 y hoy por hoy contamos con más de 500 tiendas físicas y servicio de
+                        comercio on line, además de medio centenar de gasolineras.</p>
+                    <p>Queremos crear valor y ser una marca con sentido para nuestros clientes, ciudadanos, proveedores,
+                        accionistas y sociedad en general. Estamos <strong>comprometidos con lo bueno, lo sano y lo
+                            local</strong>, creamos alianzas y experiencias y actuamos, con convicción, por el Planeta.
+                    </p>
+                </div>
+            </div>
+            <div class="row divContenido divMovil" id="divMovil2">
+                <h1>Nuestra razón de ser</h1>
+                <div class="col-lg-4 col-sm-12">
+                    <picture>
+                        <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                        <source srcset="../Imagenes/acercade(1)-S.webp" type="image/webp" media="(max-width: 575.98px)">
+                        <source srcset="../Imagenes/acercade(1)-S.avif" type="image/avif" media="(max-width: 575.98px)">
+                        <source srcset="../Imagenes/acercade(1)-S.jpg" type="image/jpg" media="(max-width: 575.98px)">
+
+                        <!-- Imagen para pantallas medianas (md) -->
+                        <source srcset="../Imagenes/acercade(1)-M.webp" type="image/webp"
+                            media="(min-width: 576px) and (max-width: 767.98px)">
+                        <source srcset="../Imagenes/acercade(1)-M.webp" type="image/avif"
+                            media="(min-width: 576px) and (max-width: 767.98px)">
+                        <source srcset="../Imagenes/acercade(1)-M.webp" type="image/jpg"
+                            media="(min-width: 576px) and (max-width: 767.98px)">
+
+                        <!-- Imagen para pantallas grandes (lg) -->
+                        <source srcset="../Imagenes/acercade(1)-L.webp" type="image/webp"
+                            media="(min-width: 768px) and (max-width: 991.98px)">
+                        <source srcset="../Imagenes/acercade(1)-L.webp" type="image/avif"
+                            media="(min-width: 768px) and (max-width: 991.98px)">
+                        <source srcset="../Imagenes/acercade(1)-L.webp" type="image/jpg"
+                            media="(min-width: 768px) and (max-width: 991.98px)">
+
+                        <!-- Imagen para pantallas extra grandes (xl) -->
+                        <source srcset="../Imagenes/acercade(1)-XL.webp" type="image/webp" media="(min-width: 992px)">
+                        <source srcset="../Imagenes/acercade(1)-XL.webp" type="image/avif" media="(min-width: 992px)">
+                        <source srcset="../Imagenes/acercade(1)-XL.webp" type="image/jpg" media="(min-width: 992px)">
+
+                        <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                        <img src="../Imagenes/acercade(1)-L.jpg" alt="Alcampo" class="img-fluid">
+                    </picture>
+                </div>
+                <div class="col-lg-8 col-sm-12 textoJustificado">
+                    <p>En Alcampo, ¡queremos cambiar la vida! por eso trabajamos para hacer realidad nuestra visión:
+                        comer bien y vivir mejor, cuidando el Planeta, y lo hacemos siendo fieles a nuestros valores:
+                        <strong>confianza, apertura y excelencia.</strong>
+                    </p>
+                    <p>La confianza es la clave de una colaboración eficaz, comprensiva y con sentido para todos. En un
+                        mundo que evoluciona constantemente queremos establecer, cada día, alianzas orientadas al bien
+                        común.</p>
+                    <p>La apertura es la curiosidad, el entusiasmo, la capacidad de cuestionarse para inventar hoy el
+                        comercio del mañana. ¡Marcar la diferencia para posibilitar el cambio!</p>
+                    <p>La excelencia es el objetivo constante, porque tenemos la ambición de ofrecer lo mejor a todo el
+                        mundo.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 divContenido divMovil" id="divMovil3">
+                    <div class="row ">
+                        <h1>Nuestra actividad</h1>
+                        <div class="col-lg-6 col-sm-12">
+                            <picture>
+                                <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                                <source srcset="../Imagenes/acercade(2)-S.webp" type="image/webp"
+                                    media="(max-width: 575.98px)">
+                                <source srcset="../Imagenes/acercade(2)-S.avif" type="image/avif"
+                                    media="(max-width: 575.98px)">
+                                <source srcset="../Imagenes/acercade(2)-S.jpg" type="image/jpg"
+                                    media="(max-width: 575.98px)">
+
+                                <!-- Imagen para pantallas medianas (md) -->
+                                <source srcset="../Imagenes/acercade(2)-M.webp" type="image/webp"
+                                    media="(min-width: 576px) and (max-width: 767.98px)">
+                                <source srcset="../Imagenes/acercade(2)-M.webp" type="image/avif"
+                                    media="(min-width: 576px) and (max-width: 767.98px)">
+                                <source srcset="../Imagenes/acercade(2)-M.webp" type="image/jpg"
+                                    media="(min-width: 576px) and (max-width: 767.98px)">
+
+                                <!-- Imagen para pantallas grandes (lg) -->
+                                <source srcset="../Imagenes/acercade(2)-L.webp" type="image/webp"
+                                    media="(min-width: 768px) and (max-width: 991.98px)">
+                                <source srcset="../Imagenes/acercade(2)-L.webp" type="image/avif"
+                                    media="(min-width: 768px) and (max-width: 991.98px)">
+                                <source srcset="../Imagenes/acercade(2)-L.webp" type="image/jpg"
+                                    media="(min-width: 768px) and (max-width: 991.98px)">
+
+                                <!-- Imagen para pantallas extra grandes (xl) -->
+                                <source srcset="../Imagenes/acercade(2)-XL.webp" type="image/webp"
+                                    media="(min-width: 992px)">
+                                <source srcset="../Imagenes/acercade(2)-XL.webp" type="image/avif"
+                                    media="(min-width: 992px)">
+                                <source srcset="../Imagenes/acercade(2)-XL.webp" type="image/jpg"
+                                    media="(min-width: 992px)">
+
+                                <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                                <img src="../Imagenes/acercade(2)-L.jpg" alt="Alcampo" class="img-fluid">
+                            </picture>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 textoJustificado">
+                            <p><strong>Comer bien y vivir mejor, cuidando el Planeta</strong>. Esta es nuestra Visión,
+                                que recoge los fundamentos de nuestra empresa, así como nuestra razón de ser.
+                                <br />Hacer realidad nuestra Visión implica ser agente activo en la <strong>lucha contra
+                                    el cambio climático</strong> y la <strong>brecha social</strong>, promover la
+                                <strong>buena alimentación</strong> y velar por la calidad, asegurando, además, una
+                                cesta de la compra asequible y personalizada para nuestros clientes.
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="col-lg-6 col-sm-12">
+                            <picture>
+                                <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                                <source srcset="../Imagenes/acercade(3)-S.webp" type="image/webp"
+                                    media="(max-width: 575.98px)">
+                                <source srcset="../Imagenes/acercade(3)-S.avif" type="image/avif"
+                                    media="(max-width: 575.98px)">
+                                <source srcset="../Imagenes/acercade(3)-S.jpg" type="image/jpg"
+                                    media="(max-width: 575.98px)">
+
+                                <!-- Imagen para pantallas medianas (md) -->
+                                <source srcset="../Imagenes/acercade(3)-M.webp" type="image/webp"
+                                    media="(min-width: 576px) and (max-width: 767.98px)">
+                                <source srcset="../Imagenes/acercade(3)-M.webp" type="image/avif"
+                                    media="(min-width: 576px) and (max-width: 767.98px)">
+                                <source srcset="../Imagenes/acercade(3)-M.webp" type="image/jpg"
+                                    media="(min-width: 576px) and (max-width: 767.98px)">
+
+                                <!-- Imagen para pantallas grandes (lg) -->
+                                <source srcset="../Imagenes/acercade(3)-L.webp" type="image/webp"
+                                    media="(min-width: 768px) and (max-width: 991.98px)">
+                                <source srcset="../Imagenes/acercade(3)-L.webp" type="image/avif"
+                                    media="(min-width: 768px) and (max-width: 991.98px)">
+                                <source srcset="../Imagenes/acercade(3)-L.webp" type="image/jpg"
+                                    media="(min-width: 768px) and (max-width: 991.98px)">
+
+                                <!-- Imagen para pantallas extra grandes (xl) -->
+                                <source srcset="../Imagenes/acercade(3)-XL.webp" type="image/webp"
+                                    media="(min-width: 992px)">
+                                <source srcset="../Imagenes/acercade(3)-XL.webp" type="image/avif"
+                                    media="(min-width: 992px)">
+                                <source srcset="../Imagenes/acercade(3)-XL.webp" type="image/jpg"
+                                    media="(min-width: 992px)">
+
+                                <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                                <img src="../Imagenes/acercade(3)-L.jpg" alt="Alcampo" class="img-fluid">
+                            </picture>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 textoJustificado">
+                            <p>Apasionados por el producto de <strong>nuestra tierra</strong> colaboramos activamente
+                                con proveedores de nuestro entorno impulsando así su desarrollo y la creación de riqueza
+                                compartida.<br />Además, para hacer realidad la mejor experiencia tanto en nuestras
+                                tiendas como en nuestros canales on line, desarrollamos un <strong>comercio
+                                    phygital</strong> asegurando que nuestros clientes pueden comprar lo que deseen y
+                                recogerlo como, donde y cuando quieran.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="espaciado"></div>
+            </div>
+        </div>
+        <div class="container divContenido divMovil" id="divMovil4">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Comité de Dirección</h1>
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-xl-4 col-lg-6 col-sm-12">
+                    <div>
+                        <picture>
+                            <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                            <source srcset="../Imagenes/comite/comite(1)-S.webp" type="image/webp"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(1)-S.avif" type="image/avif"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(1)-S.jpg" type="image/jpg"
+                                media="(max-width: 575.98px)">
+
+                            <!-- Imagen para pantallas medianas (md) -->
+                            <source srcset="../Imagenes/comite/comite(1)-M.webp" type="image/webp"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(1)-M.webp" type="image/avif"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(1)-M.webp" type="image/jpg"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+
+                            <!-- Imagen para pantallas grandes (lg) -->
+                            <source srcset="../Imagenes/comite/comite(1)-L.webp" type="image/webp"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(1)-L.webp" type="image/avif"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(1)-L.webp" type="image/jpg"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+
+                            <!-- Imagen para pantallas extra grandes (xl) -->
+                            <source srcset="../Imagenes/comite/comite(1)-XL.webp" type="image/webp"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(1)-XL.webp" type="image/avif"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(1)-XL.webp" type="image/jpg"
+                                media="(min-width: 992px)">
+
+                            <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                            <img src="../Imagenes/comite/comite(1)-L.jpg" alt="Alcampo" class="img-fluid">
+                        </picture>
+                        <div>
+                            <p>Américo Ribeiro</p>
+                            <p>Director General Alcampo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-sm-12">
+                    <div>
+                        <picture>
+                            <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                            <source srcset="../Imagenes/comite/comite(2)-S.webp" type="image/webp"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(2)-S.avif" type="image/avif"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(2)-S.jpg" type="image/jpg"
+                                media="(max-width: 575.98px)">
+
+                            <!-- Imagen para pantallas medianas (md) -->
+                            <source srcset="../Imagenes/comite/comite(2)-M.webp" type="image/webp"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(2)-M.webp" type="image/avif"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(2)-M.webp" type="image/jpg"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+
+                            <!-- Imagen para pantallas grandes (lg) -->
+                            <source srcset="../Imagenes/comite/comite(2)-L.webp" type="image/webp"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(2)-L.webp" type="image/avif"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(2)-L.webp" type="image/jpg"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+
+                            <!-- Imagen para pantallas extra grandes (xl) -->
+                            <source srcset="../Imagenes/comite/comite(2)-XL.webp" type="image/webp"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(2)-XL.webp" type="image/avif"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(2)-XL.webp" type="image/jpg"
+                                media="(min-width: 992px)">
+
+                            <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                            <img src="../Imagenes/comite/comite(2)-L.jpg" alt="Alcampo" class="img-fluid">
+                        </picture>
+                        <div>
+                            <p>Patricia González</p>
+                            <p> Directora RR.HH</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-sm-12">
+                    <div>
+                        <picture>
+                            <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                            <source srcset="../Imagenes/comite/comite(3)-S.webp" type="image/webp"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(3)-S.avif" type="image/avif"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(3)-S.jpg" type="image/jpg"
+                                media="(max-width: 575.98px)">
+
+                            <!-- Imagen para pantallas medianas (md) -->
+                            <source srcset="../Imagenes/comite/comite(3)-M.webp" type="image/webp"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(3)-M.webp" type="image/avif"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(3)-M.webp" type="image/jpg"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+
+                            <!-- Imagen para pantallas grandes (lg) -->
+                            <source srcset="../Imagenes/comite/comite(3)-L.webp" type="image/webp"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(3)-L.webp" type="image/avif"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(3)-L.webp" type="image/jpg"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+
+                            <!-- Imagen para pantallas extra grandes (xl) -->
+                            <source srcset="../Imagenes/comite/comite(3)-XL.webp" type="image/webp"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(3)-XL.webp" type="image/avif"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(3)-XL.webp" type="image/jpg"
+                                media="(min-width: 992px)">
+
+                            <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                            <img src="../Imagenes/comite/comite(3)-L.jpg" alt="Alcampo" class="img-fluid">
+                        </picture>
+                        <div>
+                            <p>Raimundo Gonzalo</p>
+                            <p>Dir. de Supply Chain y Org.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-sm-12">
+                    <div>
+                        <picture>
+                            <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                            <source srcset="../Imagenes/comite/comite(4)-S.webp" type="image/webp"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(4)-S.avif" type="image/avif"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(4)-S.jpg" type="image/jpg"
+                                media="(max-width: 575.98px)">
+
+                            <!-- Imagen para pantallas medianas (md) -->
+                            <source srcset="../Imagenes/comite/comite(4)-M.webp" type="image/webp"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(4)-M.webp" type="image/avif"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(4)-M.webp" type="image/jpg"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+
+                            <!-- Imagen para pantallas grandes (lg) -->
+                            <source srcset="../Imagenes/comite/comite(4)-L.webp" type="image/webp"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(4)-L.webp" type="image/avif"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(4)-L.webp" type="image/jpg"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+
+                            <!-- Imagen para pantallas extra grandes (xl) -->
+                            <source srcset="../Imagenes/comite/comite(4)-XL.webp" type="image/webp"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(4)-XL.webp" type="image/avif"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(4)-XL.webp" type="image/jpg"
+                                media="(min-width: 992px)">
+
+                            <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                            <img src="../Imagenes/comite/comite(4)-L.jpg" alt="Alcampo" class="img-fluid">
+                        </picture>
+                        <div>
+                            <p>Carlos Pedreira</p>
+                            <p>Director Financiero</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-sm-12">
+                    <div>
+                        <picture>
+                            <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                            <source srcset="../Imagenes/comite/comite(5)-S.webp" type="image/webp"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(5)-S.avif" type="image/avif"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(5)-S.jpg" type="image/jpg"
+                                media="(max-width: 575.98px)">
+
+                            <!-- Imagen para pantallas medianas (md) -->
+                            <source srcset="../Imagenes/comite/comite(5)-M.webp" type="image/webp"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(5)-M.webp" type="image/avif"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(5)-M.webp" type="image/jpg"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+
+                            <!-- Imagen para pantallas grandes (lg) -->
+                            <source srcset="../Imagenes/comite/comite(5)-L.webp" type="image/webp"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(5)-L.webp" type="image/avif"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(5)-L.webp" type="image/jpg"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+
+                            <!-- Imagen para pantallas extra grandes (xl) -->
+                            <source srcset="../Imagenes/comite/comite(5)-XL.webp" type="image/webp"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(5)-XL.webp" type="image/avif"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(5)-XL.webp" type="image/jpg"
+                                media="(min-width: 992px)">
+
+                            <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                            <img src="../Imagenes/comite/comite(5)-L.jpg" alt="Alcampo" class="img-fluid">
+                        </picture>
+                        <div>
+                            <p>Jesús Sangüesa</p>
+                            <p>Dir. de Performance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-sm-12">
+                    <div>
+                        <picture>
+                            <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                            <source srcset="../Imagenes/comite/comite(6)-S.webp" type="image/webp"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(6)-S.avif" type="image/avif"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(6)-S.jpg" type="image/jpg"
+                                media="(max-width: 575.98px)">
+
+                            <!-- Imagen para pantallas medianas (md) -->
+                            <source srcset="../Imagenes/comite/comite(6)-M.webp" type="image/webp"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(6)-M.webp" type="image/avif"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(6)-M.webp" type="image/jpg"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+
+                            <!-- Imagen para pantallas grandes (lg) -->
+                            <source srcset="../Imagenes/comite/comite(6)-L.webp" type="image/webp"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(6)-L.webp" type="image/avif"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(6)-L.webp" type="image/jpg"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+
+                            <!-- Imagen para pantallas extra grandes (xl) -->
+                            <source srcset="../Imagenes/comite/comite(6)-XL.webp" type="image/webp"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(6)-XL.webp" type="image/avif"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(6)-XL.webp" type="image/jpg"
+                                media="(min-width: 992px)">
+
+                            <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                            <img src="../Imagenes/comite/comite(6)-L.jpg" alt="Alcampo" class="img-fluid">
+                        </picture>
+                        <div>
+                            <p>Eduardo Latorre</p>
+                            <p>Dir.de Marca y Cliente</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-sm-12">
+                    <div>
+                        <picture>
+                            <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                            <source srcset="../Imagenes/comite/comite(7)-S.webp" type="image/webp"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(7)-S.avif" type="image/avif"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(7)-S.jpg" type="image/jpg"
+                                media="(max-width: 575.98px)">
+
+                            <!-- Imagen para pantallas medianas (md) -->
+                            <source srcset="../Imagenes/comite/comite(7)-M.webp" type="image/webp"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(7)-M.webp" type="image/avif"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(7)-M.webp" type="image/jpg"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+
+                            <!-- Imagen para pantallas grandes (lg) -->
+                            <source srcset="../Imagenes/comite/comite(7)-L.webp" type="image/webp"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(7)-L.webp" type="image/avif"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(7)-L.webp" type="image/jpg"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+
+                            <!-- Imagen para pantallas extra grandes (xl) -->
+                            <source srcset="../Imagenes/comite/comite(7)-XL.webp" type="image/webp"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(7)-XL.webp" type="image/avif"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(7)-XL.webp" type="image/jpg"
+                                media="(min-width: 992px)">
+
+                            <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                            <img src="../Imagenes/comite/comite(7)-L.jpg" alt="Alcampo" class="img-fluid">
+                        </picture>
+                        <div>
+                            <p>Mariano Serrano</p>
+                            <p>Dir. de Producto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-sm-12">
+                    <div>
+                        <picture>
+                            <!-- Imagen para pantallas extra pequeñas (xs) y pequeñas (sm) -->
+                            <source srcset="../Imagenes/comite/comite(8)-S.webp" type="image/webp"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(8)-S.avif" type="image/avif"
+                                media="(max-width: 575.98px)">
+                            <source srcset="../Imagenes/comite/comite(8)-S.jpg" type="image/jpg"
+                                media="(max-width: 575.98px)">
+
+                            <!-- Imagen para pantallas medianas (md) -->
+                            <source srcset="../Imagenes/comite/comite(8)-M.webp" type="image/webp"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(8)-M.webp" type="image/avif"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+                            <source srcset="../Imagenes/comite/comite(8)-M.webp" type="image/jpg"
+                                media="(min-width: 576px) and (max-width: 767.98px)">
+
+                            <!-- Imagen para pantallas grandes (lg) -->
+                            <source srcset="../Imagenes/comite/comite(8)-L.webp" type="image/webp"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(8)-L.webp" type="image/avif"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+                            <source srcset="../Imagenes/comite/comite(8)-L.webp" type="image/jpg"
+                                media="(min-width: 768px) and (max-width: 991.98px)">
+
+                            <!-- Imagen para pantallas extra grandes (xl) -->
+                            <source srcset="../Imagenes/comite/comite(8)-XL.webp" type="image/webp"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(8)-XL.webp" type="image/avif"
+                                media="(min-width: 992px)">
+                            <source srcset="../Imagenes/comite/comite(8)-XL.webp" type="image/jpg"
+                                media="(min-width: 992px)">
+
+                            <!-- Imagen por defecto para navegadores que no soportan la etiqueta <source> -->
+                            <img src="../Imagenes/comite/comite(8)-L.jpg" alt="Alcampo" class="img-fluid">
+                        </picture>
+                        <div>
+                            <p>Antonio Valverde</p>
+                            <p>Dir. de Prox. Digital</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer importado : https://getbootstrap.com/docs/5.1/examples/footers/-->
+    <div style="background-color: var(--main-color);">
+        <div class="container text-white">
+            <footer class="py-5">
+                <div class="row">
+                    <div class="col-5">
+                        <h5 class="text-dark">Enlaces:</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="./index.html" class="nav-link p-0">Inicio</a></li>
+                            <li class="nav-item mb-2"><a href="./productos.html" class="nav-link p-0">Productos</a></li>
+                            <li class="nav-item mb-2"><a href="./datos.html" class="nav-link p-0">Nuestros Datos</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="./aboutUs.html" class="nav-link p-0">Conócenos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 offset-1">
+                        <form>
+                            <h5 class="text-dark">Suscribete a nuestro boletín de noticias</h5>
+                            <p>Recibe novedades y promociones en tu correo.</p>
+                            <div>
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control"
+                                    placeholder="Correo Electrónico">
+                                <button class="boton" type="button" id="suscribete">Suscribete</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between py-4 my-4 border-top">
+                    <p id="copyright">&copy; 2023 Alcampo, Todos los derechos reservados.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
