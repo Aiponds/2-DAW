@@ -1,0 +1,34 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      <script language="javascript">
+         <!--
+            function crearNodo()
+            {
+               nodoImagen = document.getElementById("imagen");
+            }
+
+            function agregar()
+            {
+               nodoImagen.setAttribute("title","Trozo de hielo");
+            }
+
+            function eliminar()
+            {
+               nodoImagen.removeAttribute("title");
+            }
+         //-->
+      </script>
+   </head>
+   <body onLoad="crearNodo();">
+      <img id="imagen" src="./iceberg.jpg" onmouseover="mostrar">
+      <br>
+      <form>
+         <input type="button" value="Agregar 'title' a la imagen" onClick="agregar();">
+         <br>
+         <input type="button" value="Borrar 'title' de la imagen" onClick="eliminar();">
+      </form>
+   </body>
+</html>
