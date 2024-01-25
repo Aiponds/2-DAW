@@ -1,1 +1,34 @@
 @import 'variables';
+
+* {
+    font-family: $font-main;
+}
+
+body {
+    background-color: $secondary-color;
+}
+main {
+    padding-top: 6rem;
+}
+.navbar, .offcanvas {
+    height: 5rem;
+    background-color: $primary-color;
+    font-size: 1.3rem;
+    a {
+        font-family: $font-titles;
+    }
+    .navbar-brand {
+        font-size: 2rem;
+    }
+    .active {
+        font-size: 1.5rem;
+    }
+    img {
+        position: relative;
+        top: -15px;
+        height: 5rem;
+    }
+}
+.offcanvas {
+    height: 100%;
+}

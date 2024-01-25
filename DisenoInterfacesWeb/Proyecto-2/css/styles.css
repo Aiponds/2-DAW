@@ -18,4 +18,39 @@
   font-weight: 200;
   font-style: normal;
   font-display: swap;
+}
+* {
+  font-family: "Signika-Negative", sans-serif;
+}
+
+body {
+  background-color: #dff8ff;
+}
+
+main {
+  padding-top: 6rem;
+}
+
+.navbar, .offcanvas {
+  height: 5rem;
+  background-color: #13c8ff;
+  font-size: 1.3rem;
+}
+.navbar a, .offcanvas a {
+  font-family: "Cairo", sans-serif;
+}
+.navbar .navbar-brand, .offcanvas .navbar-brand {
+  font-size: 2rem;
+}
+.navbar .active, .offcanvas .active {
+  font-size: 1.5rem;
+}
+.navbar img, .offcanvas img {
+  position: relative;
+  top: -15px;
+  height: 5rem;
+}
+
+.offcanvas {
+  height: 100%;
 }/*# sourceMappingURL=styles.css.map */
