@@ -20,7 +20,7 @@
 <body>
     <h2 style="color: blue;">Formulario Simple</h2>
     <h3 style="font-style: italic;">Búsqueda de canciones</h3>
-    <form action="post">
+    <form action="./ejercicio1-resultados.php" method="POST">
         <table>
             <tr>
                 <td><label for="busqueda">Texto a buscar:</label></td>
@@ -29,11 +29,11 @@
             <tr>
                 <td><label for="">Buscar en:</label></td>
                 <td>
-                    <input type="radio" name="titulos" id="titulos">
+                    <input type="radio" name="buscar" id="titulos" value="titulos">
                     <label for="titulos">Titulos de canción</label>
-                    <input type="radio" name="album" id="album">
-                    <label for="album">Nombres de álbum</label>
-                    <input type="radio" name="ambos" id="ambos">
+                    <input type="radio" name="buscar" id="albumes" value="albumes">
+                    <label for="albumes">Nombres de álbum</label>
+                    <input type="radio" name="buscar" id="ambos" value="ambos">
                     <label for="ambos">Ambos campos</label>
                 </td>
             </tr>
@@ -44,7 +44,7 @@
                         <option value="acustica">Acústica</option>
                         <option value="bandasonora">Banda Sonora</option>
                         <option value="blues">Blues</option>
-                        <option value="electronica">Electrónica</option>
+                        <option value="electronica">Electrónica</option><
                         <option value="folk">Folk</option>
                         <option value="jazz">Jazz</option>
                         <option value="newage">New Age</option>
@@ -53,9 +53,7 @@
                     </select></td>
             </tr>
             <tr>
-                <td><a href="./ejercicio1-resultados.php">
-                        <input type="button" value="Buscar">
-                    </a></td>
+                <td><input type="submit" value="Buscar"></td>
                 <td></td>
             </tr>
         </table>
