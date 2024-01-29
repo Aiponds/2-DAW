@@ -20,37 +20,166 @@
   font-display: swap;
 }
 * {
+  margin: 0;
+  padding: 0;
   font-family: "Signika-Negative", sans-serif;
+  color: #fcfcfc;
 }
 
 body {
-  background-color: #dff8ff;
+  background: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.842)), url("../images/fondo.jpg");
 }
 
 main {
-  padding-top: 6rem;
+  padding-top: 9rem;
 }
 
-.navbar, .offcanvas {
-  height: 5rem;
-  background-color: #13c8ff;
+h1 {
+  font-family: "Cairo", sans-serif;
+  text-align: center;
+}
+
+.navbar,
+.offcanvas {
+  height: 6rem;
+  background-color: rgba(15, 15, 15, 0.7529411765);
   font-size: 1.3rem;
 }
-.navbar a, .offcanvas a {
+.navbar a,
+.navbar h5,
+.offcanvas a,
+.offcanvas h5 {
   font-family: "Cairo", sans-serif;
 }
-.navbar .navbar-brand, .offcanvas .navbar-brand {
-  font-size: 2rem;
-}
-.navbar .active, .offcanvas .active {
+.navbar .active,
+.offcanvas .active {
   font-size: 1.5rem;
 }
-.navbar img, .offcanvas img {
+.navbar img,
+.offcanvas img {
   position: relative;
-  top: -15px;
-  height: 5rem;
+  top: -20px;
+  height: 7rem;
+  left: calc(50vw - 75px);
+}
+
+.navbar-toggler {
+  position: relative;
+  top: -20px;
+}
+
+.btn-close {
+  filter: grayscale(1) invert(1);
 }
 
 .offcanvas {
+  background-color: #1d1d1d;
   height: 100%;
+}
+
+.border-left {
+  margin: 10px -13px;
+  border: 0px;
+}
+
+.imagen img {
+  width: 100%;
+}
+
+.contenido {
+  position: relative;
+  top: -3rem;
+  background-color: rgba(15, 15, 15, 0.7529411765);
+  text-align: center;
+  height: 3rem;
+}
+
+/*
+TODO remove para aplicar animaciones
+#texto {
+    animation: fadeIn 3s;
+}
+
+#carousel {
+    animation: fadeIn 5s;
+}
+#anime {
+    animation: fadeIn 7s;
+}
+#manga {
+    animation: fadeIn 9s;
+}
+*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.back-to-top {
+  position: fixed;
+  display: none;
+  background: #1d1d1d;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11;
+}
+
+.back-to-top i {
+  padding-top: 12px;
+  color: #fff;
+}
+
+/* 
+CSS carrousel
+*/
+.carousel-item,
+.carousel {
+  height: 75vh;
+}
+.carousel-item img,
+.carousel img {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-caption {
+  background-color: rgba(29, 29, 29, 0.337254902);
+}
+
+/*
+Footer
+*/
+.contenedorFooter {
+  background-color: #1d1d1d;
+}
+.contenedorFooter a,
+.contenedorFooter p {
+  color: #fcfcfc;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.3rem;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    height: 8rem;
+  }
+  .navbar img {
+    height: 9rem;
+  }
+}
+@media (min-width: 768px) {
+  .border-left {
+    border-left: 1px solid #fcfcfc;
+  }
 }/*# sourceMappingURL=styles.css.map */

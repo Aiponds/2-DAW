@@ -28,7 +28,6 @@ $font-titles: 'Cairo', sans-serif;
 $font-subtitles: 'Nunito', sans-serif;
 $font-main: 'Signika-Negative', sans-serif;
 
-$primary-color: #13c8ff;
-$secondary-color: lighten($primary-color, 40%); //#EBFAFF quiero esto
-$third-color: darken($primary-color, 10%);
-$link-color: lighten($primary-color, 5%);
+$primary-color: #1d1d1d;
+$secondary-color: lighten($primary-color, 15%);
+$font-color: #fcfcfc;
