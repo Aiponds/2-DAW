@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @font-face {
   font-family: "Cairo";
   src: url("../fonts/Cairo/Cairo-Regular.woff2") format("woff2"), url("../fonts/Cairo/Cairo-Regular.woff") format("woff");
@@ -5,6 +7,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Signika Negative";
   src: url("../fonts/Signika-Negative/Signika-Negative.woff2") format("woff2"), url("../fonts/Signika-Negative/Signika-Negative.woff") format("woff");
@@ -12,6 +15,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Nunito";
   src: url("../fonts/Nunito/Nunito-ExtraLight.woff2") format("woff2"), url("../fonts/Nunito/Nunito-ExtraLight.woff") format("woff");
@@ -19,6 +23,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -27,16 +32,47 @@
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.842)), url("../images/fondo.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.842)), to(rgba(0, 0, 0, 0.842))), url("../images/fondo-XL.webp");
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.842)), url("../images/fondo-XL.webp");
+  background: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.842)), url("../images/fondo-XL.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
-  padding-top: 9rem;
+  padding-top: 20vh;
 }
 
 h1 {
+  font-size: 3rem;
   font-family: "Cairo", sans-serif;
   text-align: center;
+}
+
+h3 {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+
+img {
+  border-radius: 3%;
+}
+
+a,
+.nav-link {
+  font-family: "Cairo", sans-serif;
+  text-decoration: none;
+  color: #fff;
+  -webkit-transition: color 0.6s;
+  -o-transition: color 0.6s;
+  transition: color 0.6s;
+  /* Agregamos una transición suave */
+}
+
+a:hover,
+.nav-link:hover {
+  color: aqua;
+  /* Cambia el color al pasar el ratón */
 }
 
 .navbar,
@@ -45,16 +81,20 @@ h1 {
   background-color: rgba(15, 15, 15, 0.7529411765);
   font-size: 1.3rem;
 }
+
 .navbar a,
 .navbar h5,
 .offcanvas a,
 .offcanvas h5 {
   font-family: "Cairo", sans-serif;
 }
+
 .navbar .active,
 .offcanvas .active {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: aqua !important;
 }
+
 .navbar img,
 .offcanvas img {
   position: relative;
@@ -69,6 +109,7 @@ h1 {
 }
 
 .btn-close {
+  -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
 }
 
@@ -84,45 +125,113 @@ h1 {
 
 .imagen img {
   width: 100%;
-  height: 100%;
+  height: 250px;
 }
 
 .contenido {
   position: relative;
   top: -6rem;
-  background-color: rgba(15, 15, 15, 0.7529411765);
+  background-color: rgba(15, 15, 15, 0.8549019608);
   text-align: center;
   height: 6rem;
 }
+
 .contenido p {
+  position: relative;
+  top: 10px;
   font-size: 3rem;
   font-family: "Cairo", sans-serif;
 }
 
-/*
-TODO remove para aplicar animaciones
+.subNav {
+  position: relative;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+.subNav h2 {
+  font-family: "Cairo", sans-serif;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.faq dt {
+  font-weight: bolder;
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+}
+
+.faq dd {
+  margin-left: 1.5rem;
+  font-family: "Signika-Negative", sans-serif;
+  color: #b6b6b6;
+  font-size: 1.5rem;
+}
+
+.about h3 {
+  text-align: left;
+  font-weight: bolder;
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+}
+
+.about p,
+.about li {
+  margin-left: 1.5rem;
+  font-family: "Signika-Negative", sans-serif;
+  color: #b6b6b6;
+  font-size: 1.5rem;
+}
+
+.about .fin {
+  text-align: center;
+}
+
 #texto {
-    animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  animation: fadeIn 3s;
+}
+
+#texto2 {
+  -webkit-animation: fadeIn 1.5s;
+  animation: fadeIn 1.5s;
 }
 
 #carousel {
-    animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  animation: fadeIn 5s;
 }
+
 #anime {
-    animation: fadeIn 7s;
+  -webkit-animation: fadeIn 7s;
+  animation: fadeIn 7s;
 }
+
 #manga {
-    animation: fadeIn 9s;
+  -webkit-animation: fadeIn 9s;
+  animation: fadeIn 9s;
 }
-*/
-@keyframes fadeIn {
+
+@-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .back-to-top {
   position: fixed;
   display: none;
@@ -136,6 +245,8 @@ TODO remove para aplicar animaciones
   border-radius: 50%;
   right: 15px;
   bottom: 15px;
+  -webkit-transition: background 0.5s;
+  -o-transition: background 0.5s;
   transition: background 0.5s;
   z-index: 11;
 }
@@ -153,6 +264,7 @@ CSS carrousel
 .carousel {
   height: 75vh;
 }
+
 .carousel-item img,
 .carousel img {
   height: 100%;
@@ -163,12 +275,13 @@ CSS carrousel
   font-size: 4rem;
   font-family: "Cairo", sans-serif;
 }
+
 .carousel-caption p {
   font-size: 2rem;
   font-family: "Nunito", sans-serif;
 }
 
-.carousel-caption {
+.fondoTransparente {
   background-color: rgba(29, 29, 29, 0.7254901961);
 }
 
@@ -178,6 +291,7 @@ Footer
 .contenedorFooter {
   background-color: #1d1d1d;
 }
+
 .contenedorFooter a,
 .contenedorFooter p {
   color: #fcfcfc;
@@ -185,32 +299,99 @@ Footer
   font-size: 1.3rem;
 }
 
+@media (max-width: 576px) {
+
+  .carousel,
+  .carousel-item {
+    height: 50vh;
+  }
+
+  .imagen img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+
+  .carousel,
+  .carousel-item {
+    height: 50vh;
+  }
+
+  .imagen img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 @media (min-width: 768px) {
+
+  .carousel,
+  .carousel-item {
+    height: 60vh;
+  }
+
+  .carousel-caption h5 {
+    font-size: 3rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.5rem;
+  }
+
   .border-left {
     border-left: 1px solid #fcfcfc;
   }
-}
-@media (min-width: 992px) {
-  .navbar {
-    height: 8rem;
-  }
-  .navbar img {
-    height: 9rem;
-  }
-  .carousel-caption h5 {
-    font-size: 2.5rem;
-    font-family: "Cairo", sans-serif;
-  }
-  .carousel-caption p {
-    font-size: 1.5rem;
-    font-family: "Nunito", sans-serif;
-  }
+
   .contenido {
     top: -4rem;
     height: 4rem;
   }
+
   .contenido p {
     font-size: 2rem;
-    font-family: "Cairo", sans-serif;
   }
-}/*# sourceMappingURL=styles.css.map */
+
+  .imagen img {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    height: 8rem;
+  }
+
+  .navbar img {
+    height: 9rem;
+  }
+
+  .carousel,
+  .carousel-item {
+    height: 70vh;
+  }
+
+  .carousel-caption h5 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.5rem;
+  }
+
+  .contenido {
+    top: -4rem;
+    height: 4rem;
+  }
+
+  .contenido p {
+    font-size: 2rem;
+  }
+
+  .imagen img {
+    width: 100%;
+    height: 400px;
+  }
+}

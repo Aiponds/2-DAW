@@ -9,16 +9,43 @@
 
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.842)),
-        url('../images/fondo.jpg');
+        url('../images/fondo-XL.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 main {
-    padding-top: 9rem;
+    padding-top: 20vh;
 }
 
 h1 {
+    font-size: 3rem;
     font-family: $font-titles;
     text-align: center;
+}
+
+h3 {
+    font-family: $font-subtitles;
+    text-align: center;
+}
+
+img {
+    border-radius: 3%;
+}
+
+a,
+.nav-link {
+    font-family: $font-titles;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.6s;
+    /* Agregamos una transición suave */
+}
+
+a:hover,
+.nav-link:hover {
+    color: aqua;
+    /* Cambia el color al pasar el ratón */
 }
 
 .navbar,
@@ -33,7 +60,8 @@ h1 {
     }
 
     .active {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        color: aqua !important;
     }
 
     img {
@@ -66,39 +94,94 @@ h1 {
 .imagen {
     img {
         width: 100%;
-        height: 100%;
+        height: 250px;
     }
 }
 
 .contenido {
     position: relative;
     top: -6rem;
-    background-color: #0f0f0fc0;
+    background-color: #0f0f0fda;
     text-align: center;
     height: 6rem;
 
     p {
+        position: relative;
+        top: 10px;
         font-size: 3rem;
         font-family: $font-titles;
     }
 }
 
-/*
-TODO remove para aplicar animaciones
+.subNav {
+    position: relative;
+    text-align: center;
+    margin-bottom: 10vh;
+
+    h2 {
+        font-family: $font-titles;
+        font-style: italic;
+        font-size: 3rem;
+    }
+}
+
+.faq {
+    dt {
+        font-weight: bolder;
+        font-family: $font-subtitles;
+        font-size: 2rem;
+    }
+
+    dd {
+        margin-left: 1.5rem;
+        font-family: $font-main;
+        color: #b6b6b6;
+        font-size: 1.5rem;
+    }
+}
+
+.about {
+    h3 {
+        text-align: left;
+        font-weight: bolder;
+        font-family: $font-subtitles;
+        font-size: 2rem;
+    }
+
+    p,
+    li {
+        margin-left: 1.5rem;
+        font-family: $font-main;
+        color: #b6b6b6;
+        font-size: 1.5rem;
+    }
+
+    .fin {
+        text-align: center;
+    }
+}
+
 #texto {
     animation: fadeIn 3s;
+}
+
+#texto2 {
+    animation: fadeIn 1.5s;
 }
 
 #carousel {
     animation: fadeIn 5s;
 }
+
 #anime {
     animation: fadeIn 7s;
 }
+
 #manga {
     animation: fadeIn 9s;
 }
-*/
+
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -160,7 +243,7 @@ CSS carrousel
     }
 }
 
-.carousel-caption {
+.fondoTransparente {
     background-color: #1d1d1db9;
 }
 
@@ -177,11 +260,75 @@ Footer
         font-size: 1.3rem;
     }
 }
+
+@media (max-width: 576px) {
+
+    .carousel,
+    .carousel-item {
+        height: 50vh;
+    }
+
+    .imagen {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+
+    .carousel,
+    .carousel-item {
+        height: 50vh;
+    }
+
+    .imagen {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
 @media (min-width: 768px) {
+
+    .carousel,
+    .carousel-item {
+        height: 60vh;
+    }
+
+    .carousel-caption {
+        h5 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+
     .border-left {
         border-left: 1px solid $font-color;
     }
+
+    .contenido {
+        top: -4rem;
+        height: 4rem;
+
+        p {
+            font-size: 2rem;
+        }
+    }
+
+    .imagen {
+        img {
+            width: 100%;
+            height: 250px;
+        }
+    }
 }
+
 @media (min-width: 992px) {
     .navbar {
         height: 8rem;
@@ -190,15 +337,19 @@ Footer
             height: 9rem;
         }
     }
+
+    .carousel,
+    .carousel-item {
+        height: 70vh;
+    }
+
     .carousel-caption {
         h5 {
             font-size: 2.5rem;
-            font-family: $font-titles;
         }
 
         p {
             font-size: 1.5rem;
-            font-family: $font-subtitles;
         }
     }
 
@@ -208,7 +359,13 @@ Footer
 
         p {
             font-size: 2rem;
-            font-family: $font-titles;
+        }
+    }
+
+    .imagen {
+        img {
+            width: 100%;
+            height: 400px;
         }
     }
 }
