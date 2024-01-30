@@ -84,14 +84,19 @@ h1 {
 
 .imagen img {
   width: 100%;
+  height: 100%;
 }
 
 .contenido {
   position: relative;
-  top: -3rem;
+  top: -6rem;
   background-color: rgba(15, 15, 15, 0.7529411765);
   text-align: center;
-  height: 3rem;
+  height: 6rem;
+}
+.contenido p {
+  font-size: 3rem;
+  font-family: "Cairo", sans-serif;
 }
 
 /*
@@ -121,7 +126,7 @@ TODO remove para aplicar animaciones
 .back-to-top {
   position: fixed;
   display: none;
-  background: #1d1d1d;
+  background: #434343;
   color: #fff;
   width: 44px;
   height: 44px;
@@ -135,8 +140,9 @@ TODO remove para aplicar animaciones
   z-index: 11;
 }
 
-.back-to-top i {
-  padding-top: 12px;
+.back-to-top svg {
+  position: relative;
+  top: 12px;
   color: #fff;
 }
 
@@ -153,8 +159,17 @@ CSS carrousel
   width: 100%;
 }
 
+.carousel-caption h5 {
+  font-size: 4rem;
+  font-family: "Cairo", sans-serif;
+}
+.carousel-caption p {
+  font-size: 2rem;
+  font-family: "Nunito", sans-serif;
+}
+
 .carousel-caption {
-  background-color: rgba(29, 29, 29, 0.337254902);
+  background-color: rgba(29, 29, 29, 0.7254901961);
 }
 
 /*
@@ -170,6 +185,11 @@ Footer
   font-size: 1.3rem;
 }
 
+@media (min-width: 768px) {
+  .border-left {
+    border-left: 1px solid #fcfcfc;
+  }
+}
 @media (min-width: 992px) {
   .navbar {
     height: 8rem;
@@ -177,9 +197,20 @@ Footer
   .navbar img {
     height: 9rem;
   }
-}
-@media (min-width: 768px) {
-  .border-left {
-    border-left: 1px solid #fcfcfc;
+  .carousel-caption h5 {
+    font-size: 2.5rem;
+    font-family: "Cairo", sans-serif;
+  }
+  .carousel-caption p {
+    font-size: 1.5rem;
+    font-family: "Nunito", sans-serif;
+  }
+  .contenido {
+    top: -4rem;
+    height: 4rem;
+  }
+  .contenido p {
+    font-size: 2rem;
+    font-family: "Cairo", sans-serif;
   }
 }/*# sourceMappingURL=styles.css.map */
