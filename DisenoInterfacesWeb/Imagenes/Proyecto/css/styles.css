@@ -354,13 +354,13 @@ span.visible {
 }
 
 .divAnimado-fade-in {
-    -webkit-animation: fadeIn 5s;
-    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 3s;
+    animation: fadeIn 3s;
 }
 
 #divAnimado-fade-in2 {
-    -webkit-animation: fadeIn 6s;
-    animation: fadeIn 6s;
+    -webkit-animation: fadeIn 4s;
+    animation: fadeIn 4s;
 }
 
 @-webkit-keyframes fadeIn {
@@ -395,18 +395,18 @@ span.visible {
 }
 
 #divMovil2 {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+}
+
+#divMovil3 {
     -webkit-animation-duration: 4s;
     animation-duration: 4s;
 }
 
-#divMovil3 {
+#divMovil4 {
     -webkit-animation-duration: 5s;
     animation-duration: 5s;
-}
-
-#divMovil4 {
-    -webkit-animation-duration: 6s;
-    animation-duration: 6s;
 }
 
 @-webkit-keyframes moverDiv {

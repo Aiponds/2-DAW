@@ -188,28 +188,23 @@ a:hover,
 }
 
 #texto {
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+
+#carousel {
   -webkit-animation: fadeIn 3s;
   animation: fadeIn 3s;
 }
 
-#texto2 {
-  -webkit-animation: fadeIn 1.5s;
-  animation: fadeIn 1.5s;
-}
-
-#carousel {
+#anime {
   -webkit-animation: fadeIn 5s;
   animation: fadeIn 5s;
 }
 
-#anime {
+#manga {
   -webkit-animation: fadeIn 7s;
   animation: fadeIn 7s;
-}
-
-#manga {
-  -webkit-animation: fadeIn 9s;
-  animation: fadeIn 9s;
 }
 
 @-webkit-keyframes fadeIn {
