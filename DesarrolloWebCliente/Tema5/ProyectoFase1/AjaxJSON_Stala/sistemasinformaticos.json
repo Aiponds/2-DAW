@@ -1,0 +1,104 @@
+{
+  "Sistemas Informaticos": [
+    {
+      "id": "RA1",
+      "textoRA": "Evalúa sistemas informáticos identificando sus componentes y características.",
+      "criterios": {
+        "a": "Se han reconocido los componentes físicos de un sistema informático y sus mecanismos de interconexión",
+        "b": "Se ha verificado el proceso de puesta en marcha de un equipo",
+        "c": "Se han clasificado, instalado y configurado diferentes tipos de dispositivos periféricos.",
+        "d": "Se han identificado los tipos de redes y sistemas de comunicación.",
+        "e": "Se han identificado los componentes de una red informática.",
+        "f": "Se han interpretado mapas físicos y lógicos de una red informática.",
+        "g": "Se han operado las máquinas respetando las normas de seguridad y recomendaciones de ergonomía."
+      },
+      "peso": "15%"
+    },
+    {
+      "id": "RA2",
+      "textoRA": "Instala sistemas operativos planificando el proceso e interpretando documentación técnica.",
+      "criterios": {
+        "a": "Se han identificado los elementos funcionales de un sistema informático.",
+        "b": "Se han analizado las características, funciones y arquitectura de un sistema operativo.",
+        "c": "Se han comparado sistemas operativos en base a sus requisitos, características, campos de aplicación y licencias de uso.",
+        "d": "Se han instalado diferentes sistemas operativos.",
+        "e": "Se han aplicado técnicas de actualización y recuperación del sistema.",
+        "f": "Se han utilizado máquinas virtuales para instalar y probar sistemas operativos.",
+        "g": "Se han documentado los procesos realizados."
+      },
+      "peso": "20%"
+    },
+    {
+      "id": "RA3",
+      "textoRA": "Gestiona la información del sistema identificando las estructuras de almacenamiento y aplicando medidas para asegurar la integridad de los datos.",
+      "criterios": {
+        "a": "Se han comparado sistemas de archivos.",
+        "b": "Se ha identificado la estructura y función de los directorios del sistema operativo.",
+        "c": "Se han utilizado herramientas en entorno gráfico y comandos para localizar información en el sistema de archivos.",
+        "d": "Se han creado diferentes tipos de particiones y unidades lógicas.",
+        "e": "Se han realizado copias de seguridad.",
+        "f": "Se han instalado y evaluado utilidades relacionadas con la gestión de información.",
+        "g": "Se han automatizado tareas."
+      },
+      "peso": "20%"
+    },
+    {
+      "id": "RA4",
+      "textoRA": "Gestiona sistemas operativos utilizando comandos y herramientas gráficas y evaluando las necesidades del sistema.",
+      "criterios": {
+        "a": "Se han configurado cuentas de usuario locales y grupos.",
+        "b": "Se ha asegurado el acceso al sistema mediante el uso de directivas de cuenta y directivas de contraseñas.",
+        "c": "Se ha protegido el acceso a la información mediante el uso de permisos locales.",
+        "d": "Se han identificado, arrancado y detenido servicios y procesos.",
+        "e": "Se han utilizado comandos para realizar las tareas básicas de configuración del sistema.",
+        "f": "Se ha monitorizado el sistema.",
+        "g": "Se han instalado y evaluado utilidades para el mantenimiento y optimización del sistema.",
+        "h": "Se han evaluado las necesidades del sistema informático en relación con el desarrollo de aplicaciones."
+      },
+      "peso": "18%"
+    },
+    {
+      "id": "RA5",
+      "textoRA": "Interconecta sistemas en red configurando dispositivos y protocolos.",
+      "criterios": {
+        "a": "Se ha configurado el protocolo TCP/IP.",
+        "b": "Se han utilizado dispositivos de interconexión de redes.",
+        "c": "Se ha configurado el acceso a redes de área extensa.",
+        "d": "Se han gestionado puertos de comunicaciones.",
+        "e": "Se ha verificado el funcionamiento de la red mediante el uso de comandos y herramientas básicas.",
+        "f": "Se han aplicado protocolos seguros de comunicaciones.",
+        "g": "Se han configurado redes de área local cableadas.",
+        "h": "Se han configurado redes de área local inalámbricas."
+      },
+      "peso": "15%"
+    },
+    {
+      "id": "RA6",
+      "textoRA": "Opera sistemas en red gestionando sus recursos e identificando las restricciones de seguridad existentes.",
+      "criterios": {
+        "a": "Se ha configurado el acceso a recursos locales y recursos de red.",
+        "b": "Se han identificado los derechos de usuario y directivas de seguridad.",
+        "c": "Se han explotado servidores de ficheros, servidores de impresión y servidores de aplicaciones.",
+        "d": "Se ha accedido a los servidores utilizando técnicas de conexión remota.",
+        "e": "Se ha evaluado la necesidad de proteger los recursos y el sistema.",
+        "f": "Se han instalado y evaluado utilidades de seguridad básica."
+      },
+      "peso": "5%"
+    },
+    {
+      "id": "RA7",
+      "textoRA": "Elabora documentación valorando y utilizando aplicaciones informáticas de propósito general.",
+      "criterios": {
+        "a": "Se ha clasificado software en función de su licencia y propósito.",
+        "b": "Se han analizado las necesidades específicas de software asociadas al uso de sistemas informáticos en diferentes entornos productivos.",
+        "c": "Se han realizado tareas de documentación mediante el uso de herramientas ofimáticas.",
+        "d": "Se han utilizado sistemas de correo y mensajería electrónica.",
+        "e": "Se han utilizado los servicios de transferencia de ficheros.",
+        "f": "Se han utilizado métodos de búsqueda de documentación técnica mediante el uso de servicios de Internet.",
+        "g": "Se han utilizado aplicaciones de propósito general."
+      },
+      "peso": "5%"
+    }
+  ]
+}
+

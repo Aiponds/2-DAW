@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax JSON</title>
+</head>
+
+<body>
+    <label for="raSelect">Selecciona un RA:</label>
+    <select id="raSelect"></select>
+    <button onclick="mostrarDatosRA()">Mostrar Datos</button>
+    <div id="info"></div>
+
+    <script type="text/javascript">
+        var resultado = document.getElementById("info");
+        var selectRA = document.getElementById("raSelect");
+
+        function cargarRA() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    var datos = JSON.parse(xmlhttp.responseText);
+
+                    for (var i in datos) {
+                        for (var j = 0; j < datos[i].length; j++) {
+                            var option = document.createElement("option");
+                            option.value = datos[i][j].id;
+                            option.text = datos[i][j].textoRA;
+                            selectRA.add(option);
+                        }
+                    }
+                }
+            }
+
+            xmlhttp.open("GET", "sistemasinformaticos.json", true);
+            xmlhttp.send();
+        }
+
+        function mostrarDatosRA() {
+            var selectedRA = selectRA.value;
+            resultado.innerHTML = ""; // Limpiar el contenido previo
+
+            if (selectedRA !== "") {
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        var datos = JSON.parse(xmlhttp.responseText);
+
+                        for (var i in datos) {
+                            for (var j = 0; j < datos[i].length; j++) {
+                                if (datos[i][j].id === selectedRA) {
+                                    resultado.innerHTML += "id: " + datos[i][j].id + "<br/>";
+                                    resultado.innerHTML += "textoRA: " + datos[i][j].textoRA + "<br/>";
+                                    resultado.innerHTML += "criterios: " + "<br/>";
+
+                                    var criterios = datos[i][j].criterios;
+                                    for (var k in criterios) {
+                                        resultado.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;" + k + ": " + criterios[k] + "<br/>";
+                                    }
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                xmlhttp.open("GET", "sistemasinformaticos.json", true);
+                xmlhttp.send();
+            }
+        }
+
+        // Cargar RA al cargar la página
+        cargarRA();
+    </script>
+</body>
+
+</html>
