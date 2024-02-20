@@ -10,11 +10,33 @@
     <label for="raSelect">Selecciona un RA:</label>
     <select id="raSelect"></select>
     <button onclick="mostrarDatosRA()">Mostrar Datos</button>
-    <div id="info"></div>
+    <br>
+    <label for="criterioSelect">Selecciona un criterio:</label>
+    <select id="criterioSelect"></select>
+    <button onclick="agregarCriterio()">Añadir Criterio</button>
+    <br><br>
+    <div id="criteriosSeleccionados"></div>
+    <br>
+    <label for="notaPorcentaje">Porcentaje de Nota (%):</label>
+    <input type="number" id="notaPorcentaje" min="0" max="100">
+    <br><br>
+    <label for="texto">Texto:</label>
+    <input type="text" id="texto">
+    <br><br>
+    <label for="tipoActividad">Tipo de Actividad:</label>
+    <select id="tipoActividad">
+        <option value="Test">Test</option>
+        <option value="Práctico">Práctico</option>
+    </select>
+    <br><br>
 
     <script type="text/javascript">
         var resultado = document.getElementById("info");
         var selectRA = document.getElementById("raSelect");
+        var selectCriterio = document.getElementById("criterioSelect");
+        var divCriteriosSeleccionados = document.getElementById("criteriosSeleccionados");
+        var criteriosAgregados = {}; // Objeto para registrar los criterios agregados
+        var criteriosJSON = {}; // Objeto para almacenar los criterios del JSON
 
         function cargarRA() {
             var xmlhttp;
@@ -32,8 +54,11 @@
                         for (var j = 0; j < datos[i].length; j++) {
                             var option = document.createElement("option");
                             option.value = datos[i][j].id;
-                            option.text = datos[i][j].textoRA;
+                            option.text = datos[i][j].id + ' - ' + datos[i][j].textoRA;
                             selectRA.add(option);
+
+                            // Almacena los criterios del JSON para su uso posterior
+                            criteriosJSON[datos[i][j].id] = datos[i][j].criterios;
                         }
                     }
                 }
@@ -45,40 +70,40 @@
 
         function mostrarDatosRA() {
             var selectedRA = selectRA.value;
-            resultado.innerHTML = ""; // Limpiar el contenido previo
+            selectCriterio.innerHTML = ""; // Limpiar el desplegable de criterios previo
+            criteriosAgregados = {}; // Reiniciar el registro de criterios agregados
 
             if (selectedRA !== "") {
-                var xmlhttp;
-                if (window.XMLHttpRequest) {
-                    xmlhttp = new XMLHttpRequest();
-                } else {
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
+                var criterios = criteriosJSON[selectedRA];
 
-                xmlhttp.onreadystatechange = function () {
-                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                        var datos = JSON.parse(xmlhttp.responseText);
-
-                        for (var i in datos) {
-                            for (var j = 0; j < datos[i].length; j++) {
-                                if (datos[i][j].id === selectedRA) {
-                                    resultado.innerHTML += "id: " + datos[i][j].id + "<br/>";
-                                    resultado.innerHTML += "textoRA: " + datos[i][j].textoRA + "<br/>";
-                                    resultado.innerHTML += "criterios: " + "<br/>";
-
-                                    var criterios = datos[i][j].criterios;
-                                    for (var k in criterios) {
-                                        resultado.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;" + k + ": " + criterios[k] + "<br/>";
-                                    }
-                                    return;
-                                }
-                            }
-                        }
+                for (var k in criterios) {
+                    var optionCriterio = document.createElement("option");
+                    var criterioKey = selectedRA + ' - ' + k;
+                    if (!criteriosAgregados[criterioKey]) {
+                        optionCriterio.value = k;
+                        optionCriterio.text = criterioKey + ' - ' + criterios[k]; // incluir el código del RA antes del criterio
+                        selectCriterio.add(optionCriterio);
+                        criteriosAgregados[criterioKey] = true;
                     }
                 }
+            }
+        }
 
-                xmlhttp.open("GET", "sistemasinformaticos.json", true);
-                xmlhttp.send();
+        function agregarCriterio() {
+            var selectedCriterio = selectCriterio.value;
+            var selectedCriterioText = selectCriterio.options[selectCriterio.selectedIndex].text;
+            var criterioKey = selectedCriterioText.substring(0, selectedCriterioText.indexOf(' - ')); // Extraer el código del RA del texto del criterio
+            var notaPorcentaje = document.getElementById("notaPorcentaje").value + "%";
+            var texto = document.getElementById("texto").value;
+            var tipoActividad = document.getElementById("tipoActividad").value;
+            var selectedRA = selectRA.value;
+
+            if (selectedCriterio !== "" && !criteriosAgregados[selectedCriterioText]) {
+                var div = document.createElement("div");
+                var concatenacion = criterioKey + ' - ' + tipoActividad.charAt(0).toUpperCase() + tipoActividad.slice(1) + ' - ' + texto + ' - ' + notaPorcentaje + ' - ' + selectedCriterioText.split(' - ')[1];
+                div.textContent = concatenacion; // Concatenar los valores y mostrarlos en el div de criterios
+                divCriteriosSeleccionados.appendChild(div);
+                criteriosAgregados[selectedCriterioText] = true; // Registrar el criterio agregado
             }
         }
 
