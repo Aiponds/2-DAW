@@ -20,14 +20,15 @@
         <!--Navbar con hamburger menu offcanvas-->
         <nav class="navbar  navbar-dark  fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">
+                <a href="#main" class="skip-content">Saltar al contenido principal</a>
+                <a class="navbar-brand" href="./index.html" tabindex="-1">
                     <picture>
                         <source srcset="sourceset" type="png" />
-                        <img src="../images/logo3.webp" class="img-fluid" alt="Logo AniWorld" />
+                        <img src="../images/logo3.webp" class="img-fluid" alt="Logo AniWorld"/>
                     </picture>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Menu"> 
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
@@ -42,7 +43,8 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./index.html" aria-label="Inicio">Inicio</a>
+                                <a class="nav-link active" aria-current="page" href="./index.html"
+                                    aria-label="Inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../html/error404.html" aria-label="Reseñas">Reseñas</a>
@@ -54,7 +56,8 @@
                                 <a class="nav-link" href="./faq.html" aria-label="FAQs">FAQs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./about-us.html" aria-label="Sobre nosotros">Sobre nosotros</a>
+                                <a class="nav-link" href="./about-us.html" aria-label="Sobre nosotros">Sobre
+                                    nosotros</a>
                             </li>
                         </ul>
                     </div>
@@ -63,7 +66,7 @@
         </nav>
 
     </header>
-    <main>
+    <main id="main">
         <article>
             <section>
                 <div class="container-fluid ">
@@ -282,7 +285,7 @@
                                             <img src="../images/sololeveling-L.jpg" alt="sololeveling"
                                                 sizes="(max-width: 575.98px) 100vw, (min-width: 576px) and (max-width: 767.98px) 50vw, (min-width: 768px) and (max-width: 991.98px) 33.3vw, (min-width: 992px) 25vw">
                                         </picture>
-                                        
+
                                     </div>
                                     <div class="contenido">
                                         <p><a href="./error404.html">Solo Leveling</a></p>
@@ -663,8 +666,8 @@
         </article>
         <br><br><br>
         <!-- Boton para ir al inicio. -->
-        <a href="#" class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                fill="currentColor" class="bi bi-arrow-90deg-up" viewBox="0 0 16 16">
+        <a href="#main" class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-arrow-90deg-up" viewBox="0 0 16 16" aria-label="Volver al inicio">
                 <path fill-rule="evenodd"
                     d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708z" />
             </svg></a>

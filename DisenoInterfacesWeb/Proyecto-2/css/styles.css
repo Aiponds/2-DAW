@@ -100,7 +100,7 @@ a:hover,
   position: relative;
   top: -20px;
   height: 7rem;
-  left: calc(50vw - 75px);
+  left: calc(50vw - 70px);
 }
 
 .navbar-toggler {
@@ -187,6 +187,22 @@ a:hover,
   text-align: center;
 }
 
+.skip-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: black;
+  color: white;
+  opacity: 0;
+}
+
+.skip-content:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
 #texto {
   -webkit-animation: fadeIn 2s;
   animation: fadeIn 2s;
@@ -205,6 +221,11 @@ a:hover,
 #manga {
   -webkit-animation: fadeIn 7s;
   animation: fadeIn 7s;
+}
+
+#faq-final {
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 @-webkit-keyframes fadeIn {
