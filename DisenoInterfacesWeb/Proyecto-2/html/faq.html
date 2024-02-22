@@ -16,51 +16,41 @@
 </head>
 
 <body>
+    <!-- Header adaptativo -->
     <header>
-        <!--Navbar con hamburger menu offcanvas-->
-        <nav class="navbar  navbar-dark  fixed-top">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
                 <a href="#main" class="skip-content">Saltar al contenido principal</a>
-                <a class="navbar-brand" href="./index.html">
+                <a class="navbar-brand" href="./index.html" tabindex="-1">
                     <picture>
                         <source srcset="sourceset" type="png" />
-                        <img src="../images/logo3.webp" class="img-fluid" alt="Logo AniWorld" />
+                        <img src="../images/logo3.webp" class="img-fluid" alt="Logo AniWorld"/>
                     </picture>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Menu">
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                            Menú
-                        </h5>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link" href="./index.html" aria-label="Inicio">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../html/error404.html" aria-label="Reseñas">Reseñas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./error404.html" aria-label="Biografías">Biografías</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./faq.html"
-                                    aria-label="FAQs">FAQs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./about-us.html" aria-label="Sobre nosotros">Sobre
-                                    nosotros</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" aria-current="page">Inicio
+                                <span class="visually-hidden">(actual)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reseñas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Biografías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre nosotros</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -103,7 +93,8 @@
                         <dd>Puedes ponerte en contacto con nosotros a través de nuestras redes sociales o encontrar
                             información de contacto en la sección "Sobre nosotros."</dd>
                     </dl>
-                    <p id="faq-final">¡Bienvenido a ANIWORLD, tu destino para explorar el fascinante mundo del Animanga!</p>
+                    <p id="faq-final">¡Bienvenido a ANIWORLD, tu destino para explorar el fascinante mundo del Animanga!
+                    </p>
                 </div>
             </div>
         </div>
