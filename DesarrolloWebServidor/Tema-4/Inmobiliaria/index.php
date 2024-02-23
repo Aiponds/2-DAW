@@ -83,7 +83,40 @@
     </style>
 </head>
 <body>
-        
-</body>
 
+<h2>Consulta de Noticias</h2>
+
+<table>
+    <tr>
+        <th>Título</th>
+        <th>Texto</th>
+        <th>Categoría</th>
+        <th>Fecha</th>
+        <th>Imagen</th>
+    </tr>
+    <?php
+        $llamadaBD=new mysqli("localhost","root","1507","inmobiliaria");
+        // Verificar si hay errores en la conexión
+        if ($llamadaBD->connect_errno==null) {
+            echo "<h1> Conexión correcta </h1>";     
+            $consulta=mysqli_query($llamadaBD,"SELECT * FROM noticias ORDER BY fecha DESC");
+            echo "<table>";
+            echo"<th>título</th>";
+            echo"<th>texto</th>";
+            echo"<th>categoria</th>";
+            echo"<th>fecha</th>";
+            while ($registro = mysqli_fetch_array($consulta)) {
+                echo"<tr>";
+                echo "<td>".$registro['titulo']."</td>"."<td>".$registro['texto']."</td>"."<td>".$registro['categoria']."</td>"."<td>".$registro['fecha']."</td>" ;
+                echo "</tr>";
+            }
+            echo "</table>";
+            mysqli_close($llamadaBD);
+        }else {
+            echo "<h1>Conexión fallida </h1>";
+        }
+
+    ?>
+</table>
+</body>
 </html>
