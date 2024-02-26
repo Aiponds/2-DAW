@@ -1,115 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Ajax JSON</title>
+    <title>AJAX JSON Stala</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <label for="raSelect">Selecciona un RA:</label>
-    <select id="raSelect"></select>
-    <button onclick="mostrarDatosRA()">Mostrar Datos</button>
-    <br>
-    <label for="criterioSelect">Selecciona un criterio:</label>
-    <select id="criterioSelect"></select>
-    <button onclick="agregarCriterio()">Añadir Criterio</button>
-    <br><br>
-    <div id="criteriosSeleccionados"></div>
-    <br>
-    <label for="notaPorcentaje">Porcentaje de Nota (%):</label>
-    <input type="number" id="notaPorcentaje" min="0" max="100">
-    <br><br>
-    <label for="texto">Texto:</label>
-    <input type="text" id="texto">
-    <br><br>
-    <label for="tipoActividad">Tipo de Actividad:</label>
-    <select id="tipoActividad">
-        <option value="Test">Test</option>
-        <option value="Práctico">Práctico</option>
-    </select>
-    <br><br>
+    <header>
+        <img src="https://blogsaverroes.juntadeandalucia.es/eiadelfa/files/2020/12/LOGO-JUNTA-ANDALUCIA-2.png" alt="">
+        <h1>PROYECTO DWC 2023-2024</h1>
+        <img src="https://www.iesmurgi.org/web3/wp-content/uploads/2019/03/SOLO-LOGO.png" alt="">
+    </header>
+    <main>
+        <div class="container contenedor">
+            <div class="row" id="login">
+                <div class="col-12">
+                    <h2>Login de usuario</h2>
+                    <form id="loginForm">
+                        <table>
+                            <tr>
+                                <td><label for="username">Usuario:</label></td>
+                                <td><input type="text" id="username" name="username" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="password">Contraseña:</label></td>
+                                <td><input type="password" id="password" name="password" required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><button type="button" onclick="iniciarSesion()">Iniciar sesión</button></td>
+                            </tr>
+                            <tr>
+                                <td class="profesor"><label for="profesor">Nombre Profesor:</label></td>
+                                <td class="profesor"><input type="text" name="profesor" id="profesor"></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <br>
+                </div>
+            </div>
+            <div class="row" id="formulario">
+                <div class="col-lg-6 col-sm-12">
+                    <h2>Sistemas Informáticos</h2>
+                    <p>PROFESOR: <span id="info"></span></p>
+                    <table>
+                        <tr>
+                            <td><label for="raSelect">Selecciona un RA:</label></td>
+                            <td> <select id="raSelect"></select></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button onclick="mostrarDatosRA()">Mostrar Criterios</button></td>
+                        </tr>
+                        <tr>
+                            <td><label for="criterioSelect">Selecciona un criterio:</label></td>
+                            <td><select id="criterioSelect"></select></td>
+                        </tr>
+                        <tr>
+                            <td><label for="notaPorcentaje">Porcentaje de Nota (%):</label></td>
+                            <td><input type="number" id="notaPorcentaje" min="0" max="100"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="texto">Texto:</label></td>
+                            <td><input type="text" id="texto"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="tipoActividad">Tipo de Actividad:</label></td>
+                            <td><select id="tipoActividad">
+                                    <option value="Test">Test</option>
+                                    <option value="PruebaPractica">Prueba Práctica</option>
+                                    <option value="PruebaEscrita">Prueba Escrita</option>
+                                    <option value="PruebaTeoricoPractica">Prueba Teorico Práctica</option>
+                                    <option value="Trabajo">Trabajo</option>
+                                    <option value="Proyecto">Proyecto</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button onclick="agregarCriterio()">Añadir Criterio</button></td>
+                        </tr>
+                    </table>
+                    <br>
+                </div>
+                <div class="col-lg-6 col-sm-12" id="listaCriterios">
+                    <h2>Lista Criterios</h2>
+                    <div id="criteriosSeleccionados"></div>
+                </div>
+            </div>
+        </div>
 
-    <script type="text/javascript">
-        var resultado = document.getElementById("info");
-        var selectRA = document.getElementById("raSelect");
-        var selectCriterio = document.getElementById("criterioSelect");
-        var divCriteriosSeleccionados = document.getElementById("criteriosSeleccionados");
-        var criteriosAgregados = {}; // Objeto para registrar los criterios agregados
-        var criteriosJSON = {}; // Objeto para almacenar los criterios del JSON
+    </main>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
 
-        function cargarRA() {
-            var xmlhttp;
-            if (window.XMLHttpRequest) {
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                    var datos = JSON.parse(xmlhttp.responseText);
-
-                    for (var i in datos) {
-                        for (var j = 0; j < datos[i].length; j++) {
-                            var option = document.createElement("option");
-                            option.value = datos[i][j].id;
-                            option.text = datos[i][j].id + ' - ' + datos[i][j].textoRA;
-                            selectRA.add(option);
-
-                            // Almacena los criterios del JSON para su uso posterior
-                            criteriosJSON[datos[i][j].id] = datos[i][j].criterios;
-                        }
-                    }
-                }
-            }
-
-            xmlhttp.open("GET", "sistemasinformaticos.json", true);
-            xmlhttp.send();
-        }
-
-        function mostrarDatosRA() {
-            var selectedRA = selectRA.value;
-            selectCriterio.innerHTML = ""; // Limpiar el desplegable de criterios previo
-            criteriosAgregados = {}; // Reiniciar el registro de criterios agregados
-
-            if (selectedRA !== "") {
-                var criterios = criteriosJSON[selectedRA];
-
-                for (var k in criterios) {
-                    var optionCriterio = document.createElement("option");
-                    var criterioKey = selectedRA + ' - ' + k;
-                    if (!criteriosAgregados[criterioKey]) {
-                        optionCriterio.value = k;
-                        optionCriterio.text = criterioKey + ' - ' + criterios[k]; // incluir el código del RA antes del criterio
-                        selectCriterio.add(optionCriterio);
-                        criteriosAgregados[criterioKey] = true;
-                    }
-                }
-            }
-        }
-
-        function agregarCriterio() {
-            var selectedCriterio = selectCriterio.value;
-            var selectedCriterioText = selectCriterio.options[selectCriterio.selectedIndex].text;
-            var criterioKey = selectedCriterioText.substring(0, selectedCriterioText.indexOf(' - ')); // Extraer el código del RA del texto del criterio
-            var notaPorcentaje = document.getElementById("notaPorcentaje").value + "%";
-            var texto = document.getElementById("texto").value;
-            var tipoActividad = document.getElementById("tipoActividad").value;
-            var selectedRA = selectRA.value;
-
-            if (selectedCriterio !== "" && !criteriosAgregados[selectedCriterioText]) {
-                var div = document.createElement("div");
-                var concatenacion = criterioKey + ' - ' + tipoActividad.charAt(0).toUpperCase() + tipoActividad.slice(1) + ' - ' + texto + ' - ' + notaPorcentaje + ' - ' + selectedCriterioText.split(' - ')[1];
-                div.textContent = concatenacion; // Concatenar los valores y mostrarlos en el div de criterios
-                divCriteriosSeleccionados.appendChild(div);
-                criteriosAgregados[selectedCriterioText] = true; // Registrar el criterio agregado
-            }
-        }
-
-        // Cargar RA al cargar la página
-        cargarRA();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- Mi javascript -->
+    <script src="./script.js"></script>
 </body>
 
 </html>

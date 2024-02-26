@@ -1,0 +1,39 @@
+h1, h2, p {
+    font-weight: bold;
+    color: green;
+}
+span {
+    color: rgb(86, 207, 86);
+}
+select {
+    width: 400px;
+}
+.contenedor {
+    border: 2px solid green;
+    padding: 20px;
+}
+button {
+    border: 2px solid green;
+    background-color: rgb(183, 245, 183);
+}
+img {
+    width: 150px;
+}
+header {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+header h1 {
+    position: relative;
+    top: 30px;
+    padding: 20px;
+}
+td {
+    padding: 3px;
+}
+.profesor {
+    display: none;
+}
