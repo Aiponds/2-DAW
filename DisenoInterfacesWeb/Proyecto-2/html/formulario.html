@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>ANIWORLD - Datos</title>
+    <title>ANIWORLD - Formulario</title>
     <meta charset="utf-8" />
     <meta name="description" content="Web de reseñas Anime y Manga">
     <meta name="keywords" content="Anime, Manga, Reseñas">
@@ -21,7 +21,7 @@
         <nav class="navbar  navbar-dark  fixed-top">
             <div class="container-fluid">
                 <a href="#main" class="skip-content">Saltar al contenido principal</a>
-                <a class="navbar-brand" href="./index.html">
+                <a class="navbar-brand" href="./index.html" tabindex="-1">
                     <picture>
                         <source srcset="sourceset" type="png" />
                         <img src="../images/logo3.webp" class="img-fluid" alt="Logo AniWorld" />
@@ -55,10 +55,12 @@
                                 <a class="nav-link" href="./faq.html" aria-label="FAQs">FAQs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./about-us.html" aria-label="Sobre nosotros">Sobre nosotros</a>
+                                <a class="nav-link" href="./about-us.html" aria-label="Sobre nosotros">Sobre
+                                    nosotros</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./formulario.html" aria-label="Formulario">Formulario</a>
+                                <a class="nav-link active" href="./formulario.html" aria-current="page"
+                                    aria-label="Formulario">Formulario</a>
                             </li>
                         </ul>
                     </div>
@@ -68,53 +70,116 @@
 
     </header>
     <main id="main">
-        <div class="container fondoTransparente">
+        <div class="container">
             <div class="row">
-                <div class="col-12 about">
-                    <h1 class="border-bottom">Sobre Nosotros - ANIWORLD</h1>
-                    <p>
-                        ¡Bienvenido a ANIWORLD, el rincón digital donde la pasión por el Animanga cobra vida! En nuestra
-                        página "Sobre Nosotros," queremos compartir contigo la historia detrás de ANIWORLD y presentarte
-                        al equipo apasionado que trabaja incansablemente para brindarte la mejor experiencia en el mundo
-                        del anime y manga.</p>
-                    <h3>Nuestra Historia:</h3>
-                    <p>ANIWORLD nació de la visión compartida de un grupo de entusiastas del Animanga que querían crear
-                        un espacio vibrante y acogedor para todos los amantes de esta fascinante forma de arte. Desde
-                        nuestros primeros días hasta ahora, hemos crecido y evolucionado, comprometidos con la misión de
-                        compartir la magia de los animes y mangas con el mundo.</p>
-                    <h3>Nuestro Compromiso:</h3>
-                    <p>En ANIWORLD, estamos comprometidos con la calidad, la diversidad y la autenticidad. Nos
-                        esforzamos por ofrecer contenido relevante, reseñas honestas y recomendaciones apasionadas.
-                        Valoramos la conexión con nuestra comunidad y nos esforzamos por crear un espacio inclusivo
-                        donde todos puedan explorar, aprender y compartir su amor por el Animanga.</p>
-                    <h3>El Equipo ANIWORLD:</h3>
-                    <p>Detrás de cada reseña, recomendación y artículo, hay un equipo dedicado de entusiastas del
-                        Animanga. Desde redactores y editores hasta diseñadores y desarrolladores, cada miembro del
-                        equipo contribuye con su pasión única, creando juntos la experiencia ANIWORLD.</p>
-                    <ul>
-                        <li>Victor Stala: Líder apasionado que inspiró la creación de ANIWORLD.</li>
-                        <li>Victor Stala: Experto en anime y manga, encargado de ofrecer reseñas y análisis.</li>
-                        <li>Victor Stala: Creador de la estética visual de ANIWORLD, asegurando una experiencia
-                            atractiva</li>
-                        <li>Victor Stala: Responsable de la funcionalidad y la experiencia del usuario en nuestro sitio
-                            web.</li>
-                    </ul>
-                    <h3>Conéctate con Nosotros:</h3>
-                    <p>Queremos escucharte y compartir esta pasión contigo. Síguenos en nuestras redes sociales,
-                        interactúa con nuestro equipo y únete a la conversación. ¡Tu participación es lo que hace que
-                        ANIWORLD cobre vida!
-                        <br><br>
-                        ANIWORLD es más que un sitio web; es una comunidad en constante crecimiento de amantes del
-                        Animanga. ¡Gracias por ser parte de nuestra historia y por permitirnos ser tu guía en este
-                        increíble viaje animado!
-                    </p>
-                    <h3 class="fin">¡Descubre, disfruta y comparte la magia del Animanga en ANIWORLD!</h3>
-                    <p class="fin">Atentamente,<br>El Equipo ANIWORLD</p>
+                <div class="col-12">
+                    <h1>Formulario de registro</h1>
+                    <form class="d-flex" autocomplete="on" method="post" target="_self">
+                        <div class="col-12 cajaFormulario">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre<span class="requerido">*</span>:</label>
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Juan"
+                                    aria-describedby="Escribe tu nombre" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="apellidos" class="form-label">Apellidos<span
+                                        class="requerido">*</span>:</label>
+                                <input type="text" class="form-control" name="apellidos" id="apellidos"
+                                    aria-describedby="Escribe tus apellidos" placeholder="Sánchez Martín" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="contrasena" class="form-label">Contraseña<span
+                                        class="requerido">*</span>:</label>
+                                <input type="password" class="form-control" name="contrasena" id="contrasena"
+                                    required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email<span class="requerido">*</span>:</label>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    aria-describedby="Escribe tu correo electrónico" placeholder="tuemail@gmail.com"
+                                    required />
+                            </div>
+                            <label for="edad">Edad:</label><br>
+                            <div class="mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="edad" id="dieciocho"
+                                        value="{3:option1}" />
+                                    <label class="form-check-label" for="dieciocho">18</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="edad" id="diecinueveVeinticinco"
+                                        value="19-25" />
+                                    <label class="form-check-label" for="diecinueveVeinticinco">19 - 25</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="edad" id="veintiseisCuarenta"
+                                        value="26-40" />
+                                    <label class="form-check-label" for="veintiseisCuarenta">26 - 40</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="edad" id="masCuarenta"
+                                        value="40+" />
+                                    <label class="form-check-label" for="masCuarenta">40+</label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                                <label for="informacion" class="form-label">Información relevante:</label>
+                                <textarea class="form-control" name="informacion" id="informacion" rows="4"
+                                    placeholder="Texto..."
+                                    aria-describedby="Escribe aquí información relevante sobre ti"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="archivo" class="form-label">Sube una foto:</label>
+                                <input type="file" class="form-control" name="archivo" id="archivo"
+                                    aria-describedby="Sube una foto" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="Ciudad" class="form-label">Ciudad</label>
+                                <select class="form-select form-select-sm" name="Ciudad" id="Ciudad"
+                                    aria-describedby="Selecciona tu ciudad">
+                                    <option class="text-dark" value="almeria">Almería</option>
+                                    <option class="text-dark" value="granada">Granada</option>
+                                    <option class="text-dark" value="jaen">Jaén</option>
+                                    <option class="text-dark" value="malaga">Málaga</option>
+                                </select>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="recibirCorreo" />
+                                <label class="form-check-label" for="recibirCorreo">Recibir noticias al correo
+                                    electrónico</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="recibirCambios" />
+                                <label class="form-check-label" for="recibirCambios">Recibir ofertas sobre productos de
+                                    merchandising</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="Ropa" value="Ropa" />
+                                <label class="form-check-label" for="Ropa">Ropa</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="figuras" value="figuras" />
+                                <label class="form-check-label" for="figuras">Figuras</label>
+                            </div>
+                            <hr>
+                            <div class="alinearMedio mb-3 mt-3">
+                                <button type="enviar" class="btn btn-primary">
+                                    ENVIAR FORMULARIO
+                                </button>
+                                <button type="reset" class="btn btn-primary">
+                                    REINICIAR FORMULARIO
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
         <br><br><br>
-        <a href="#" class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        <!-- Boton para ir al inicio. -->
+        <a href="#main" class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                 fill="currentColor" class="bi bi-arrow-90deg-up" viewBox="0 0 16 16" aria-label="Volver al inicio">
                 <path fill-rule="evenodd"
                     d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708z" />
@@ -130,7 +195,7 @@
                 <li class="nav-item"><a href="./faq.html" class="nav-link px-2">FAQs</a></li>
                 <li class="nav-item"><a href="./about-us.html" class="nav-link px-2 text-body-primary">Sobre
                         nosotros</a></li>
-                        <li class="nav-item"><a href="./formulario.html" class="nav-link px-2">Formulario</a></li>
+                <li class="nav-item"><a href="./formulario.html" class="nav-link px-2">Formulario</a></li>
             </ul>
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="https://twitter.com/?lang=es" class="nav-link px-2"><svg
