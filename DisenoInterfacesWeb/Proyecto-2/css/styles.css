@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @font-face {
   font-family: "Cairo";
   src: url("../fonts/Cairo/Cairo-Regular.woff2") format("woff2"), url("../fonts/Cairo/Cairo-Regular.woff") format("woff");
@@ -7,7 +6,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Signika Negative";
   src: url("../fonts/Signika-Negative/Signika-Negative.woff2") format("woff2"), url("../fonts/Signika-Negative/Signika-Negative.woff") format("woff");
@@ -15,7 +13,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Nunito";
   src: url("../fonts/Nunito/Nunito-ExtraLight.woff2") format("woff2"), url("../fonts/Nunito/Nunito-ExtraLight.woff") format("woff");
@@ -23,7 +20,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -32,8 +28,6 @@
 }
 
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.842)), to(rgba(0, 0, 0, 0.842))), url("../images/fondo-XL.webp");
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.842)), url("../images/fondo-XL.webp");
   background: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.842)), url("../images/fondo-XL.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -63,8 +57,6 @@ a,
   font-family: "Cairo", sans-serif;
   text-decoration: none;
   color: #fff;
-  -webkit-transition: color 0.6s;
-  -o-transition: color 0.6s;
   transition: color 0.6s;
   /* Agregamos una transición suave */
 }
@@ -81,44 +73,37 @@ a:hover,
   background-color: rgba(15, 15, 15, 0.7529411765);
   font-size: 1.3rem;
 }
-
 .navbar a,
 .navbar h5,
 .offcanvas a,
 .offcanvas h5 {
   font-family: "Cairo", sans-serif;
 }
-
 .navbar .active,
 .offcanvas .active {
   font-size: 2rem;
   color: aqua !important;
 }
-
 .navbar img,
-.navbar-brand{
-  margin: 0 auto;
+.offcanvas img {
   position: relative;
-  top: -10px;
+  top: -20px;
   height: 7rem;
+  left: calc(50vw - 75px);
 }
 
 .navbar-toggler {
   position: relative;
-  top: -15px;
-}
-
-.navbar-collapse,
-.collapse {
-  background-color: #1d1d1d;
-  margin-left: 50%;
-  height: 100vh;
-  width: 75vw;
+  top: -20px;
 }
 
 .btn-close {
-  -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
+}
+
+.offcanvas {
+  background-color: #1d1d1d;
+  height: 100%;
 }
 
 .border-left {
@@ -138,7 +123,6 @@ a:hover,
   text-align: center;
   height: 6rem;
 }
-
 .contenido p {
   position: relative;
   top: 10px;
@@ -151,7 +135,6 @@ a:hover,
   text-align: center;
   margin-bottom: 10vh;
 }
-
 .subNav h2 {
   font-family: "Cairo", sans-serif;
   font-style: italic;
@@ -163,7 +146,6 @@ a:hover,
   font-family: "Nunito", sans-serif;
   font-size: 2rem;
 }
-
 .faq dd {
   margin-left: 1.5rem;
   font-family: "Signika-Negative", sans-serif;
@@ -177,7 +159,6 @@ a:hover,
   font-family: "Nunito", sans-serif;
   font-size: 2rem;
 }
-
 .about p,
 .about li {
   margin-left: 1.5rem;
@@ -185,9 +166,55 @@ a:hover,
   color: #b6b6b6;
   font-size: 1.5rem;
 }
-
 .about .fin {
   text-align: center;
+}
+
+#texto {
+  animation: fadeIn 2s;
+}
+
+#carousel {
+  animation: fadeIn 3s;
+}
+
+#anime {
+  animation: fadeIn 5s;
+}
+
+#manga {
+  animation: fadeIn 7s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.back-to-top {
+  position: fixed;
+  display: none;
+  background: #434343;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11;
+}
+
+.back-to-top svg {
+  position: relative;
+  top: 12px;
+  color: #fff;
 }
 
 .skip-content {
@@ -206,74 +233,32 @@ a:hover,
   opacity: 1;
 }
 
-#texto {
-  -webkit-animation: fadeIn 2s;
-  animation: fadeIn 2s;
+.cajaFormulario {
+  background-color: rgba(15, 15, 15, 0.7529411765);
+  border-radius: 10px;
+  padding: 5px;
+}
+.requerido {
+  color: red;
 }
 
-#carousel {
-  -webkit-animation: fadeIn 3s;
-  animation: fadeIn 3s;
+.btn-primary {
+  background-color: white;
+  border:#1d1d1d 3px solid;
+  color:#1d1d1d;
+  font-weight: bold;
+  font-family: Cairo, 'sans-serif';
 }
 
-#anime {
-  -webkit-animation: fadeIn 5s;
-  animation: fadeIn 5s;
+.btn-primary:hover {
+  background-color: #1d1d1d;
+  border: white 3px solid;
+  color:white;
 }
 
-#manga {
-  -webkit-animation: fadeIn 7s;
-  animation: fadeIn 7s;
-}
-
-#faq-final {
-  font-size: 1.6rem;
+.alinearMedio {
+  justify-content: center;
   text-align: center;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.back-to-top {
-  position: fixed;
-  display: none;
-  background: #434343;
-  color: #fff;
-  width: 44px;
-  height: 44px;
-  text-align: center;
-  line-height: 1;
-  font-size: 16px;
-  border-radius: 50%;
-  right: 15px;
-  bottom: 15px;
-  -webkit-transition: background 0.5s;
-  -o-transition: background 0.5s;
-  transition: background 0.5s;
-  z-index: 11;
-}
-
-.back-to-top svg {
-  position: relative;
-  top: 12px;
-  color: #fff;
 }
 
 /* 
@@ -283,7 +268,6 @@ CSS carrousel
 .carousel {
   height: 75vh;
 }
-
 .carousel-item img,
 .carousel img {
   height: 100%;
@@ -294,7 +278,6 @@ CSS carrousel
   font-size: 4rem;
   font-family: "Cairo", sans-serif;
 }
-
 .carousel-caption p {
   font-size: 2rem;
   font-family: "Nunito", sans-serif;
@@ -310,7 +293,6 @@ Footer
 .contenedorFooter {
   background-color: #1d1d1d;
 }
-
 .contenedorFooter a,
 .contenedorFooter p {
   color: #fcfcfc;
@@ -319,107 +301,77 @@ Footer
 }
 
 @media (max-width: 576px) {
-
   .carousel,
   .carousel-item {
     height: 50vh;
   }
-
   .imagen img {
     width: 100%;
     height: 100%;
   }
 }
-
 @media (min-width: 576px) {
-
   .carousel,
   .carousel-item {
     height: 50vh;
   }
-
   .imagen img {
     width: 100%;
     height: 100%;
   }
 }
-
 @media (min-width: 768px) {
-
   .carousel,
   .carousel-item {
     height: 60vh;
   }
-
   .carousel-caption h5 {
     font-size: 3rem;
   }
-
   .carousel-caption p {
     font-size: 1.5rem;
   }
-
   .border-left {
     border-left: 1px solid #fcfcfc;
   }
-
   .contenido {
     top: -4rem;
     height: 4rem;
   }
-
   .contenido p {
     font-size: 2rem;
   }
-
   .imagen img {
     width: 100%;
     height: 250px;
   }
-
-  .navbar-nav {
-    align-items: center;
-  }
-  .navbar-brand {
-    height: 7rem;
-  }
 }
-
 @media (min-width: 992px) {
   .navbar {
     height: 8rem;
   }
-
   .navbar img {
-    height: 8.5rem;
-    position: relative;
-    top: -10px;
+    height: 9rem;
   }
-
   .carousel,
   .carousel-item {
     height: 70vh;
   }
-
   .carousel-caption h5 {
     font-size: 2.5rem;
   }
-
   .carousel-caption p {
     font-size: 1.5rem;
   }
-
   .contenido {
     top: -4rem;
     height: 4rem;
   }
-
   .contenido p {
     font-size: 2rem;
   }
-
   .imagen img {
     width: 100%;
     height: 400px;
   }
-}
+}/*# sourceMappingURL=styles.css.map */
