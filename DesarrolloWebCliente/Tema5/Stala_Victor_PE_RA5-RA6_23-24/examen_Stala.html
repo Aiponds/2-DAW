@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Final Stala</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <label for="nombre" id="labelNombre">Nombre: </label>
+    <input type="text" name="nombre" id="nombre"><br>
+    <label for="apellido" id="labelApellido">Apellidos: </label>
+    <input type="text" name="apellido" id="apellido"><br>
+    <label for="codigoVerificacion" id="labelCodigo">Codigo Verificación: </label>
+    <input type="text" name="codigoVerificacion" id="codigoVerificacion"><br>
+    <button type="button" id="enviar">Enviar</button>
+    <p id="info"></p>
+    <hr>
+
+    <label for="usuario" id="labelUsuario">Usuario Administrador: </label>
+    <input type="text" name="usuario" id="usuario"><br>
+    <label for="clave" id="labelClave">Clave de Acceso: </label>
+    <input type="password" name="clave" id="clave"><br>
+    <button type="button" id="login" onclick="login()">Iniciar Sesión (clicka dos veces)</button>
+    <p id="info2"></p>
+    <hr>
+    <button type="button" id="idioma" style="display:none;">Cambiar a inglés</button>
+    <button type="button" id="salir" style="display:none;" onclick="salirAdmin()">Salir</button>
+    <p id="cronometro" style="display: none;">10</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
