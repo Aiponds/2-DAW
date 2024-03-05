@@ -31,7 +31,7 @@ function cargarRA() {
         }
     }
 
-    xmlhttp.open("GET", "sistemasinformaticos.json", true);
+    xmlhttp.open("GET", "http://10.10.40.187/Sistemas%20Informaticos", true);
     xmlhttp.send();
 }
 
