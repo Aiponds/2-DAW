@@ -30,8 +30,9 @@ function cargarRA() {
             }
         }
     }
-
-    xmlhttp.open("GET", "http://10.10.40.187/Sistemas%20Informaticos", true);
+    //URL DEL SERVIDOR NODEJS QUE ALOJA EL JSON, el otro comentario es la fase 1, por si queremos abrir el json en local.
+    // xmlhttp.open("GET", "sistemasinformaticos.json", true);
+    xmlhttp.open("GET", "http://192.168.1.139/sistemasinformaticos.json", true);
     xmlhttp.send();
 }
 
@@ -59,15 +60,16 @@ function mostrarDatosRA() {
 function agregarCriterio() {
     var selectedCriterio = selectCriterio.value;
     var selectedCriterioText = selectCriterio.options[selectCriterio.selectedIndex].text;
-    var criterioKey = selectedCriterioText.substring(0, selectedCriterioText.indexOf(' - ')); // Extraer el código del RA del texto del criterio
-    var notaPorcentaje = document.getElementById("notaPorcentaje").value + "%";
+    var selectedRAText = selectRA.options[selectRA.selectedIndex].text; // Texto completo del RA seleccionado
+    var notaPorcentaje = document.getElementById("notaPorcentaje").value;
     var texto = document.getElementById("texto").value.toUpperCase();
     var tipoActividad = document.getElementById("tipoActividad").value;
     var selectedRA = selectRA.value;
 
     if (selectedCriterio !== "" && !criteriosAgregados[selectedCriterioText]) {
         var div = document.createElement("div");
-        var concatenacion = criterioKey + ' ' + selectedCriterioText.split(' - ')[1] + ' - ' + tipoActividad.charAt(0).toUpperCase() + tipoActividad.slice(1) + ' - ' + texto + ' - ' + notaPorcentaje;
+        var tipoActividadCapitalized = tipoActividad.charAt(0).toUpperCase() + tipoActividad.slice(1);
+        var concatenacion = selectedRAText + ' - ' + selectedCriterioText.substring(selectedCriterioText.indexOf('-') + 1).trim() + ' - ' + tipoActividadCapitalized + ' - ' + texto + ' - ' + (notaPorcentaje.trim() !== "" ? notaPorcentaje + "%" : "");
         div.textContent = concatenacion; // Concatenar los valores y mostrarlos en el div de criterios
         divCriteriosSeleccionados.appendChild(div);
         criteriosAgregados[selectedCriterioText] = true; // Registrar el criterio agregado
@@ -97,9 +99,9 @@ function mostrarNombreProfesor() {
     var nombreProfesor = document.getElementById("profesor").value;
     document.getElementById("info").textContent = nombreProfesor;
     var profesorRows = document.getElementsByClassName("profesor");
-        for (var i = 0; i < profesorRows.length; i++) {
-            profesorRows[i].style.display = "none"; // Ocultar campos
-        }
+    for (var i = 0; i < profesorRows.length; i++) {
+        profesorRows[i].style.display = "none"; // Ocultar campos
+    }
 }
 
 // Cargar RA al cargar la página
