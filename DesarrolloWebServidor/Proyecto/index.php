@@ -1,18 +1,8 @@
 <?php
 session_start();
 
-// Guarda las variables de la conexión en un archivo aparte.
+// Incluye las variables de la conexión desde config.php
 require_once("./config.php");
-
-try {
-    // Crear conexión PDO
-    $conexion = new PDO("mysql:host=$db_host;dbname=$db_nombre", $db_usuario, $db_contrasena);
-
-    // Configurar el manejo de errores de PDO para que lance excepciones
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
-}
 
 // Verificar si el usuario ya está autenticado, si es así, redirigir a la página correspondiente
 if (isset($_SESSION['usuario']) && isset($_SESSION['perfil'])) {
@@ -26,28 +16,40 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['perfil'])) {
 
 // Verificar si se ha enviado el formulario de inicio de sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
+    // Obtener los datos del formulario
     $usuario = $_POST['usuario'];
     $password = $_POST['contrasena'];
-    $query = $conexion->prepare("SELECT * FROM usuarios WHERE usuario=:usuario");
-    $query->bindParam("usuario", $usuario, PDO::PARAM_STR);
-    $query->execute();
-    $result = $query->fetch(PDO::FETCH_ASSOC);
-    if (!$result) {
-        $error = '<p class="error">¡Usuario o contraseña incorrectos!</p>';
-    } else {
-        if ($password == $result['contrasena']) {
-            $_SESSION['usuario'] = $result['usuario'];
-            $_SESSION['perfil'] = $result['perfil'];
-            if ($_SESSION['perfil'] == 'administrador') {
-                header("Location: pagina_de_administracion.php");
-                exit;
-            } else {
-                header("Location: index.php");
-                exit;
-            }
-        } else {
+
+    try {
+        // Preparar la consulta para seleccionar el usuario por su nombre de usuario
+        $query = $conexion->prepare("SELECT * FROM usuarios WHERE usuario=:usuario");
+        $query->bindParam("usuario", $usuario, PDO::PARAM_STR);
+        $query->execute();
+        
+        // Obtener el resultado de la consulta
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+
+        if (!$result) {
             $error = '<p class="error">¡Usuario o contraseña incorrectos!</p>';
+        } else {
+            // Verificar la contraseña
+            if ($password == $result['contrasena']) {
+                $_SESSION['usuario'] = $result['usuario'];
+                $_SESSION['perfil'] = $result['perfil'];
+                if ($_SESSION['perfil'] == 'administrador') {
+                    header("Location: pagina_de_administracion.php");
+                    exit;
+                } else {
+                    header("Location: index.php");
+                    exit;
+                }
+            } else {
+                $error = '<p class="error">¡Usuario o contraseña incorrectos!</p>';
+            }
         }
+    } catch (PDOException $e) {
+        // Manejar errores de la consulta
+        die("Error: " . $e->getMessage());
     }
 }
 ?>
