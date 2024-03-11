@@ -1,7 +1,7 @@
 <?php
 $db_host = "localhost";
-$db_usuario = "tienda";
-$db_contrasena = "tienda";
+$db_usuario = "dwes";
+$db_contrasena = "abc123.";
 $db_nombre = "tienda_lena";
 
 try {
