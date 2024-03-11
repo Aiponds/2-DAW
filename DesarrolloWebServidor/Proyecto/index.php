@@ -1,11 +1,18 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 session_start();
 
-//Guardo las variables de la conexión en un archivo aparte.
+// Guarda las variables de la conexión en un archivo aparte.
 require_once("./config.php");
+
+try {
+    // Crear conexión PDO
+    $conexion = new PDO("mysql:host=$db_host;dbname=$db_nombre", $db_usuario, $db_contrasena);
+
+    // Configurar el manejo de errores de PDO para que lance excepciones
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
+}
 
 // Verificar si el usuario ya está autenticado, si es así, redirigir a la página correspondiente
 if (isset($_SESSION['usuario']) && isset($_SESSION['perfil'])) {
@@ -18,56 +25,30 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['perfil'])) {
 }
 
 // Verificar si se ha enviado el formulario de inicio de sesión
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Utilizo las variables incluidas en config.php para la conexión.
-    $conexion = new mysqli($db_host, $db_usuario, $db_contrasena, $db_nombre);
-
-    // Verificar la conexión
-    if ($conexion->connect_error) {
-        die("Error de conexión: " . $conexion->connect_error);
-    }
-
-    // Obtener los datos del formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     $usuario = $_POST['usuario'];
-    $contrasena = $_POST['contrasena'];
-
-    // Preparar consulta SQL
-    $sql = "SELECT * FROM usuarios WHERE usuario=?";
-    $login = $conexion->prepare($sql);
-
-    // Vincular parámetros
-    $login->bind_param("s", $usuario);
-
-    // Ejecutar consulta
-    $login->execute();
-
-    // Obtener resultados
-    $resultado = $login->get_result();
-
-    if ($resultado->num_rows > 0) {
-        // Usuario encontrado, verificar contraseña
-        $fila = $resultado->fetch_assoc();
-        if (password_verify($contrasena, $fila['contrasena'])) {
-            // Contraseña correcta, iniciar sesión
-            $_SESSION['usuario'] = $usuario;
-            $_SESSION['perfil'] = $fila['perfil'];
-
-            if ($_SESSION['perfil'] == 'normal') {
-                header("Location: pagina_de_compras.php");
-            } elseif ($_SESSION['perfil'] == 'admin') {
-                header("Location: pagina_de_administracion.php");
-            }
-            exit();
-        } else {
-            $error = "Contraseña incorrecta";
-        }
+    $password = $_POST['contrasena'];
+    $query = $conexion->prepare("SELECT * FROM usuarios WHERE usuario=:usuario");
+    $query->bindParam("usuario", $usuario, PDO::PARAM_STR);
+    $query->execute();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    if (!$result) {
+        $error = '<p class="error">¡Usuario o contraseña incorrectos!</p>';
     } else {
-        $error = "Usuario no encontrado";
+        if ($password == $result['contrasena']) {
+            $_SESSION['usuario'] = $result['usuario'];
+            $_SESSION['perfil'] = $result['perfil'];
+            if ($_SESSION['perfil'] == 'administrador') {
+                header("Location: pagina_de_administracion.php");
+                exit;
+            } else {
+                header("Location: index.php");
+                exit;
+            }
+        } else {
+            $error = '<p class="error">¡Usuario o contraseña incorrectos!</p>';
+        }
     }
-
-    // Cerrar la conexión
-    $login->close();
-    $conexion->close();
 }
 ?>
 
@@ -84,16 +65,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h2>Iniciar sesión</h2>
     <?php if (isset($error)) { ?>
-        <p>
-            <?php echo $error; ?>
-        </p>
+        <?php echo $error; ?>
     <?php } ?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="usuario">Usuario:</label><br>
         <input type="text" id="usuario" name="usuario" required><br>
         <label for="contrasena">Contraseña:</label><br>
         <input type="password" id="contrasena" name="contrasena" required><br><br>
-        <input type="submit" value="Iniciar sesión">
+        <input type="submit" name="login" value="Iniciar sesión">
     </form>
 </body>
 

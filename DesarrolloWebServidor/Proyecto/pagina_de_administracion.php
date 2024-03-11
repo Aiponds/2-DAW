@@ -1,37 +1,27 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 session_start();
-require_once("./config.php"); // Incluye el archivo de configuración con las credenciales de la base de datos
 
 // Función para obtener la lista de usuarios desde la base de datos
-function obtenerListaUsuarios($conn) {
+function obtenerListaUsuarios($conexion) {
     $sql = "SELECT id, nombre, usuario FROM usuarios";
-    $resultado = $conn->query($sql);
+    $query = $conexion->prepare($sql);
+    $query->execute();
 
     $lista_usuarios = array();
-    if ($resultado->num_rows > 0) {
-        while($fila = $resultado->fetch_assoc()) {
-            $lista_usuarios[] = $fila;
-        }
+    while($fila = $query->fetch(PDO::FETCH_ASSOC)) {
+        $lista_usuarios[] = $fila;
     }
     return $lista_usuarios;
 }
 
-// Verificar si el usuario tiene el perfil de administrador
+// Verificar si el usuario NO tiene el perfil de administrador y lo devuelve a index.php
 if(!isset($_SESSION['usuario']) || !isset($_SESSION['perfil']) || $_SESSION['perfil'] !== 'admin') {
     header("Location: index.php");
     exit();
 }
 
-// Crear conexión a la base de datos
-$conn = new mysqli($db_host, $db_usuario, $db_contrasena, $db_nombre);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+// Obtener la conexión PDO establecida en index.php
+require_once("./config.php");
 
 // Verificar si se ha enviado el formulario de alta de usuario
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['alta_usuario'])) {
@@ -41,14 +31,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['alta_usuario'])) {
     $nueva_contrasena = $_POST['nueva_contrasena'];
 
     // Verificar si el nuevo usuario ya existe
-    $sql_verificar_usuario = "SELECT usuario FROM usuarios WHERE usuario = '$nuevo_usuario'";
-    $resultado_verificacion = $conn->query($sql_verificar_usuario);
-    if ($resultado_verificacion->num_rows > 0) {
+    $sql_verificar_usuario = "SELECT usuario FROM usuarios WHERE usuario = :nuevo_usuario";
+    $query_verificar_usuario = $conexion->prepare($sql_verificar_usuario);
+    $query_verificar_usuario->bindParam(":nuevo_usuario", $nuevo_usuario, PDO::PARAM_STR);
+    $query_verificar_usuario->execute();
+
+    if ($query_verificar_usuario->rowCount() > 0) {
         $error_alta = "El usuario ya existe.";
     } else {
         // Insertar nuevo usuario en la base de datos
-        $sql_insertar_usuario = "INSERT INTO usuarios (nombre, usuario, contrasena, perfil) VALUES ('$nuevo_nombre', '$nuevo_usuario', '$nueva_contrasena', 'usuario')";
-        if ($conn->query($sql_insertar_usuario) === TRUE) {
+        $sql_insertar_usuario = "INSERT INTO usuarios (nombre, usuario, contrasena, perfil) VALUES (:nuevo_nombre, :nuevo_usuario, :nueva_contrasena, 'usuario')";
+        $query_insertar_usuario = $conexion->prepare($sql_insertar_usuario);
+        $query_insertar_usuario->bindParam(":nuevo_nombre", $nuevo_nombre, PDO::PARAM_STR);
+        $query_insertar_usuario->bindParam(":nuevo_usuario", $nuevo_usuario, PDO::PARAM_STR);
+        $query_insertar_usuario->bindParam(":nueva_contrasena", $nueva_contrasena, PDO::PARAM_STR);
+        
+        if ($query_insertar_usuario->execute()) {
             header("Location: pagina_de_administracion.php");
             exit();
         } else {
@@ -65,8 +63,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['baja_usuario'])) {
     // Verificar que el usuario no se esté intentando dar de baja a sí mismo
     if($id_usuario_baja != $_SESSION['id_usuario']) {
         // Eliminar usuario de la base de datos
-        $sql_eliminar_usuario = "DELETE FROM usuarios WHERE id = $id_usuario_baja";
-        if ($conn->query($sql_eliminar_usuario) === TRUE) {
+        $sql_eliminar_usuario = "DELETE FROM usuarios WHERE id = :id_usuario_baja";
+        $query_eliminar_usuario = $conexion->prepare($sql_eliminar_usuario);
+        $query_eliminar_usuario->bindParam(":id_usuario_baja", $id_usuario_baja, PDO::PARAM_INT);
+
+        if ($query_eliminar_usuario->execute()) {
             header("Location: pagina_de_administracion.php");
             exit();
         } else {
@@ -78,10 +79,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['baja_usuario'])) {
 }
 
 // Obtener la lista de usuarios desde la base de datos
-$lista_usuarios = obtenerListaUsuarios($conn);
+$lista_usuarios = obtenerListaUsuarios($conexion);
 
-// Cerrar la conexión
-$conn->close();
 ?>
 
 <!DOCTYPE html>
