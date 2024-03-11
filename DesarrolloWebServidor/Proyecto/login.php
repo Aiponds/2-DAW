@@ -13,19 +13,58 @@ if(isset($_SESSION['usuario']) && isset($_SESSION['perfil'])) {
 
 // Verificar si se ha enviado el formulario de inicio de sesión
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validar los datos del formulario (podrías hacer más validaciones aquí, como verificar la contraseña con la base de datos)
-    $usuario_valido = "usuario"; // Cambiar por el usuario válido
-    $contrasena_valida = "contrasena"; // Cambiar por la contraseña válida
+    // Conexión a la base de datos
+    $db_host = "localhost";
+    $db_usuario = "usuario_db";
+    $db_contrasena = "contrasena_db";
+    $db_nombre = "nombre_db";
 
-    if($_POST['usuario'] == $usuario_valido && $_POST['contrasena'] == $contrasena_valida) {
+    $conn = new mysqli($db_host, $db_usuario, $db_contrasena, $db_nombre);
+
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("Error de conexión: " . $conn->connect_error);
+    }
+
+    // Obtener los datos del formulario
+    $usuario = $_POST['usuario'];
+    $contrasena = $_POST['contrasena'];
+
+    // Preparar consulta SQL
+    $sql = "SELECT * FROM usuarios WHERE usuario=? AND contrasena=?";
+    $stmt = $conn->prepare($sql);
+
+    // Vincular parámetros
+    $stmt->bind_param("ss", $usuario, $contrasena);
+
+    // Ejecutar consulta
+    $stmt->execute();
+
+    // Obtener resultados
+    $resultado = $stmt->get_result();
+
+    if ($resultado->num_rows > 0) {
+        // Usuario autenticado, obtener perfil
+        $fila = $resultado->fetch_assoc();
+        $perfil = $fila['perfil'];
+
         // Iniciar sesión y redirigir al usuario a la página correspondiente
-        $_SESSION['usuario'] = $usuario_valido;
-        $_SESSION['perfil'] = 'normal'; // Cambiar a 'admin' si es un usuario administrador
-        header("Location: pagina_de_compras.php");
+        $_SESSION['usuario'] = $usuario;
+        $_SESSION['perfil'] = $perfil;
+
+        if($perfil == 'normal') {
+            header("Location: pagina_de_compras.php");
+        } elseif($perfil == 'admin') {
+            header("Location: pagina_de_administracion.php");
+        }
         exit();
     } else {
         $error = "Usuario o contraseña incorrectos";
     }
+
+    // Cerrar la conexión
+    $stmt->close();
+    $conn->close();
 }
 ?>
 
