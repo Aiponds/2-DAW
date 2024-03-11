@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 
 session_start();
 
-//Guardo las variables de la conexión en un archivo aparte.
+// Guardo las variables de la conexión en un archivo aparte.
 require_once("./config.php");
 
 // Verificar si el usuario ya está autenticado, si es así, redirigir a la página correspondiente
@@ -33,11 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST['contrasena'];
 
     // Preparar consulta SQL
-    $sql = "SELECT * FROM usuarios WHERE usuario=? AND contrasena=?";
+    $sql = "SELECT * FROM usuarios WHERE usuario=?";
     $login = $conexion->prepare($sql);
 
     // Vincular parámetros
-    $login->bind_param("ss", $usuario, $contrasena);
+    $login->bind_param("s", $usuario);
 
     // Ejecutar consulta
     $login->execute();
@@ -46,20 +46,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = $login->get_result();
 
     if ($resultado->num_rows > 0) {
-        // Usuario autenticado, obtener perfil
+        // Usuario encontrado, verificar contraseña
         $fila = $resultado->fetch_assoc();
-        $perfil = $fila['perfil'];
-
-        // Iniciar sesión y redirigir al usuario a la página correspondiente
-        $_SESSION['usuario'] = $usuario;
-        $_SESSION['perfil'] = $perfil;
-
-        if ($perfil == 'normal') {
-            header("Location: pagina_de_compras.php");
-        } elseif ($perfil == 'admin') {
-            header("Location: pagina_de_administracion.php");
+        if (password_verify($contrasena, $fila['contrasena'])) {
+            // Contraseña válida, iniciar sesión
+            $_SESSION['usuario'] = $usuario;
+            $_SESSION['perfil'] = $fila['perfil'];
+            if ($_SESSION['perfil'] == 'normal') {
+                header("Location: pagina_de_compras.php");
+            } elseif ($_SESSION['perfil'] == 'admin') {
+                header("Location: pagina_de_administracion.php");
+            }
+            exit();
+        } else {
+            $error = "Usuario o contraseña incorrectos";
         }
-        exit();
     } else {
         $error = "Usuario o contraseña incorrectos";
     }
