@@ -1,6 +1,8 @@
 <?php
 session_start();
-require_once("ruta/a/config.php");
+
+//Guardo las variables de la conexión en un archivo aparte.
+require_once("./config.php");
 
 // Verificar si el usuario ya está autenticado, si es así, redirigir a la página correspondiente
 if (isset($_SESSION['usuario']) && isset($_SESSION['perfil'])) {

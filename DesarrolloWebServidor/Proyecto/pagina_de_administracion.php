@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("ruta/a/config.php"); // Incluye el archivo de configuración con las credenciales de la base de datos
+require_once("./config.php"); // Incluye el archivo de configuración con las credenciales de la base de datos
 
 // Función para obtener la lista de usuarios desde la base de datos
 function obtenerListaUsuarios($conn) {
@@ -87,7 +87,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Administración</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Cambia esto por tu archivo CSS con estilos personalizados -->
 </head>
 <body>
     <h2>Página de Administración</h2>
