@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 
 session_start();
 
-// Guardo las variables de la conexión en un archivo aparte.
+//Guardo las variables de la conexión en un archivo aparte.
 require_once("./config.php");
 
 // Verificar si el usuario ya está autenticado, si es así, redirigir a la página correspondiente
@@ -19,7 +19,6 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['perfil'])) {
 
 // Verificar si se ha enviado el formulario de inicio de sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     // Utilizo las variables incluidas en config.php para la conexión.
     $conexion = new mysqli($db_host, $db_usuario, $db_contrasena, $db_nombre);
 
@@ -49,9 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Usuario encontrado, verificar contraseña
         $fila = $resultado->fetch_assoc();
         if (password_verify($contrasena, $fila['contrasena'])) {
-            // Contraseña válida, iniciar sesión
+            // Contraseña correcta, iniciar sesión
             $_SESSION['usuario'] = $usuario;
             $_SESSION['perfil'] = $fila['perfil'];
+
             if ($_SESSION['perfil'] == 'normal') {
                 header("Location: pagina_de_compras.php");
             } elseif ($_SESSION['perfil'] == 'admin') {
@@ -59,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             exit();
         } else {
-            $error = "Usuario o contraseña incorrectos";
+            $error = "Contraseña incorrecta";
         }
     } else {
-        $error = "Usuario o contraseña incorrectos";
+        $error = "Usuario no encontrado";
     }
 
     // Cerrar la conexión
