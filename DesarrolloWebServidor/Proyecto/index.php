@@ -1,29 +1,26 @@
 <?php
 session_start();
+require_once("ruta/a/config.php");
 
 // Verificar si el usuario ya está autenticado, si es así, redirigir a la página correspondiente
-if(isset($_SESSION['usuario']) && isset($_SESSION['perfil'])) {
-    if($_SESSION['perfil'] == 'normal') {
+if (isset($_SESSION['usuario']) && isset($_SESSION['perfil'])) {
+    if ($_SESSION['perfil'] == 'normal') {
         header("Location: pagina_de_compras.php");
-    } elseif($_SESSION['perfil'] == 'admin') {
+    } elseif ($_SESSION['perfil'] == 'admin') {
         header("Location: pagina_de_administracion.php");
     }
     exit();
 }
 
 // Verificar si se ha enviado el formulario de inicio de sesión
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conexión a la base de datos
-    $db_host = "localhost";
-    $db_usuario = "usuario_db";
-    $db_contrasena = "contrasena_db";
-    $db_nombre = "nombre_db";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $conn = new mysqli($db_host, $db_usuario, $db_contrasena, $db_nombre);
+    // Utilizo las variables incluidas en config.php para la conexión.
+    $conexion = new mysqli($db_host, $db_usuario, $db_contrasena, $db_nombre);
 
     // Verificar la conexión
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
+    if ($conexion->connect_error) {
+        die("Error de conexión: " . $conexion->connect_error);
     }
 
     // Obtener los datos del formulario
@@ -32,16 +29,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Preparar consulta SQL
     $sql = "SELECT * FROM usuarios WHERE usuario=? AND contrasena=?";
-    $stmt = $conn->prepare($sql);
+    $login = $conexion->prepare($sql);
 
     // Vincular parámetros
-    $stmt->bind_param("ss", $usuario, $contrasena);
+    $login->bind_param("ss", $usuario, $contrasena);
 
     // Ejecutar consulta
-    $stmt->execute();
+    $login->execute();
 
     // Obtener resultados
-    $resultado = $stmt->get_result();
+    $resultado = $login->get_result();
 
     if ($resultado->num_rows > 0) {
         // Usuario autenticado, obtener perfil
@@ -52,9 +49,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['usuario'] = $usuario;
         $_SESSION['perfil'] = $perfil;
 
-        if($perfil == 'normal') {
+        if ($perfil == 'normal') {
             header("Location: pagina_de_compras.php");
-        } elseif($perfil == 'admin') {
+        } elseif ($perfil == 'admin') {
             header("Location: pagina_de_administracion.php");
         }
         exit();
@@ -63,23 +60,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Cerrar la conexión
-    $stmt->close();
-    $conn->close();
+    $login->close();
+    $conexion->close();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Cambia esto por tu archivo CSS con estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <h2>Iniciar sesión</h2>
-    <?php if(isset($error)) { ?>
-        <p><?php echo $error; ?></p>
+    <?php if (isset($error)) { ?>
+        <p>
+            <?php echo $error; ?>
+        </p>
     <?php } ?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="usuario">Usuario:</label><br>
@@ -89,4 +90,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Iniciar sesión">
     </form>
 </body>
+
 </html>

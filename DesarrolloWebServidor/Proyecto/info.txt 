@@ -1,0 +1,27 @@
+Se pide desarrollar una aplicación web de un comercio electrónico o tienda on-line  de venta de leña. 
+La aplicación web debe tener al menos dos perfiles de usuarios que se almacenan en una base de datos:
+
+1. Los usuarios normales que serán capaces de realizar compras 
+2. Los usuarios “gestores” o “administradores” que son los encargados de dar de alta o de baja al resto de usuarios 
+y de poner o quitar de la venta los distintos productos o servicios ofertados.
+
+Por lo tanto la aplicación web tendrá una página de login donde, después de introducir
+correctamente el usuario y la contraseña, se redirigirá a la página de compras o a la de
+administración dependiendo del perfil del usuario. 
+
+Recuerda que un perfil de usuario NO PUEDE ver la parte del otro perfil. Por ejemplo, un usuario no puede ir a la página de administración 
+y un administrador no puede ir a la página de compras. También debe haber un método para desconectarse (logout).
+
+Los productos o servicios ofertados deben tener como mínimo un nombre, imagen y descripción.
+Todos estos datos deben estar almacenados en una base de datos y se gestiona todo desde la página de administración. 
+No se permite subir ficheros que no sean imágenes.
+
+Utilizando cookies debemos personalizar la web, puedes hacerlo cambiando de combinación de
+colores y de idioma.
+
+Todos los datos que se recojan en un formulario deben ser validados y la aplicación web no debe
+mostrar mensajes de error ni warnings.
+
+Crea el contenido de 'pagina_de_administracion.php' donde solo permitas la visualización de usuarios con el perfil 'administrador'.
+La página debera permitir mediante un formulario dar de alta a nuevos usuarios y dar de baja a usuarios existentes que se muestren en una lista dentro de la pagina.
+El usuario actual no podra darse de baja a si mismo nunca.
