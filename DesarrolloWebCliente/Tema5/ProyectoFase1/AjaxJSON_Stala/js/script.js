@@ -31,8 +31,8 @@ function cargarRA() {
         }
     }
     //URL DEL SERVIDOR NODEJS QUE ALOJA EL JSON, el otro comentario es la fase 1, por si queremos abrir el json en local.
-    // xmlhttp.open("GET", "sistemasinformaticos.json", true);
-    xmlhttp.open("GET", "http://192.168.1.139/sistemasinformaticos.json", true);
+    xmlhttp.open("GET", "sistemasinformaticos.json", true);
+    //xmlhttp.open("GET", "http://192.168.1.139/sistemasinformaticos.json", true);
     xmlhttp.send();
 }
 
