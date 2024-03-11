@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 require_once("./config.php"); // Incluye el archivo de configuración con las credenciales de la base de datos
 
