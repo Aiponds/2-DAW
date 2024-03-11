@@ -24,6 +24,7 @@ if (!isset($_SESSION['usuario'])) {
         <title>Tienda de Leña</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
@@ -35,8 +36,10 @@ if (!isset($_SESSION['usuario'])) {
                     $resultado = $connection->query($sql);
                     //Recoge todos los productos de la base de datos y los añade al documento html.
                     while ($madera = $resultado->fetch(PDO::FETCH_OBJ)) {
-                        echo "<div>" . "<div>" . "<img src='" . $madera->imagen . "' class='card-img-top' alt='" . $madera->nombre . "'>";
-                        echo "<div>". "<h4>" . $madera->nombre . "</h4>";
+                        // Concatenar la ruta de la carpeta "img" antes de la ruta de la imagen
+                        $ruta_imagen = "./img/" . $madera->imagen;
+                        echo "<div>" . "<div>" . "<img src='" . $ruta_imagen . "' alt='" . $madera->nombre . "'>";
+                        echo "<div>" . "<h4>" . $madera->nombre . "</h4>";
                         echo "<p>" . $madera->descripcion . "</p>";
                         echo "<div><a href='#' class='btn btn-primary'>Comprar</a>" . "<span class='btn'>" . $madera->precio . " €</span></div></div></div></div>";
                     }
@@ -46,6 +49,11 @@ if (!isset($_SESSION['usuario'])) {
                 ?>
             </main>
         </div>
+        <footer>
+            <div>
+                <button type="button" onclick="location.href='logout.php'">Cerrar sesión</button>
+            </div>
+        </footer>
     </body>
 
     </html>

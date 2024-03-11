@@ -8,9 +8,9 @@ DROP TABLE IF EXISTS productos;
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
-    usuario VARCHAR(25) UNIQUE NOT NULL,
-    contrasena VARCHAR(30) NOT NULL,
-    perfil ENUM('usuario', 'administrador') NOT NULL DEFAULT 'normal'
+    usuario VARCHAR(50) UNIQUE NOT NULL,
+    contrasena VARCHAR(60) NOT NULL,
+    perfil ENUM('usuario', 'administrador') NOT NULL
 );
 
 -- Crear la tabla de productos
@@ -23,9 +23,9 @@ CREATE TABLE productos (
 );
 
 -- Insertar usuarios de ejemplo
-INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `contrasena`, `email`, `direccion`, `perfil`) 
+INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `contrasena`, `perfil`) 
 VALUES
-    (1, 'Usuario Default', 'usuario', '$2a$12$78aEJHTD0qaH6MvfsKCGkev2MLMhR8eCCo0ccUb7acvDcyXNIGxgK', 'normal'),
+    (1, 'Usuario Default', 'usuario', '$2a$12$78aEJHTD0qaH6MvfsKCGkev2MLMhR8eCCo0ccUb7acvDcyXNIGxgK', 'usuario'),
     (2, 'Administrador', 'admin', '$2a$12$tjWR7yqs388DwkHg0jmp3./TIU7tKN/.3I76zNWtOevlldWNs3wR.', 'administrador');
 
 -- Insertar productos de ejemplo
