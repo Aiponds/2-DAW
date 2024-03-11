@@ -23,7 +23,7 @@ if (isset($_POST['login'])) {
                 exit;
             }
         } else {
-            echo '<p class="error">¡Usuario o contraseña incorrectos!</p>';
+            echo '<center><p class="error">¡Usuario o contraseña incorrectos!</p></center>';
         }
     }
 }
@@ -61,7 +61,8 @@ if (isset($_POST['login'])) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-6"></div>
+                <div class="col-6">
                     <button type="submit" name="login" value="login">Iniciar sesión</button>
                 </div>
             </div>
