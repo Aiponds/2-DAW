@@ -162,7 +162,7 @@ if (!isset($_SESSION['usuario'])) {
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <input type="text" name="nombre_usuario" placeholder="Nombre completo" required><br>
                 <input type="text" name="usuario" placeholder="Nombre de usuario" required><br>
-                <input type="password" name="contrasena" placeholder="Contraseña" required><br>
+                <input type="password" name="contrasena" placeholder="Contraseña" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,\.])[A-Za-z\d@$!%*?&,\.]{8,}$"><br>
                 <select name="perfil" required>
                     <option value="">Seleccionar perfil</option>
                     <option value="administrador">Administrador</option>
