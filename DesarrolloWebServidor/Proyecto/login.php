@@ -3,6 +3,8 @@
 include_once('config/config.php');
 session_start();
 
+$tema = getTemaCookie();
+
 // Verifica si se ha enviado un formulario para cambiar el tema
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tema'])) {
     $tema = ($tema === 'light') ? 'dark' : 'light';
