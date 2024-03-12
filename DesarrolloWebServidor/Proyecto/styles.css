@@ -18,3 +18,14 @@ footer {
     text-align: center;
     vertical-align: middle;
 }
+.compra {
+    color: green;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
