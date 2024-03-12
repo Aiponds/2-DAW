@@ -1,0 +1,36 @@
+body {
+    background-color: #222;
+    color: #fff;
+}
+
+div {
+    border: 1px solid #fff;
+}
+
+img {
+    width: 250px;
+}
+
+footer {
+    border: 2px solid #fff;
+    height: 100px;
+    background-color: #004d40; /* Verde oscuro */
+    text-align: center;
+    line-height: 100px; /* Para centrar verticalmente */
+}
+
+.error {
+    color: #ff5252; /* Rojo oscuro */
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.5; /* Ajuste del espaciado */
+}
+
+.compra {
+    color: #00e676; /* Verde claro */
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.5; /* Ajuste del espaciado */
+}

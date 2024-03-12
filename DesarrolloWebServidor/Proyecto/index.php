@@ -3,8 +3,12 @@
 include_once('config/config.php');
 session_start();
 
-if (isset($_COOKIE['tema']) && $_COOKIE['tema'] === 'dark') {
-    echo '<script>document.body.classList.add("dark-mode");</script>';
+$tema = getTemaCookie();
+
+// Verifica si se ha enviado un formulario para cambiar el tema
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tema'])) {
+    $tema = ($tema === 'light') ? 'dark' : 'light';
+    setTemaCookie($tema);
 }
 
 // Si la sesión no ha sido iniciada, envía el usuario al inicio de sesión.
@@ -28,34 +32,16 @@ if (!isset($_SESSION['usuario'])) {
         <title>Tienda de Leña</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-        <link rel="stylesheet" href="styles.css">
-        <script>
-            function cambiarTema() {
-                if (document.body.classList.contains('dark-mode')) {
-                    document.body.classList.remove('dark-mode');
-                    setCookie('tema', 'light', 365);
-                } else {
-                    document.body.classList.add('dark-mode');
-                    setCookie('tema', 'dark', 365);
-                }
-            }
-
-            function setCookie(name, value, days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + (value || "") + expires + "; path=/";
-            }
-        </script>
+        <link rel="stylesheet" href="<?php echo $tema; ?>.css">
     </head>
 
     <body>
         <div class="container-lg">
             <main class="row">
-                <button type="button" onclick="cambiarTema()">Cambiar tema</button>
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <label>Cambiar Tema:</label>
+                    <button type="submit" name="tema" value="tema">Cambiar Tema</button>
+                </form>
                 <?php
                 try {
                     $sql = "SELECT id, nombre, imagen, descripcion, precio FROM productos";
@@ -108,7 +94,7 @@ if (!isset($_SESSION['usuario'])) {
 
         <footer>
             <div>
-                <button type="button" onclick="location.href='logout.php'">Cerrar sesión</button>
+                <button type="button" class="btn btn-dark" onclick="location.href='logout.php'">Cerrar sesión</button><br>
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <button type="submit" name="limpiar_carrito" class="btn btn-danger">Limpiar carrito</button>
                     <button type="submit" name="finalizar_compra" class="btn btn-success">Finalizar compra</button>
@@ -139,9 +125,11 @@ if (isset($_POST['limpiar_carrito'])) {
     unset($_SESSION['carrito']);
 }
 
-// Verificar si se ha pulsado el botón "Finalizar compra"
-if (isset($_POST['finalizar_compra'])) {
+// Verificar si se ha pulsado el botón "Finalizar compra" y el carrito no esta vacio.
+if (isset($_POST['finalizar_compra']) && !empty($_SESSION['carrito'])) {
     echo "<p class='compra'>¡Gracias por su compra!</p>";
     unset($_SESSION['carrito']);
+} elseif (isset($_POST['finalizar_compra']) && empty($_SESSION['carrito'])) {
+    echo "<p class='compra'>¡El carrito está vacío! No se puede finalizar la compra.</p>";
 }
 ?>
