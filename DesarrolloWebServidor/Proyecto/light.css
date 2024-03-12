@@ -1,27 +1,36 @@
-div {
-    border: 1px solid black;
+body {
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
 }
+
+div {
+    border: 1px solid #000; /* Borde negro */
+}
+
 img {
     width: 250px;
 }
+
 footer {
-    border: 2px solid black;
+    border: 2px solid #000; /* Borde negro */
     height: 100px;
-    background-color: aquamarine;
+    background-color: #a0d6b4; /* Verde claro */
     text-align: center;
-    vertical-align: middle;
+    line-height: 100px; /* Para centrar verticalmente */
 }
+
 .error {
-    color: red;
+    color: #ff5252; /* Rojo oscuro */
     font-weight: bold;
     font-size: 15px;
     text-align: center;
-    vertical-align: middle;
+    line-height: 1.5; /* Ajuste del espaciado */
 }
+
 .compra {
-    color: green;
+    color: #00e676; /* Verde claro */
     font-weight: bold;
     font-size: 30px;
     text-align: center;
-    vertical-align: middle;
+    line-height: 1.5; /* Ajuste del espaciado */
 }
