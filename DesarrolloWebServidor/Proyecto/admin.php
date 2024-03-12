@@ -52,10 +52,11 @@ if (!isset($_SESSION['usuario'])) {
         // Procesar la imagen cargada
         $imagen_nombre = $_FILES['imagen']['name'];
         $imagen_temp = $_FILES['imagen']['tmp_name'];
-        $imagen_destino = 'img/' . $imagen_nombre;
+        $imagen_extension = pathinfo($imagen_nombre, PATHINFO_EXTENSION); // Obtener la extensión de la imagen
+        $imagen_guardar = 'img/' . $imagen_nombre; // Utilizar el nombre original con la extensión
 
         // Mover la imagen al directorio de img
-        if (move_uploaded_file($imagen_temp, $imagen_destino)) {
+        if (move_uploaded_file($imagen_temp, $imagen_guardar)) {
             echo "Imagen subida correctamente.";
         } else {
             echo "Hubo un error al subir la imagen.";
@@ -63,12 +64,10 @@ if (!isset($_SESSION['usuario'])) {
         }
 
         // Guardar solo el nombre de la imagen en la base de datos
-        $imagen_guardar = pathinfo($imagen_nombre, PATHINFO_FILENAME) . '.jpg';
-
         $sql = "INSERT INTO productos (nombre, imagen, descripcion, precio) VALUES (:nombre, :imagen, :descripcion, :precio)";
         $stmt = $connection->prepare($sql);
         $stmt->bindParam(':nombre', $nombre);
-        $stmt->bindParam(':imagen', $imagen_guardar); // Guardar solo el nombre de la imagen
+        $stmt->bindParam(':imagen', $imagen_nombre); // Guardar solo el nombre de la imagen
         $stmt->bindParam(':descripcion', $descripcion);
         $stmt->bindParam(':precio', $precio);
         $stmt->execute();
@@ -77,6 +76,7 @@ if (!isset($_SESSION['usuario'])) {
         header("Location: {$_SERVER['PHP_SELF']}");
         exit;
     }
+
 
     // Dar de alta un usuario
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_register'])) {
