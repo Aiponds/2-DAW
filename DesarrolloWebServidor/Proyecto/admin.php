@@ -3,6 +3,12 @@
 include_once('config/config.php');
 session_start();
 
+// Verifica si se ha enviado un formulario para cambiar el tema
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tema'])) {
+    $tema = ($tema === 'light') ? 'dark' : 'light';
+    setTemaCookie($tema);
+}
+
 // Si la sesión no ha sido iniciada, envía el usuario al inicio de sesión.
 // Si la sesión NO coincide con el perfil de administrador, lo reenvía a la página de usuarios comunes.
 // Si no cumple ninguna, la sesión es del perfil administrador, por lo que le carga la página del administrador en este archivo.
@@ -115,12 +121,16 @@ if (!isset($_SESSION['usuario'])) {
         <title>Administración de la web</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="<?php echo $tema; ?>.css">
     </head>
 
     <body>
         <div class="container">
             <h1>Administración de la web</h1>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <label>Cambiar Tema:</label>
+                <button type="submit" name="tema" value="tema">Cambiar Tema</button>
+            </form>
             <!-- Formulario para insertar tipo de leña -->
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
                 <h2>Insertar tipo de leña</h2>
